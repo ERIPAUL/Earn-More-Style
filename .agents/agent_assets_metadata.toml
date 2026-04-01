@@ -1,0 +1,20 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "awIGpbGMVt-88hLFrrHgk"
+uri = "file://artifacts/earnmore-website/public/images/hero-bg.png"
+type = "image"
+title = "Abstract hero wealth growth"
+
+[[generated]]
+id = "A5kXpeQyEatJbR8njlKcc"
+uri = "file://artifacts/earnmore-website/public/images/about-image.png"
+type = "image"
+title = "Modern premium office abstract"
+
+[[generated]]
+id = "j_4iJ8J-vJ_d3cinBY0cn"
+uri = "file://artifacts/earnmore-website/public/images/esg-image.png"
+type = "image"
+title = "ESG sustainability finance"
