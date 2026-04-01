@@ -10,13 +10,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-9 h-9 rounded-full bg-emerald-500 flex items-center justify-center">
-                <span className="text-white font-bold text-sm font-serif">E</span>
-              </div>
-              <span className="font-bold text-xl text-white">
-                Earn<span style={{ color: "#34d399" }}>more</span> Group
-              </span>
+            <div className="mb-5">
+              <img
+                src="/logo.png"
+                alt="Earnmore Consultants"
+                className="h-10 w-auto object-contain"
+              />
             </div>
             <p className="text-green-200/50 text-sm leading-relaxed mb-6">
               A sustainability consultancy providing practical strategies and impactful solutions for a greener, more prosperous future.

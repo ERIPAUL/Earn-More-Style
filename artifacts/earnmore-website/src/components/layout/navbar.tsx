@@ -30,17 +30,18 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center">
-            <span className="text-white font-bold text-sm font-serif">E</span>
-          </div>
-          <span
-            className={`font-bold text-xl tracking-tight transition-colors duration-300 ${
-              isScrolled ? "text-foreground" : "text-white"
+        <a href="#home" className="flex items-center">
+          <div
+            className={`transition-all duration-300 rounded-lg ${
+              isScrolled ? "bg-[#0f2b2b] px-3 py-1.5" : ""
             }`}
           >
-            Earn<span className="text-primary">more</span> Group
-          </span>
+            <img
+              src="/logo.png"
+              alt="Earnmore Consultants"
+              className="h-10 w-auto object-contain"
+            />
+          </div>
         </a>
 
         {/* Desktop Nav */}
