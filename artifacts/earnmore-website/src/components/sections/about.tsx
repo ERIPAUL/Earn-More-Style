@@ -31,20 +31,20 @@ export default function AboutSection() {
                   </span>
                 </p>
 
-                {/* Stat grid */}
-                <div className="grid grid-cols-2 gap-6 mb-8">
+                {/* Service highlights */}
+                <div className="grid grid-cols-2 gap-4 mb-8">
                   {[
-                    { value: "150+", label: "Global Clients" },
-                    { value: "30+", label: "Countries" },
-                    { value: "10+", label: "Years of Experience" },
-                    { value: "500+", label: "Projects Delivered" },
-                  ].map((stat, i) => (
+                    "Sustainable Infrastructure Finance",
+                    "Climate Finance Solutions",
+                    "ESG Structures",
+                    "Sustainability Policy Reviews",
+                  ].map((item, i) => (
                     <div
                       key={i}
-                      className="bg-white/5 rounded-xl p-4 border border-white/10"
+                      className="bg-white/5 rounded-xl p-4 border border-white/10 flex items-start gap-2"
                     >
-                      <p className="text-2xl font-bold text-emerald-400 mb-1">{stat.value}</p>
-                      <p className="text-green-200/50 text-xs">{stat.label}</p>
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 flex-shrink-0" />
+                      <p className="text-green-200/70 text-xs leading-snug">{item}</p>
                     </div>
                   ))}
                 </div>

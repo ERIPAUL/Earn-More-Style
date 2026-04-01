@@ -99,16 +99,16 @@ export default function EsgSection() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-5 mb-10">
+              <div className="grid grid-cols-2 gap-4 mb-10">
                 {[
-                  { value: "40+", label: "ESG Frameworks" },
-                  { value: "3 Continents", label: "Impact Reach" },
-                  { value: "GRI / TCFD", label: "Standards Aligned" },
-                  { value: "100%", label: "Client Retention" },
-                ].map((stat, i) => (
-                  <div key={i} className="border-l-2 border-emerald-400/30 pl-4">
-                    <p className="text-xl font-bold text-emerald-400 mb-1">{stat.value}</p>
-                    <p className="text-green-300/50 text-xs uppercase tracking-wider">{stat.label}</p>
+                  { label: "GRI Aligned", desc: "Global Reporting Initiative frameworks" },
+                  { label: "TCFD Aligned", desc: "Climate-related financial disclosures" },
+                  { label: "NDC Screened", desc: "National determined contribution pipelines" },
+                  { label: "ICMA Aligned", desc: "Green & social bond principles" },
+                ].map((item, i) => (
+                  <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-4">
+                    <p className="text-emerald-400 text-sm font-bold mb-1">{item.label}</p>
+                    <p className="text-green-300/50 text-xs leading-snug">{item.desc}</p>
                   </div>
                 ))}
               </div>

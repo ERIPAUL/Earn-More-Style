@@ -66,27 +66,19 @@ export default function FaqSection() {
               className="rounded-2xl p-8"
               style={{ background: "linear-gradient(135deg, #0a2e28 0%, #0d3d2e 100%)" }}
             >
-              <p className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">Quick Overview</p>
-              <p className="text-white font-bold text-2xl mb-6">Our Impact By Numbers</p>
+              <p className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">Why EarnMore</p>
+              <p className="text-white font-bold text-2xl mb-6">Our Commitment to You</p>
 
               {[
-                { label: "Client Satisfaction", pct: 98 },
-                { label: "Project Success Rate", pct: 95 },
-                { label: "On-Time Delivery", pct: 90 },
+                { label: "Expert Guidance", desc: "Multi-disciplinary consultants with cross-industry depth" },
+                { label: "Tailored Solutions", desc: "Strategies built around your unique context and goals" },
+                { label: "Full-Cycle Support", desc: "From feasibility to implementation and compliance" },
               ].map((item, i) => (
-                <div key={i} className="mb-5">
-                  <div className="flex justify-between mb-1.5">
-                    <span className="text-green-200/70 text-xs font-medium">{item.label}</span>
-                    <span className="text-emerald-400 text-xs font-bold">{item.pct}%</span>
-                  </div>
-                  <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-400"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${item.pct}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 0.3 + i * 0.15 }}
-                    />
+                <div key={i} className="flex gap-3 mb-5 last:mb-0">
+                  <div className="w-2 h-2 rounded-full bg-emerald-400 mt-1.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-white text-sm font-semibold mb-0.5">{item.label}</p>
+                    <p className="text-green-200/55 text-xs leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
