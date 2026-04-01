@@ -57,7 +57,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            A sustainability consultancy leveraging extensive expertise to steer change and offer tangible, impactful solutions — propelling your organization toward a greener, more prosperous future.
+            At EarnMore, we leverage our extensive expertise to steer change and offer tangible, impactful sustainability solutions to propel your organization toward a greener, more prosperous future.
           </motion.p>
 
           <motion.div
