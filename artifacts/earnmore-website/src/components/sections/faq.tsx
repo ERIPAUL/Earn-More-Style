@@ -58,7 +58,7 @@ export default function FaqSection() {
               <span className="italic font-serif font-normal text-primary">Questions</span>
             </h2>
             <p className="text-foreground/60 leading-relaxed mb-10">
-              Everything you need to know about working with EarnMore Group. Can't find an answer? Reach out to our team directly.
+              Everything you need to know about working with EarnMore Consultants. Can't find an answer? Reach out to our team directly.
             </p>
 
             {/* Visual stats block */}

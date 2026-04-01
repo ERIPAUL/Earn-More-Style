@@ -130,7 +130,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-green-200/35">
-            &copy; {new Date().getFullYear()} Earnmore Group. All rights reserved.
+            &copy; {new Date().getFullYear()} EarnMore Consultants. All rights reserved.
           </p>
           <div className="flex gap-6 flex-wrap justify-center">
             {["About Us", "Terms and Conditions", "Privacy Policy", "Contact Us"].map((l) => (
