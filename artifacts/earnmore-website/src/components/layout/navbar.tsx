@@ -1,40 +1,45 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
+    { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "ESG", href: "#esg" },
-    { name: "Team", href: "#team" },
+    { name: "What We Do", href: "#services" },
+    { name: "Blog", href: "#blog" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/90 backdrop-blur-md border-b border-border py-4" : "bg-transparent py-6"
+        isScrolled
+          ? "bg-white/95 backdrop-blur-md shadow-md shadow-green-900/5 py-3"
+          : "bg-transparent py-5"
       }`}
     >
-      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 bg-primary flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-500">
-            <div className="w-3 h-3 bg-background" />
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between">
+        {/* Logo */}
+        <a href="#home" className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center">
+            <span className="text-white font-bold text-sm font-serif">E</span>
           </div>
-          <span className="font-serif font-bold text-xl tracking-wide uppercase">
-            Earn More <span className="text-primary font-serif">Group</span>
+          <span
+            className={`font-bold text-xl tracking-tight transition-colors duration-300 ${
+              isScrolled ? "text-foreground" : "text-white"
+            }`}
+          >
+            Earn<span className="text-primary">more</span> Group
           </span>
         </a>
 
@@ -44,19 +49,26 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase"
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                isScrolled ? "text-foreground/80" : "text-white/90"
+              }`}
             >
               {link.name}
             </a>
           ))}
-          <Button asChild className="rounded-none font-bold uppercase tracking-widest text-xs px-8 py-6 h-auto">
-            <a href="#contact">Get Started</a>
-          </Button>
+          <a
+            href="#contact"
+            className="bg-primary hover:bg-primary/90 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+          >
+            Book a Session
+          </a>
         </nav>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-foreground p-2"
+          className={`md:hidden p-2 rounded-md transition-colors ${
+            isScrolled ? "text-foreground" : "text-white"
+          }`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle Menu"
         >
@@ -68,24 +80,30 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-background border-b border-border shadow-2xl md:hidden flex flex-col px-6 py-8 gap-6"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="absolute top-full left-0 right-0 bg-white border-b border-border shadow-lg md:hidden overflow-hidden"
           >
-            {navLinks.map((link) => (
+            <div className="flex flex-col px-6 py-6 gap-5">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-base font-medium text-foreground hover:text-primary transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
               <a
-                key={link.name}
-                href={link.href}
-                className="text-lg font-medium text-foreground tracking-wide uppercase border-b border-border pb-4"
+                href="#contact"
+                className="bg-primary text-white text-sm font-semibold px-5 py-3 rounded-full text-center mt-2 hover:bg-primary/90 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {link.name}
+                Book a Free Session
               </a>
-            ))}
-            <Button asChild className="rounded-none w-full font-bold uppercase tracking-widest py-6 mt-4">
-              <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Get Started</a>
-            </Button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

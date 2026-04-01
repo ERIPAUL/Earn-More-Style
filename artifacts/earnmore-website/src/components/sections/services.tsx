@@ -1,88 +1,129 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, BarChart3, ShieldCheck, Gem, Network } from "lucide-react";
+import { ArrowRight, Building2, Cloud, BarChart3, FileCheck, GraduationCap } from "lucide-react";
 
 const services = [
   {
-    icon: <BarChart3 className="w-8 h-8 text-primary" />,
-    title: "Strategic Investments",
-    description: "Algorithmic and fundamental approaches to equity, fixed income, and alternative markets, tailored to outpace benchmarks."
+    icon: <Building2 className="w-7 h-7" />,
+    title: "Sustainable Infrastructure Finance",
+    summary: "Securing financing for infrastructure projects that prioritize sustainability.",
+    description:
+      "This function involves securing financing for infrastructure projects that prioritize sustainability. It focuses on identifying funding sources, developing financial models, and facilitating investment in projects that have positive environmental and social impacts.",
   },
   {
-    icon: <Gem className="w-8 h-8 text-primary" />,
-    title: "Private Wealth Management",
-    description: "Bespoke capital preservation and growth strategies for high-net-worth individuals, families, and estates."
+    icon: <Cloud className="w-7 h-7" />,
+    title: "Climate Finance Solutions",
+    summary: "Mobilising capital to close investment gaps in low- and middle-income countries.",
+    description:
+      "EarnMore Group mobilises public and private capital to close investment gaps in low- and middle-income countries. This is crucial to funding projects in renewables, afforestation, clean energy, water infrastructure, agriculture and more. We deliver in line with NDC-screened project pipelines and ICMA-aligned frameworks.",
   },
   {
-    icon: <ShieldCheck className="w-8 h-8 text-primary" />,
-    title: "Risk Advisory",
-    description: "Comprehensive risk modeling and mitigation frameworks to protect capital against systemic and idiosyncratic shocks."
+    icon: <BarChart3 className="w-7 h-7" />,
+    title: "ESG Structures",
+    summary: "Setting up and overseeing ESG structures and practices within your operations.",
+    description:
+      "This function assists organizations in setting up and overseeing ESG structures and practices within their operations. It involves carrying out a materiality assessment to identify risks and opportunities that will help create unique frameworks, policies, and strategies for addressing environmental, social, and governance issues.",
   },
   {
-    icon: <Network className="w-8 h-8 text-primary" />,
-    title: "Corporate Finance",
-    description: "Capital restructuring, M&A advisory, and liquidity optimization for mid-to-large cap enterprises."
-  }
+    icon: <FileCheck className="w-7 h-7" />,
+    title: "Sustainability Policy Reviews",
+    summary: "Evaluating and analyzing existing sustainability policies of institutions.",
+    description:
+      "This function involves evaluating and analyzing the existing sustainability policies of government institutions. It includes identifying areas for improvement, assessing alignment with current environmental and social goals, and recommending changes to enhance sustainability efforts.",
+  },
+  {
+    icon: <GraduationCap className="w-7 h-7" />,
+    title: "Training and Capacity Building",
+    summary: "Education and skill development programs to enhance sustainability understanding.",
+    description:
+      "This function provides education and skill development programs for individuals and organizations to enhance their understanding of sustainability principles and practices. It includes workshops, seminars, and training sessions aimed at building capacity to effectively contribute to sustainability efforts.",
+  },
 ];
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-24 md:py-32 bg-secondary/50 border-y border-border relative overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 gap-8">
-          <motion.div 
+    <section id="services" className="py-24 md:py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
+          <motion.div
             className="max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-xs font-bold tracking-[0.2em] uppercase text-primary mb-4 flex items-center gap-4">
-              <span className="w-8 h-[1px] bg-primary"></span>
-              Core Competencies
+            <span className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-5">
+              What We Do
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+              Comprehensive Sustainability{" "}
+              <span className="text-primary font-serif italic font-normal">Services</span>
             </h2>
-            <h3 className="text-4xl md:text-5xl font-serif font-bold leading-tight">
-              Sophisticated strategies.<br/>Flawless execution.
-            </h3>
           </motion.div>
-          
-          <motion.div
+          <motion.p
+            className="text-foreground/60 text-lg max-w-sm"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="text-muted-foreground text-lg max-w-md">
-              We deploy institutional-grade intelligence across our entire suite of financial services.
-            </p>
-          </motion.div>
+            We deploy institutional expertise across a full suite of sustainability and ESG services.
+          </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+        {/* Service cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
-              className="bg-background p-8 md:p-10 group hover:bg-secondary transition-colors duration-500 relative flex flex-col h-full"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              className="bg-white border border-border rounded-2xl p-8 hover:border-primary/40 hover:shadow-lg hover:shadow-green-900/5 transition-all duration-300 group flex flex-col"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
             >
-              <div className="mb-8 p-4 bg-secondary/50 inline-flex rounded-sm w-fit group-hover:bg-background transition-colors duration-500">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
                 {service.icon}
               </div>
-              <h4 className="text-xl font-bold font-serif mb-4 group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
                 {service.title}
-              </h4>
-              <p className="text-muted-foreground leading-relaxed flex-grow">
+              </h3>
+              <p className="text-foreground/60 text-sm leading-relaxed mb-6 flex-grow">
                 {service.description}
               </p>
-              
-              <div className="mt-8 pt-6 border-t border-border flex justify-between items-center text-sm font-bold uppercase tracking-widest text-primary opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
-                <span>Learn More</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </div>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 text-primary text-sm font-semibold hover:gap-3 transition-all"
+              >
+                Learn More <ArrowRight className="w-4 h-4" />
+              </a>
             </motion.div>
           ))}
+
+          {/* CTA card */}
+          <motion.div
+            className="rounded-2xl p-8 flex flex-col justify-between"
+            style={{ background: "linear-gradient(135deg, #0f2b2b 0%, #1a4d35 100%)" }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: services.length * 0.08 }}
+          >
+            <div>
+              <p className="text-emerald-300 text-xs font-bold uppercase tracking-widest mb-4">Get Started</p>
+              <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
+                Ready to build a more sustainable future?
+              </h3>
+              <p className="text-green-200/60 text-sm leading-relaxed">
+                Contact us today for full-cycle support from feasibility to impact reporting.
+              </p>
+            </div>
+            <a
+              href="#contact"
+              className="mt-8 inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-primary/90 transition-colors w-fit"
+            >
+              Book a Free Session <ArrowRight className="w-4 h-4" />
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>

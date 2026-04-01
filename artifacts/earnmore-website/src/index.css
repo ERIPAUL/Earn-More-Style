@@ -42,75 +42,70 @@
 
   --font-sans: var(--app-font-sans);
   --font-serif: var(--app-font-serif);
-  
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-:root, .dark {
-  --background: 220 40% 4%;
-  --foreground: 210 20% 98%;
-  --border: 220 20% 12%;
-  --card: 220 40% 6%;
-  --card-foreground: 210 20% 98%;
-  --card-border: 220 20% 12%;
-  --popover: 220 40% 6%;
-  --popover-foreground: 210 20% 98%;
-  --popover-border: 220 20% 12%;
-  --primary: 43 74% 66%;
-  --primary-foreground: 220 40% 4%;
-  --secondary: 220 20% 12%;
-  --secondary-foreground: 210 20% 98%;
-  --muted: 220 20% 12%;
-  --muted-foreground: 220 15% 65%;
-  --accent: 220 20% 12%;
-  --accent-foreground: 210 20% 98%;
+/* Green color scheme derived from earnmoreapp.co */
+:root {
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(0,0,0, .03);
+  --elevate-2: rgba(0,0,0, .08);
+
+  /* Light mode — white background, dark green text, emerald accent */
+  --background: 0 0% 100%;           /* white */
+  --foreground: 160 43% 12%;         /* #0f2b2b dark green */
+  --border: 151 20% 85%;             /* light green-grey border */
+  --card: 145 30% 97%;               /* very light green tint */
+  --card-foreground: 160 43% 12%;
+  --card-border: 151 20% 88%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 160 43% 12%;
+  --popover-border: 151 20% 88%;
+  --primary: 152 71% 38%;            /* #059669 emerald-600 */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 145 35% 94%;          /* very light green */
+  --secondary-foreground: 160 43% 12%;
+  --muted: 145 25% 92%;
+  --muted-foreground: 160 20% 40%;
+  --accent: 152 71% 38%;
+  --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 60%;
-  --destructive-foreground: 210 20% 98%;
-  --input: 220 20% 12%;
-  --ring: 43 74% 66%;
-  
-  --sidebar: 220 40% 6%;
-  --sidebar-foreground: 210 20% 98%;
-  --sidebar-border: 220 20% 12%;
-  --sidebar-primary: 43 74% 66%;
-  --sidebar-primary-foreground: 220 40% 4%;
-  --sidebar-accent: 220 20% 12%;
-  --sidebar-accent-foreground: 210 20% 98%;
-  --sidebar-ring: 43 74% 66%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 151 20% 85%;
+  --ring: 152 71% 38%;
+
+  --sidebar: 145 30% 97%;
+  --sidebar-foreground: 160 43% 12%;
+  --sidebar-border: 151 20% 88%;
+  --sidebar-primary: 152 71% 38%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 145 35% 94%;
+  --sidebar-accent-foreground: 160 43% 12%;
+  --sidebar-ring: 152 71% 38%;
 
   --app-font-sans: 'Plus Jakarta Sans', sans-serif;
-  --app-font-serif: 'Playfair Display', serif;
-  --radius: 0rem;
-  
-  --tracking-normal: 0em;
-  --spacing: 0.25rem;
+  --app-font-serif: 'Playfair Display', Georgia, serif;
+  --app-font-mono: Menlo, monospace;
+  --radius: 0.5rem;
 
-  --opaque-button-border-intensity: 9;
-  --elevate-1: rgba(255,255,255, .04);
-  --elevate-2: rgba(255,255,255, .09);
-  
-  --sidebar-primary-border: hsl(var(--sidebar-primary));
-  --sidebar-accent-border: hsl(var(--sidebar-accent));
-  --primary-border: hsl(var(--primary));
-  --secondary-border: hsl(var(--secondary));
-  --muted-border: hsl(var(--muted));
-  --accent-border: hsl(var(--accent));
-  --destructive-border: hsl(var(--destructive));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
 }
 
 @layer base {
   * {
     @apply border-border;
   }
-
   body {
-    @apply font-sans antialiased bg-background text-foreground selection:bg-primary selection:text-primary-foreground;
-  }
-  
-  html {
-    scroll-behavior: smooth;
+    @apply font-sans antialiased bg-background text-foreground;
   }
 }

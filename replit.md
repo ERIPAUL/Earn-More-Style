@@ -16,6 +16,15 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
 
+## Artifacts
+
+### `artifacts/earnmore-website` — Earnmore Group Website
+React + Vite website for Earnmore Group (sustainability consultancy). Mirrors the content of earnmoregroup.com with a modern redesign.
+- **Color scheme**: Green palette matching earnmoreapp.co — dark forest green (#0f2b2b), emerald primary (#059669), light green backgrounds
+- **Sections**: Hero ("Driving Change, Delivering Solutions"), About, Who We Are (Vision/Mission/Values), Services (5 ESG services), ESG/EGG section (links to earnmoreapp.co), FAQ, Contact
+- **Nav**: Home, About, What We Do, Blog, Contact + Book a Session CTA
+- **Key**: ESG section prominently features EGG and links to https://earnmoreapp.co
+
 ## Structure
 
 ```text

@@ -1,64 +1,129 @@
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { Mail, Globe, Leaf } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary py-20 border-t border-border">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer
+      className="py-16 border-t border-white/10"
+      style={{ background: "linear-gradient(135deg, #0f2b2b 0%, #0d3d2e 100%)" }}
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
+          {/* Brand */}
           <div className="lg:col-span-1">
-            <a href="#" className="flex items-center gap-2 mb-6">
-              <div className="w-6 h-6 bg-primary flex items-center justify-center">
-                <div className="w-2 h-2 bg-secondary" />
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-9 h-9 rounded-full bg-emerald-500 flex items-center justify-center">
+                <span className="text-white font-bold text-sm font-serif">E</span>
               </div>
-              <span className="font-serif font-bold text-lg tracking-wide uppercase">
-                EMG
+              <span className="font-bold text-xl text-white">
+                Earn<span style={{ color: "#34d399" }}>more</span> Group
               </span>
-            </a>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Forward-thinking financial services and investment group for those who demand more from their wealth.
+            </div>
+            <p className="text-green-200/50 text-sm leading-relaxed mb-6">
+              A sustainability consultancy providing practical strategies and impactful solutions for a greener, more prosperous future.
             </p>
+            <div className="flex items-center gap-2 text-emerald-400 text-sm">
+              <Leaf className="w-4 h-4" />
+              <span className="font-medium">Sustainability First</span>
+            </div>
           </div>
 
+          {/* Company */}
           <div>
-            <h4 className="font-bold uppercase tracking-widest text-xs mb-6 text-foreground">Company</h4>
-            <ul className="space-y-4">
-              <li><a href="#about" className="text-sm text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">Services</a></li>
-              <li><a href="#team" className="text-sm text-muted-foreground hover:text-primary transition-colors">Leadership</a></li>
-              <li><a href="#careers" className="text-sm text-muted-foreground hover:text-primary transition-colors">Careers</a></li>
+            <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-6">Company</h4>
+            <ul className="space-y-3">
+              {[
+                { label: "Home", href: "#home" },
+                { label: "About Us", href: "#about" },
+                { label: "What We Do", href: "#services" },
+                { label: "Who We Are", href: "#who-we-are" },
+                { label: "Blog", href: "#blog" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    className="text-sm text-green-200/60 hover:text-emerald-400 transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Services */}
           <div>
-            <h4 className="font-bold uppercase tracking-widest text-xs mb-6 text-foreground">Initiatives</h4>
-            <ul className="space-y-4">
-              <li><a href="#esg" className="text-sm text-muted-foreground hover:text-primary transition-colors">ESG at EMG</a></li>
-              <li><a href="https://earnmoreapp.co" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:text-foreground transition-colors flex items-center gap-1">EarnMore App <ArrowRight size={12} /></a></li>
-              <li><a href="#community" className="text-sm text-muted-foreground hover:text-primary transition-colors">Community</a></li>
+            <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-6">Services</h4>
+            <ul className="space-y-3">
+              {[
+                "Sustainable Infrastructure Finance",
+                "Climate Finance Solutions",
+                "ESG Structures",
+                "Sustainability Policy Reviews",
+                "Training & Capacity Building",
+              ].map((s) => (
+                <li key={s}>
+                  <a
+                    href="#services"
+                    className="text-sm text-green-200/60 hover:text-emerald-400 transition-colors"
+                  >
+                    {s}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Contact & ESG App */}
           <div>
-            <h4 className="font-bold uppercase tracking-widest text-xs mb-6 text-foreground">Contact</h4>
-            <ul className="space-y-4 text-sm text-muted-foreground">
-              <li>100 Financial District</li>
-              <li>New York, NY 10005</li>
-              <li className="pt-2"><a href="mailto:contact@earnmoregroup.com" className="hover:text-primary transition-colors">contact@earnmoregroup.com</a></li>
-              <li><a href="tel:+12125550198" className="hover:text-primary transition-colors">+1 (212) 555-0198</a></li>
+            <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-6">Get In Touch</h4>
+            <ul className="space-y-4 text-sm text-green-200/60 mb-8">
+              <li className="flex items-center gap-2 hover:text-emerald-400 transition-colors">
+                <Mail className="w-4 h-4" />
+                <a href="mailto:info@earnmoregroup.com">info@earnmoregroup.com</a>
+              </li>
+              <li className="flex items-center gap-2 hover:text-emerald-400 transition-colors">
+                <Globe className="w-4 h-4" />
+                <a href="https://www.earnmoregroup.com" target="_blank" rel="noopener noreferrer">
+                  www.earnmoregroup.com
+                </a>
+              </li>
             </ul>
+
+            {/* ESG App CTA */}
+            <div className="bg-emerald-500/10 border border-emerald-400/20 rounded-xl p-5">
+              <p className="text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2">ESG Platform</p>
+              <p className="text-green-200/70 text-sm mb-4 leading-relaxed">
+                Explore our ESG impact platform — EarnMore App.
+              </p>
+              <a
+                href="https://earnmoreapp.co"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 text-sm font-semibold transition-colors"
+              >
+                earnmoreapp.co →
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Earn More Group. All rights reserved.
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-green-200/40">
+            &copy; {new Date().getFullYear()} Earnmore Group. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Terms of Service</a>
-            <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Legal Disclosures</a>
+            <a href="#" className="text-xs text-green-200/40 hover:text-emerald-400 transition-colors">
+              About Us
+            </a>
+            <a href="#" className="text-xs text-green-200/40 hover:text-emerald-400 transition-colors">
+              Terms and Conditions
+            </a>
+            <a href="#" className="text-xs text-green-200/40 hover:text-emerald-400 transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#contact" className="text-xs text-green-200/40 hover:text-emerald-400 transition-colors">
+              Contact Us
+            </a>
           </div>
         </div>
       </div>
