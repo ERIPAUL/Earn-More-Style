@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -48,15 +48,6 @@ export default function Navbar() {
 
         {/* Right Actions */}
         <div className="hidden lg:flex items-center gap-5 flex-shrink-0">
-          <a
-            href="tel:+1234567890"
-            className="flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-primary transition-colors"
-          >
-            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-              <Phone className="w-3.5 h-3.5 text-primary" />
-            </div>
-            +1 234 567 890
-          </a>
           <a
             href="#contact"
             className="bg-primary hover:bg-primary/90 text-white text-sm font-semibold px-6 py-2.5 rounded-md transition-colors"

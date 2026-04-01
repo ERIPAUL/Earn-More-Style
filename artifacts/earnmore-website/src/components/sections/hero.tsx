@@ -36,7 +36,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5 }}
           >
             <span className="w-8 h-px bg-emerald-400 inline-block" />
-            Welcome to Earnmore Group
+            Welcome to Earnmore Consultants
           </motion.p>
 
           <motion.h1
