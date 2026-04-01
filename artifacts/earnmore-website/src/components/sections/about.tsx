@@ -1,72 +1,93 @@
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function AboutSection() {
   return (
     <section id="about" className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Left: Image / visual block */}
+          {/* Left: Visual mosaic */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            className="relative"
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative"
           >
-            {/* Green accent block */}
-            <div className="absolute -top-6 -left-6 w-40 h-40 bg-primary/10 rounded-2xl z-0" />
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-green-900/10">
-              <div
-                className="w-full aspect-[4/3] flex items-center justify-center"
-                style={{ background: "linear-gradient(135deg, #0f2b2b 0%, #1a4d35 100%)" }}
-              >
-                <div className="text-center px-10">
-                  <p className="text-6xl font-bold text-white mb-2">EMG</p>
-                  <p className="text-emerald-300 text-sm tracking-widest uppercase">Earnmore Group</p>
-                  <div className="mt-8 grid grid-cols-2 gap-6 text-left">
-                    <div>
-                      <p className="text-3xl font-bold text-emerald-400">150+</p>
-                      <p className="text-green-200/60 text-xs mt-1">Global Clients</p>
+            {/* Background accent */}
+            <div className="absolute -top-8 -left-8 w-64 h-64 rounded-full bg-primary/5 -z-10" />
+
+            {/* Main visual card */}
+            <div
+              className="rounded-2xl overflow-hidden shadow-xl"
+              style={{ background: "linear-gradient(135deg, #0a2e28 0%, #0d3d2e 100%)" }}
+            >
+              <div className="p-10">
+                <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-6">About Us</p>
+                <p className="text-white text-3xl font-bold leading-tight mb-8">
+                  Our Path to Trust and{" "}
+                  <span className="italic font-serif font-normal text-emerald-300">
+                    Sustainable Success
+                  </span>
+                </p>
+
+                {/* Stat grid */}
+                <div className="grid grid-cols-2 gap-6 mb-8">
+                  {[
+                    { value: "150+", label: "Global Clients" },
+                    { value: "30+", label: "Countries" },
+                    { value: "10+", label: "Years of Experience" },
+                    { value: "500+", label: "Projects Delivered" },
+                  ].map((stat, i) => (
+                    <div
+                      key={i}
+                      className="bg-white/5 rounded-xl p-4 border border-white/10"
+                    >
+                      <p className="text-2xl font-bold text-emerald-400 mb-1">{stat.value}</p>
+                      <p className="text-green-200/50 text-xs">{stat.label}</p>
                     </div>
-                    <div>
-                      <p className="text-3xl font-bold text-emerald-400">30+</p>
-                      <p className="text-green-200/60 text-xs mt-1">Countries</p>
-                    </div>
-                    <div>
-                      <p className="text-3xl font-bold text-emerald-400">10+</p>
-                      <p className="text-green-200/60 text-xs mt-1">Years Experience</p>
-                    </div>
-                    <div>
-                      <p className="text-3xl font-bold text-emerald-400">500+</p>
-                      <p className="text-green-200/60 text-xs mt-1">Projects Delivered</p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
+
+                {/* Divider bar */}
+                <div className="h-1 w-full bg-gradient-to-r from-emerald-500 via-teal-400 to-transparent rounded-full" />
               </div>
             </div>
-            <div className="absolute -bottom-5 -right-5 w-24 h-24 bg-emerald-400/20 rounded-full z-0" />
+
+            {/* Floating badge */}
+            <div className="absolute -bottom-6 -right-6 bg-white shadow-lg rounded-xl px-6 py-4 border border-border flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">
+                ✓
+              </div>
+              <div>
+                <p className="font-bold text-sm text-foreground">GRI & TCFD</p>
+                <p className="text-xs text-foreground/50">Standards Aligned</p>
+              </div>
+            </div>
           </motion.div>
 
           {/* Right: Content */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="inline-block bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full mb-5">
+            <p className="text-primary text-xs font-bold tracking-widest uppercase mb-4 flex items-center gap-2">
+              <span className="w-6 h-px bg-primary" />
               About Us
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-foreground">
-              Your Partner in
-              <span className="text-primary font-serif italic font-normal"> Sustainability</span>
-            </h2>
-            <p className="text-foreground/70 text-lg leading-relaxed mb-6">
-              EarnMore is a sustainability consultancy that provides practical strategies and impactful solutions that enable institutions to accomplish their goals in all areas of their near and long-term operations.
             </p>
-            <p className="text-foreground/70 text-lg leading-relaxed mb-8">
-              We deliver strategic consultation with the expertise to deliver strategy, planning, implementation, and compliance. Our multi-disciplinary team of consultants brings their cross-industry experience and in-depth knowledge to find bespoke solutions for both businesses and governments.
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-foreground">
+              Your Partner in{" "}
+              <span className="italic font-serif font-normal text-primary">
+                Sustainability
+              </span>
+            </h2>
+            <p className="text-foreground/65 text-lg leading-relaxed mb-5">
+              At EarnMore, our journey commenced with a clear and inspiring mission: to empower both individuals and businesses to realise their sustainability aspirations.
+            </p>
+            <p className="text-foreground/65 leading-relaxed mb-8">
+              We are dedicated to providing expert guidance and unwavering support — ensuring that our clients have the tools and knowledge to navigate the complex landscape of environmental, social, and governance challenges.
             </p>
 
             <ul className="space-y-3 mb-10">
@@ -76,7 +97,7 @@ export default function AboutSection() {
                 "Government & Private Sector Focus",
                 "Bespoke Cross-Industry Solutions",
               ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-foreground font-medium">
+                <li key={i} className="flex items-center gap-3 text-foreground/80 text-sm font-medium">
                   <CheckCircle2 className="text-primary w-5 h-5 flex-shrink-0" />
                   {item}
                 </li>
@@ -84,11 +105,13 @@ export default function AboutSection() {
             </ul>
 
             <a
-              href="#about-detail"
-              className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+              href="#services"
+              className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-md transition-all group"
             >
-              Discover more
-              <span className="text-lg">→</span>
+              Read More
+              <span className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                <ArrowRight className="w-3.5 h-3.5" />
+              </span>
             </a>
           </motion.div>
         </div>

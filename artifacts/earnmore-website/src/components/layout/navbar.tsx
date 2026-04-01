@@ -1,108 +1,105 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "What We Do", href: "#services" },
+    { name: "Services", href: "#services" },
     { name: "Blog", href: "#blog" },
     { name: "Contact", href: "#contact" },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md shadow-green-900/5 py-3"
-          : "bg-transparent py-5"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${
+        scrolled ? "shadow-md" : "border-b border-gray-100"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between gap-8">
         {/* Logo */}
-        <a href="#home" className="flex items-center">
-          <div
-            className={`transition-all duration-300 rounded-lg ${
-              isScrolled ? "bg-[#0f2b2b] px-3 py-1.5" : ""
-            }`}
-          >
-            <img
-              src="/logo.png"
-              alt="Earnmore Consultants"
-              className="h-10 w-auto object-contain"
-            />
-          </div>
+        <a href="#home" className="flex-shrink-0">
+          <img src="/logo.png" alt="Earnmore Consultants" className="h-11 w-auto object-contain" />
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-8 flex-1 justify-center">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isScrolled ? "text-foreground/80" : "text-white/90"
-              }`}
+              className="text-sm font-medium text-gray-700 hover:text-primary transition-colors relative group"
             >
               {link.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
             </a>
           ))}
+        </nav>
+
+        {/* Right Actions */}
+        <div className="hidden lg:flex items-center gap-5 flex-shrink-0">
+          <a
+            href="tel:+1234567890"
+            className="flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-primary transition-colors"
+          >
+            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+              <Phone className="w-3.5 h-3.5 text-primary" />
+            </div>
+            +1 234 567 890
+          </a>
           <a
             href="#contact"
-            className="bg-primary hover:bg-primary/90 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+            className="bg-primary hover:bg-primary/90 text-white text-sm font-semibold px-6 py-2.5 rounded-md transition-colors"
           >
-            Book a Session
+            Contact Us
           </a>
-        </nav>
+        </div>
 
         {/* Mobile Toggle */}
         <button
-          className={`md:hidden p-2 rounded-md transition-colors ${
-            isScrolled ? "text-foreground" : "text-white"
-          }`}
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle Menu"
+          className="lg:hidden p-2 text-gray-700"
+          onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile Menu */}
       <AnimatePresence>
-        {mobileMenuOpen && (
+        {mobileOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="absolute top-full left-0 right-0 bg-white border-b border-border shadow-lg md:hidden overflow-hidden"
+            className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
           >
-            <div className="flex flex-col px-6 py-6 gap-5">
+            <div className="px-6 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-base font-medium text-foreground hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-gray-700 font-medium py-1 border-b border-gray-50 hover:text-primary transition-colors"
+                  onClick={() => setMobileOpen(false)}
                 >
                   {link.name}
                 </a>
               ))}
               <a
                 href="#contact"
-                className="bg-primary text-white text-sm font-semibold px-5 py-3 rounded-full text-center mt-2 hover:bg-primary/90 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
+                className="mt-2 bg-primary text-white font-semibold px-6 py-3 rounded-md text-center hover:bg-primary/90 transition-colors"
+                onClick={() => setMobileOpen(false)}
               >
-                Book a Free Session
+                Contact Us
               </a>
             </div>
           </motion.div>
