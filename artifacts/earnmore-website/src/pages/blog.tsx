@@ -15,7 +15,7 @@ const featuredPost = {
   role: "Editorial Team",
   readTime: "6 min read",
   image: "https://d1yei2z3i6k35z.cloudfront.net/5190898/6576cd5073e40_valley-with-huge-wind-mills-solar-batteries-factories-renewable-sources-energy-care-environment-green-generate-electricity-eco-power-plant-ecology-concept-3d-rendering-illustration_76964-833.jpg",
-  url: "https://www.earnmoregroup.com/blog/understanding-the-international--sustainability-standards-boards--sustainability-disclosure--standards-ifrs-s1-and-ifrs-s2---part-2",
+  url: "/blog/ifrs-s1-s2-part-2",
 };
 
 const posts = [
@@ -28,7 +28,7 @@ const posts = [
       "The ISSB was established to develop a comprehensive global baseline of sustainability-related disclosure standards. This article explores the governance and strategy pillars of IFRS S1 and IFRS S2 and what they mean for reporting organisations.",
     readTime: "6 min read",
     image: "https://d1yei2z3i6k35z.cloudfront.net/5190898/656da9f4b3ab7_sunny-landscape-with-windmills.jpg",
-    url: "https://www.earnmoregroup.com/blog/understanding-the-international-sustainability",
+    url: "/blog/ifrs-s1-s2-part-1",
   },
   {
     date: "December 1, 2023",
@@ -39,7 +39,7 @@ const posts = [
       "Africa gathered in Nairobi from 4th to 6th September 2023 for the inaugural Africa Climate Summit convened by the African Union and hosted by the Government of Kenya, under the theme 'Driving Green Growth and Climate Finance Solutions for Africa and the World'.",
     readTime: "5 min read",
     image: "https://d1yei2z3i6k35z.cloudfront.net/5190898/656a6142aa695_drought.jpg",
-    url: "https://www.earnmoregroup.com/blog/africa-climate-summit",
+    url: "/blog/africa-climate-summit",
   },
   {
     date: "December 1, 2023",
@@ -50,7 +50,7 @@ const posts = [
       "Eight Amazon countries recently concluded the Amazon Summit in Belém, Brazil — focused on environmental and climate challenges facing the Amazon. A key lesson emerges for Africa: the need for a similar concord to protect the Equatorial Rainforest, funded through innovative climate finance.",
     readTime: "5 min read",
     image: "https://d1yei2z3i6k35z.cloudfront.net/5190898/6569e10ef1132_tranquil-scene-mountain-range-reflected-pond-generated-by-ai.jpg",
-    url: "https://www.earnmoregroup.com/blog/amazon-summit",
+    url: "/blog/amazon-summit",
   },
 ];
 
@@ -97,11 +97,9 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 md:py-20">
 
           {/* Featured Post */}
-          <motion.a
-            href={featuredPost.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="grid lg:grid-cols-2 gap-8 mb-16 bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 group hover:shadow-lg transition-all duration-300"
+          <Link href={featuredPost.url} className="block mb-16">
+          <motion.div
+            className="grid lg:grid-cols-2 gap-8 bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 group hover:shadow-lg transition-all duration-300 cursor-pointer"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -139,17 +137,15 @@ export default function BlogPage() {
                 </span>
               </div>
             </div>
-          </motion.a>
+          </motion.div>
+          </Link>
 
           {/* Post Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post, i) => (
-              <motion.a
-                key={i}
-                href={post.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-primary/20 transition-all duration-300 group flex flex-col"
+              <Link key={i} href={post.url} className="flex flex-col">
+              <motion.div
+                className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-primary/20 transition-all duration-300 group flex flex-col flex-grow cursor-pointer"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -187,7 +183,8 @@ export default function BlogPage() {
                     </span>
                   </div>
                 </div>
-              </motion.a>
+              </motion.div>
+              </Link>
             ))}
           </div>
 
