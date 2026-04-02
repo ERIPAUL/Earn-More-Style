@@ -75,7 +75,9 @@ export default function ContactSection() {
                 30 minutes to explore how we can help your organization achieve its sustainability goals.
               </p>
               <a
-                href="mailto:info@earnmoregroup.com?subject=Book a Free Clarity Session"
+                href="https://calendly.com/esg-earnmoreapp/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-md transition-all group"
               >
                 Book Now

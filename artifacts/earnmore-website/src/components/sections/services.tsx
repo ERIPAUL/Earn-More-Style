@@ -140,7 +140,9 @@ export default function ServicesSection() {
               </p>
             </div>
             <a
-              href="/contact"
+              href="https://calendly.com/esg-earnmoreapp/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-8 inline-flex items-center gap-3 bg-primary text-white font-semibold px-6 py-3 rounded-md hover:bg-primary/90 transition-colors w-fit group relative z-10"
             >
               Book a Free Session
