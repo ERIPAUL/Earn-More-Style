@@ -28,7 +28,7 @@ const previewServices = [
     icon: <FileCheck className="w-5 h-5" />,
     title: "Sustainability Policy Reviews",
     description: "Evaluating existing sustainability policies and recommending changes to enhance institutional sustainability efforts.",
-    image: "/images/blog-climate-policy.jpg",
+    image: "/images/policy-globe.jpg",
   },
   {
     icon: <GraduationCap className="w-5 h-5" />,

@@ -28,7 +28,7 @@ const services = [
     title: "Sustainability Policy Reviews",
     description:
       "Evaluating and analyzing existing sustainability policies of government institutions — identifying improvement areas and recommending changes to enhance sustainability efforts.",
-    image: "/images/agriculture-crops.jpg",
+    image: "/images/policy-globe.jpg",
   },
   {
     icon: <GraduationCap className="w-6 h-6" />,
