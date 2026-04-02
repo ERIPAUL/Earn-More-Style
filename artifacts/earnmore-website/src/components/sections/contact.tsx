@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Globe, ArrowRight } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
 
 export default function ContactSection() {
   return (
@@ -43,12 +43,6 @@ export default function ContactSection() {
                 label: "Email Us",
                 value: "info@earnmoregroup.com",
                 href: "mailto:info@earnmoregroup.com",
-              },
-              {
-                icon: <Globe className="w-5 h-5" />,
-                label: "Website",
-                value: "www.earnmoregroup.com",
-                href: "https://www.earnmoregroup.com",
               },
             ].map((item, i) => (
               <a
