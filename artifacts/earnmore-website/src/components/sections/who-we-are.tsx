@@ -48,7 +48,7 @@ export default function WhoWeAreSection() {
             {
               icon: <Eye className="w-5 h-5" />,
               label: "Vision",
-              text: "\"Promoting a sustainable and resilient future\"",
+              text: "Promoting a sustainable and resilient future",
             },
             {
               icon: <Target className="w-5 h-5" />,
