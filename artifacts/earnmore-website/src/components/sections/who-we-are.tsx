@@ -75,7 +75,7 @@ export default function WhoWeAreSection() {
               {
                 icon: <Eye className="w-5 h-5" />,
                 label: "Vision",
-                text: "Promoting a sustainable and resilient future for generations to come — through expert guidance, rigorous policy, and innovative finance.",
+                text: "Promoting a sustainable and resilient future",
               },
               {
                 icon: <Target className="w-5 h-5" />,
