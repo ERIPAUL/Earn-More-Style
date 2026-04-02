@@ -5,46 +5,46 @@ export default function Footer() {
   return (
     <footer style={{ background: "linear-gradient(135deg, #0a2e28 0%, #0d3d2e 100%)" }}>
       {/* Newsletter bar */}
-      <div className="border-b border-white/10 py-12">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="border-b border-white/10 py-7">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
-            <p className="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-1">Stay Informed</p>
-            <h3 className="text-2xl font-bold text-white">Join Our Weekly Newsletter</h3>
+            <p className="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-0.5">Stay Informed</p>
+            <h3 className="text-lg font-bold text-white">Join Our Weekly Newsletter</h3>
           </div>
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="flex gap-3 w-full md:w-auto"
+            className="flex gap-2 w-full md:w-auto"
           >
             <input
               type="email"
               placeholder="Enter your email address"
-              className="flex-1 md:w-72 px-5 py-3 rounded-md bg-white/10 border border-white/15 text-white placeholder-green-200/40 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+              className="flex-1 md:w-64 px-4 py-2.5 rounded-md bg-white/10 border border-white/15 text-white placeholder-green-200/40 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
             />
             <button
               type="submit"
-              className="flex-shrink-0 inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-md transition-colors group"
+              className="flex-shrink-0 inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-semibold px-5 py-2.5 rounded-md transition-colors group text-sm"
             >
               Subscribe
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
             </button>
           </form>
         </div>
       </div>
 
       {/* Main footer content */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="mb-5">
-              <img src="/logo.png" alt="Earnmore Consultants" className="h-10 w-auto object-contain" />
+            <div className="mb-3">
+              <img src="/logo.png" alt="Earnmore Consultants" className="h-9 w-auto object-contain" />
             </div>
           </div>
 
           {/* Company */}
           <div>
-            <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-6">Company</h4>
-            <ul className="space-y-3">
+            <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-4">Company</h4>
+            <ul className="space-y-2">
               {[
                 { label: "Home", href: "/" },
                 { label: "About Us", href: "/about" },
@@ -66,8 +66,8 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-6">Services</h4>
-            <ul className="space-y-3">
+            <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-4">Services</h4>
+            <ul className="space-y-2">
               {[
                 "Sustainable Infrastructure Finance",
                 "Climate Finance Solutions",
@@ -89,8 +89,8 @@ export default function Footer() {
 
           {/* Contact & ESG App */}
           <div>
-            <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-6">Get In Touch</h4>
-            <ul className="space-y-4 text-sm text-green-200/55 mb-8">
+            <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-4">Get In Touch</h4>
+            <ul className="space-y-3 text-sm text-green-200/55 mb-5">
               <li className="flex items-center gap-2 hover:text-emerald-400 transition-colors">
                 <Mail className="w-4 h-4 flex-shrink-0" />
                 <a href="mailto:info@earnmoregroup.com">info@earnmoregroup.com</a>
@@ -104,9 +104,9 @@ export default function Footer() {
             </ul>
 
             {/* ESG App CTA */}
-            <div className="bg-emerald-500/10 border border-emerald-400/20 rounded-xl p-5">
-              <p className="text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2">ESG Platform</p>
-              <p className="text-green-200/60 text-sm mb-4 leading-relaxed">
+            <div className="bg-emerald-500/10 border border-emerald-400/20 rounded-lg p-4">
+              <p className="text-emerald-300 text-xs font-bold uppercase tracking-wider mb-1">ESG Platform</p>
+              <p className="text-green-200/60 text-xs mb-3 leading-relaxed">
                 Explore our ESG impact platform — EarnMore App.
               </p>
               <a
@@ -122,11 +122,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-white/10 pt-5 flex flex-col md:flex-row justify-between items-center gap-3">
           <p className="text-xs text-green-200/35">
             &copy; {new Date().getFullYear()} EarnMore Consultants. All rights reserved.
           </p>
-          <div className="flex gap-6 flex-wrap justify-center">
+          <div className="flex gap-5 flex-wrap justify-center">
             {[
               { label: "About Us", href: "/about" },
               { label: "Terms and Conditions", href: "#" },
