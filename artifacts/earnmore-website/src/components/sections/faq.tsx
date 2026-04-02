@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, ArrowRight } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
@@ -83,15 +83,6 @@ export default function FaqSection() {
                 </div>
               ))}
 
-              <a
-                href="#contact"
-                className="mt-4 inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-md transition-all group"
-              >
-                Contact Us
-                <span className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </span>
-              </a>
             </div>
           </motion.div>
 
