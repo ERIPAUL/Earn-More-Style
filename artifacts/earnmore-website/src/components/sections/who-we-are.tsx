@@ -107,8 +107,8 @@ export default function WhoWeAreSection() {
       {/* Full-width image break */}
       <div className="relative h-56 md:h-72 my-0 overflow-hidden">
         <img
-          src="/images/professional-training.jpg"
-          alt="Professionals in a training session"
+          src="/images/green-city-park.jpg"
+          alt="Green urban park — our commitment to a sustainable future"
           className="w-full h-full object-cover object-center"
         />
         <div
