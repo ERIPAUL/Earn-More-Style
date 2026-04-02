@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function HeroSection() {
   return (
@@ -63,21 +64,21 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <a
-              href="#contact"
+            <Link
+              href="/about"
               className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white font-semibold px-7 py-3.5 rounded-md transition-all group"
             >
               Discover More
               <span className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
                 <ArrowRight className="w-3.5 h-3.5" />
               </span>
-            </a>
-            <a
-              href="#services"
+            </Link>
+            <Link
+              href="/services"
               className="text-sm font-semibold text-white/70 hover:text-emerald-300 transition-colors flex items-center gap-2"
             >
               Our Services <span className="text-lg">→</span>
-            </a>
+            </Link>
           </motion.div>
         </div>
 

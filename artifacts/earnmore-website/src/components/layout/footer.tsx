@@ -1,4 +1,5 @@
 import { Mail, Globe, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Footer() {
   return (
@@ -45,19 +46,19 @@ export default function Footer() {
             <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-6">Company</h4>
             <ul className="space-y-3">
               {[
-                { label: "Home", href: "#home" },
-                { label: "About Us", href: "#about" },
-                { label: "Services", href: "#services" },
-                { label: "Who We Are", href: "#who-we-are" },
-                { label: "Contact", href: "#contact" },
+                { label: "Home", href: "/" },
+                { label: "About Us", href: "/about" },
+                { label: "Services", href: "/services" },
+                { label: "Blog", href: "/blog" },
+                { label: "Contact", href: "/contact" },
               ].map((item) => (
                 <li key={item.label}>
-                  <a
+                  <Link
                     href={item.href}
                     className="text-sm text-green-200/55 hover:text-emerald-400 transition-colors"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -75,12 +76,12 @@ export default function Footer() {
                 "Training & Capacity Building",
               ].map((s) => (
                 <li key={s}>
-                  <a
-                    href="#services"
+                  <Link
+                    href="/services"
                     className="text-sm text-green-200/55 hover:text-emerald-400 transition-colors"
                   >
                     {s}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -126,10 +127,15 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} EarnMore Consultants. All rights reserved.
           </p>
           <div className="flex gap-6 flex-wrap justify-center">
-            {["About Us", "Terms and Conditions", "Privacy Policy", "Contact Us"].map((l) => (
-              <a key={l} href="#" className="text-xs text-green-200/35 hover:text-emerald-400 transition-colors">
-                {l}
-              </a>
+            {[
+              { label: "About Us", href: "/about" },
+              { label: "Terms and Conditions", href: "#" },
+              { label: "Privacy Policy", href: "#" },
+              { label: "Contact Us", href: "/contact" },
+            ].map((l) => (
+              <Link key={l.label} href={l.href} className="text-xs text-green-200/35 hover:text-emerald-400 transition-colors">
+                {l.label}
+              </Link>
             ))}
           </div>
         </div>
