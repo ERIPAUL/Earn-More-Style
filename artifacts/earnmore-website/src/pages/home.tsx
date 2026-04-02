@@ -166,10 +166,7 @@ export default function Home() {
         </section>
 
         {/* ── Contact CTA Strip ── */}
-        <section
-          className="py-20"
-          style={{ background: "linear-gradient(135deg, #0a2e28 0%, #0d3d2e 100%)" }}
-        >
+        <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <motion.div
               className="flex flex-col md:flex-row items-center justify-between gap-8"
@@ -179,12 +176,15 @@ export default function Home() {
               transition={{ duration: 0.7 }}
             >
               <div className="max-w-xl">
-                <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-3">Get In Touch</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
+                <p className="text-primary text-xs font-bold tracking-widest uppercase mb-3 flex items-center gap-2">
+                  <span className="w-6 h-px bg-primary" />
+                  Get In Touch
+                </p>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight mb-4">
                   Ready to Build a More{" "}
-                  <span className="italic font-serif font-normal text-emerald-300">Sustainable Future?</span>
+                  <span className="italic font-serif font-normal text-primary">Sustainable Future?</span>
                 </h2>
-                <p className="text-green-200/60 leading-relaxed">
+                <p className="text-foreground/60 leading-relaxed">
                   Contact us today for full-cycle support — from feasibility analysis to impact reporting and capacity building.
                 </p>
               </div>
