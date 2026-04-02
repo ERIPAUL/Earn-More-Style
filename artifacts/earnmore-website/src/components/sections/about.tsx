@@ -31,39 +31,11 @@ export default function AboutSection() {
                   </span>
                 </p>
 
-                {/* Service highlights */}
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  {[
-                    "Sustainable Infrastructure Finance",
-                    "Climate Finance Solutions",
-                    "ESG Structures",
-                    "Sustainability Policy Reviews",
-                  ].map((item, i) => (
-                    <div
-                      key={i}
-                      className="bg-white/5 rounded-xl p-4 border border-white/10 flex items-start gap-2"
-                    >
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 flex-shrink-0" />
-                      <p className="text-green-200/70 text-xs leading-snug">{item}</p>
-                    </div>
-                  ))}
-                </div>
-
                 {/* Divider bar */}
                 <div className="h-1 w-full bg-gradient-to-r from-emerald-500 via-teal-400 to-transparent rounded-full" />
               </div>
             </div>
 
-            {/* Floating badge */}
-            <div className="absolute -bottom-6 -right-6 bg-white shadow-lg rounded-xl px-6 py-4 border border-border flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">
-                ✓
-              </div>
-              <div>
-                <p className="font-bold text-sm text-foreground">GRI & TCFD</p>
-                <p className="text-xs text-foreground/50">Standards Aligned</p>
-              </div>
-            </div>
           </motion.div>
 
           {/* Right: Content */}

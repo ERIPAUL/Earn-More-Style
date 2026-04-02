@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Leaf, Globe2, ShieldCheck, TrendingUp } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -24,9 +24,8 @@ export default function HeroSection() {
       />
       <div className="absolute right-16 top-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full opacity-10 border border-emerald-400" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-20 grid lg:grid-cols-2 gap-16 items-center w-full">
-        {/* Left: Text */}
-        <div>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 py-20 w-full">
+        <div className="max-w-3xl">
           <motion.p
             className="text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-4 flex items-center gap-2"
             initial={{ opacity: 0, y: 15 }}
@@ -82,67 +81,6 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Right: Visual panel */}
-        <motion.div
-          className="hidden lg:flex flex-col gap-4 items-end"
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          {/* Main card */}
-          <div
-            className="relative w-full rounded-2xl overflow-hidden"
-            style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)" }}
-          >
-            <div className="h-2 w-full bg-gradient-to-r from-emerald-500 to-teal-400" />
-            <div className="p-8">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                  <Leaf className="w-6 h-6 text-emerald-400" />
-                </div>
-                <div>
-                  <p className="text-white font-bold">Sustainability Focus</p>
-                  <p className="text-emerald-400 text-sm">Our Core Pillars</p>
-                </div>
-              </div>
-
-              {/* ESG pillars — no made-up percentages */}
-              {[
-                { label: "Environmental", desc: "Climate risk analysis & clean infrastructure" },
-                { label: "Social", desc: "Financial inclusion & community development" },
-                { label: "Governance", desc: "Transparent reporting & ethical standards" },
-              ].map((item, i) => (
-                <div key={i} className="flex items-start gap-3 mb-5 last:mb-0">
-                  <div className="w-2 h-2 rounded-full bg-emerald-400 mt-1.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-white text-sm font-semibold">{item.label}</p>
-                    <p className="text-green-200/55 text-xs leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Mini cards — service highlights, no numbers */}
-          <div className="flex gap-4 w-full">
-            {[
-              { icon: <Globe2 className="w-5 h-5" />, label: "Global Reach" },
-              { icon: <TrendingUp className="w-5 h-5" />, label: "Impact Focus" },
-              { icon: <ShieldCheck className="w-5 h-5" />, label: "GRI Aligned" },
-            ].map((card, i) => (
-              <div
-                key={i}
-                className="flex-1 rounded-xl p-4 text-center"
-                style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.1)" }}
-              >
-                <div className="w-9 h-9 rounded-full bg-emerald-400/10 flex items-center justify-center text-emerald-400 mx-auto mb-2">
-                  {card.icon}
-                </div>
-                <p className="text-green-300/70 text-xs font-medium">{card.label}</p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

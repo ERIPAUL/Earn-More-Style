@@ -1,4 +1,4 @@
-import { Mail, Globe, Leaf, ArrowRight } from "lucide-react";
+import { Mail, Globe, ArrowRight } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -37,13 +37,6 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="mb-5">
               <img src="/logo.png" alt="Earnmore Consultants" className="h-10 w-auto object-contain" />
-            </div>
-            <p className="text-green-200/50 text-sm leading-relaxed mb-6">
-              A sustainability consultancy providing practical strategies and impactful solutions for a greener, more prosperous future.
-            </p>
-            <div className="flex items-center gap-2 text-emerald-400 text-sm font-medium">
-              <Leaf className="w-4 h-4" />
-              Sustainability First
             </div>
           </div>
 
