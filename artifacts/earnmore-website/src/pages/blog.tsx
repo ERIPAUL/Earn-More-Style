@@ -5,78 +5,52 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 
 const featuredPost = {
-  date: "March 15, 2025",
-  category: "ESG",
-  categoryColor: "bg-emerald-100 text-emerald-700",
-  title: "Understanding ESG Frameworks for Government Institutions",
+  date: "December 11, 2023",
+  category: "(ESG) Structures",
+  categoryColor: "bg-teal-100 text-teal-700",
+  title: "Understanding the International Sustainability Standards Board's Sustainability Disclosure Standards: IFRS S1 and IFRS S2 — Part 2",
   excerpt:
-    "As governments globally face pressure to align operations with environmental, social, and governance standards, establishing the right ESG framework becomes critical. We explore the key principles and steps for public sector adoption.",
+    "In the first part of this series, we looked at the governance and strategy elements of the ISSB IFRS S1 and S2 standards. In this second part we consider risk management plus metrics and targets — and what each reporting requirement means in practice for organisations.",
   author: "EarnMore Consultants",
   role: "Editorial Team",
   readTime: "6 min read",
-  image: "/images/blog-featured.jpg",
+  image: "https://d1yei2z3i6k35z.cloudfront.net/5190898/6576cd5073e40_valley-with-huge-wind-mills-solar-batteries-factories-renewable-sources-energy-care-environment-green-generate-electricity-eco-power-plant-ecology-concept-3d-rendering-illustration_76964-833.jpg",
+  url: "https://www.earnmoregroup.com/blog/understanding-the-international--sustainability-standards-boards--sustainability-disclosure--standards-ifrs-s1-and-ifrs-s2---part-2",
 };
 
 const posts = [
   {
-    date: "Feb 20, 2025",
-    category: "Climate Finance",
-    categoryColor: "bg-blue-100 text-blue-700",
-    title: "Financing the Clean Energy Transition in Low-Income Countries",
-    excerpt:
-      "Mobilising capital for renewables and clean energy in emerging markets requires innovative blended finance structures and strong policy environments.",
-    readTime: "5 min read",
-    image: "/images/blog-renewable.jpg",
-  },
-  {
-    date: "Jan 30, 2025",
-    category: "Capacity Building",
-    categoryColor: "bg-amber-100 text-amber-700",
-    title: "Building ESG Capacity Within Your Organisation",
-    excerpt:
-      "Effective sustainability programs start with people. Discover how targeted training and capacity building drives lasting institutional change.",
-    readTime: "4 min read",
-    image: "/images/blog-training.jpg",
-  },
-  {
-    date: "Jan 10, 2025",
-    category: "Policy",
-    categoryColor: "bg-orange-100 text-orange-700",
-    title: "NDCs and the Role of National Sustainability Policy",
-    excerpt:
-      "Nationally Determined Contributions are reshaping government sustainability agendas. Here's what institutions need to know to align their strategies.",
-    readTime: "5 min read",
-    image: "/images/blog-climate-policy.jpg",
-  },
-  {
-    date: "Dec 18, 2024",
-    category: "Finance",
+    date: "December 4, 2023",
+    category: "(ESG) Structures",
     categoryColor: "bg-teal-100 text-teal-700",
-    title: "Green Bonds: Mobilising Capital for a Sustainable Future",
+    title: "Understanding the International Sustainability Standards Board's Sustainability Disclosure Standards: IFRS S1 and IFRS S2",
     excerpt:
-      "Green bonds are among the fastest-growing instruments in sustainable finance. We break down the issuance process, benefits, and reporting requirements.",
+      "The ISSB was established to develop a comprehensive global baseline of sustainability-related disclosure standards. This article explores the governance and strategy pillars of IFRS S1 and IFRS S2 and what they mean for reporting organisations.",
     readTime: "6 min read",
-    image: "/images/blog-green-bonds.jpg",
+    image: "https://d1yei2z3i6k35z.cloudfront.net/5190898/656da9f4b3ab7_sunny-landscape-with-windmills.jpg",
+    url: "https://www.earnmoregroup.com/blog/understanding-the-international-sustainability",
   },
   {
-    date: "Nov 25, 2024",
-    category: "Infrastructure",
-    categoryColor: "bg-violet-100 text-violet-700",
-    title: "Sustainable Infrastructure: From Concept to Finance",
+    date: "December 1, 2023",
+    category: "Sustainable Infrastructure Finance",
+    categoryColor: "bg-blue-100 text-blue-700",
+    title: "Africa Climate Summit: Towards Promoting Climate Finance and Green Growth",
     excerpt:
-      "Developing infrastructure that is both economically viable and environmentally resilient demands an integrated approach from feasibility through to impact reporting.",
-    readTime: "7 min read",
-    image: "/images/wind-farm.jpg",
-  },
-  {
-    date: "Oct 14, 2024",
-    category: "Agriculture",
-    categoryColor: "bg-green-100 text-green-700",
-    title: "Sustainable Land Use and Agricultural Finance",
-    excerpt:
-      "Agricultural systems are at the heart of the climate challenge. We explore how sustainable land-use finance can unlock both food security and carbon outcomes.",
+      "Africa gathered in Nairobi from 4th to 6th September 2023 for the inaugural Africa Climate Summit convened by the African Union and hosted by the Government of Kenya, under the theme 'Driving Green Growth and Climate Finance Solutions for Africa and the World'.",
     readTime: "5 min read",
-    image: "/images/green-terraces.jpg",
+    image: "https://d1yei2z3i6k35z.cloudfront.net/5190898/656a6142aa695_drought.jpg",
+    url: "https://www.earnmoregroup.com/blog/africa-climate-summit",
+  },
+  {
+    date: "December 1, 2023",
+    category: "Sustainable Infrastructure Finance",
+    categoryColor: "bg-blue-100 text-blue-700",
+    title: "Amazon Summit: Inspiration for Protecting African Rainforests",
+    excerpt:
+      "Eight Amazon countries recently concluded the Amazon Summit in Belém, Brazil — focused on environmental and climate challenges facing the Amazon. A key lesson emerges for Africa: the need for a similar concord to protect the Equatorial Rainforest, funded through innovative climate finance.",
+    readTime: "5 min read",
+    image: "https://d1yei2z3i6k35z.cloudfront.net/5190898/6569e10ef1132_tranquil-scene-mountain-range-reflected-pond-generated-by-ai.jpg",
+    url: "https://www.earnmoregroup.com/blog/amazon-summit",
   },
 ];
 
@@ -123,7 +97,10 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 md:py-20">
 
           {/* Featured Post */}
-          <motion.div
+          <motion.a
+            href={featuredPost.url}
+            target="_blank"
+            rel="noopener noreferrer"
             className="grid lg:grid-cols-2 gap-8 mb-16 bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 group hover:shadow-lg transition-all duration-300"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -157,19 +134,21 @@ export default function BlogPage() {
                   <p className="text-sm font-semibold text-foreground">{featuredPost.author}</p>
                   <p className="text-xs text-foreground/40">{featuredPost.role}</p>
                 </div>
-                <div className="flex items-center gap-1.5 text-foreground/40 text-xs">
-                  <Clock className="w-3.5 h-3.5" />
-                  {featuredPost.readTime}
-                </div>
+                <span className="text-primary text-xs font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                  Read article <ArrowRight className="w-3.5 h-3.5" />
+                </span>
               </div>
             </div>
-          </motion.div>
+          </motion.a>
 
           {/* Post Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post, i) => (
-              <motion.div
+              <motion.a
                 key={i}
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-primary/20 transition-all duration-300 group flex flex-col"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -208,7 +187,7 @@ export default function BlogPage() {
                     </span>
                   </div>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
 
