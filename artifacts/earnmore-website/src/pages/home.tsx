@@ -10,26 +10,31 @@ const previewServices = [
     icon: <Building2 className="w-5 h-5" />,
     title: "Sustainable Infrastructure Finance",
     description: "Securing financing for infrastructure projects that prioritize sustainability — identifying funding sources and facilitating impactful investment.",
+    image: "/images/solar-panels.jpg",
   },
   {
     icon: <Cloud className="w-5 h-5" />,
     title: "Climate Finance Solutions",
     description: "Mobilising public and private capital to close investment gaps for renewables, clean energy, water infrastructure, and agriculture.",
+    image: "/images/wind-turbines.jpg",
   },
   {
     icon: <BarChart3 className="w-5 h-5" />,
     title: "ESG Structures",
     description: "Helping organisations set up and oversee ESG frameworks — from materiality assessments to governance strategies.",
+    image: "/images/blog-featured.jpg",
   },
   {
     icon: <FileCheck className="w-5 h-5" />,
     title: "Sustainability Policy Reviews",
     description: "Evaluating existing sustainability policies and recommending changes to enhance institutional sustainability efforts.",
+    image: "/images/blog-climate-policy.jpg",
   },
   {
     icon: <GraduationCap className="w-5 h-5" />,
     title: "Training & Capacity Building",
     description: "Workshops, seminars, and training sessions to build capacity for effective sustainability contributions.",
+    image: "/images/blog-training.jpg",
   },
 ];
 
@@ -58,7 +63,6 @@ export default function Home() {
                   alt="Solar panels — sustainable infrastructure finance"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                {/* Gradient overlay at bottom for label */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                 <div className="absolute bottom-6 left-6">
                   <span className="inline-block bg-primary/90 text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-md">
@@ -136,21 +140,34 @@ export default function Home() {
               {previewServices.map((service, idx) => (
                 <motion.div
                   key={idx}
-                  className="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-all duration-300 group border border-transparent hover:border-primary/20 flex flex-col"
+                  className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group border border-transparent hover:border-primary/20 flex flex-col"
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.07 }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-300 flex-shrink-0">
-                    {service.icon}
+                  {/* Card thumbnail */}
+                  <div className="relative overflow-hidden" style={{ height: "140px" }}>
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                   </div>
-                  <h3 className="font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-foreground/55 text-sm leading-relaxed flex-grow">
-                    {service.description}
-                  </p>
+
+                  {/* Card body */}
+                  <div className="p-7 flex flex-col flex-grow">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-300 flex-shrink-0 -mt-10 relative z-10 border-4 border-white shadow-sm">
+                      {service.icon}
+                    </div>
+                    <h3 className="font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-foreground/55 text-sm leading-relaxed flex-grow">
+                      {service.description}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -170,8 +187,17 @@ export default function Home() {
         </section>
 
         {/* ── Contact CTA Strip ── */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <section className="relative py-24 overflow-hidden">
+          <img
+            src="/images/green-terraces.jpg"
+            alt="Green terraced fields"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(135deg, rgba(10,46,40,0.88) 0%, rgba(13,61,46,0.80) 100%)" }}
+          />
+          <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
             <motion.div
               className="flex flex-col md:flex-row items-center justify-between gap-8"
               initial={{ opacity: 0, y: 20 }}
@@ -180,15 +206,15 @@ export default function Home() {
               transition={{ duration: 0.7 }}
             >
               <div className="max-w-xl">
-                <p className="text-primary text-xs font-bold tracking-widest uppercase mb-3 flex items-center gap-2">
-                  <span className="w-6 h-px bg-primary" />
+                <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-3 flex items-center gap-2">
+                  <span className="w-6 h-px bg-emerald-400" />
                   Get In Touch
                 </p>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
                   Ready to Build a More{" "}
-                  <span className="italic font-serif font-normal text-primary">Sustainable Future?</span>
+                  <span className="italic font-serif font-normal text-emerald-300">Sustainable Future?</span>
                 </h2>
-                <p className="text-foreground/60 leading-relaxed">
+                <p className="text-green-200/60 leading-relaxed">
                   Contact us today for full-cycle support — from feasibility analysis to impact reporting and capacity building.
                 </p>
               </div>

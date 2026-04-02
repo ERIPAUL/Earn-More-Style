@@ -83,3 +83,9 @@ id = "QphbRJ-lQhNwEqctkpRlc"
 uri = "file://attached_assets/stock_images/blog-training.jpg"
 type = "image"
 title = "capacity building training workshop sustainability professionals education"
+
+[[outputs]]
+id = "bKXIT3z0GeM6v_AV3RnZe"
+uri = "file://attached_assets/stock_images/city-sustainability.jpg"
+type = "image"
+title = "sustainable city skyline green urban building architecture"

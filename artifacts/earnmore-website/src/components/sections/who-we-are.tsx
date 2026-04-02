@@ -24,7 +24,7 @@ export default function WhoWeAreSection() {
   return (
     <section id="who-we-are" className="py-24 md:py-32 bg-white">
       {/* Vision & Mission */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 mb-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 mb-0">
         <motion.div
           className="text-center max-w-2xl mx-auto mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -43,36 +43,91 @@ export default function WhoWeAreSection() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {[
-            {
-              icon: <Eye className="w-5 h-5" />,
-              label: "Vision",
-              text: "Promoting a sustainable and resilient future",
-            },
-            {
-              icon: <Target className="w-5 h-5" />,
-              label: "Mission",
-              text: "At EarnMore Consultants, our mission is to catalyse positive change by providing expert guidance and innovative solutions in sustainability. We are committed to partnering with government institutions and organisations globally, helping them navigate the complex landscape of environmental, social, and governance challenges. Through rigorous policy reviews, strategic advisory, sustainable finance, and capacity building, we aspire to shape a more sustainable world, one institution at a time.",
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              className="flex gap-5 p-7 rounded-2xl border border-border hover:border-primary/30 hover:shadow-md transition-all duration-300 group"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
-            >
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                {item.icon}
-              </div>
-              <div>
-                <p className="font-bold text-foreground mb-2">{item.label}</p>
-                <p className="text-foreground/60 text-sm leading-relaxed">{item.text}</p>
-              </div>
-            </motion.div>
-          ))}
+        {/* Vision / Mission — now image + cards split layout */}
+        <div className="grid lg:grid-cols-2 gap-10 items-stretch mb-16">
+          {/* Left: photo */}
+          <motion.div
+            className="relative rounded-2xl overflow-hidden shadow-xl"
+            style={{ minHeight: "340px" }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <img
+              src="/images/green-terraces.jpg"
+              alt="Terraced green fields — sustainable agriculture"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
+            <div className="absolute bottom-8 left-8 right-8">
+              <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-2">Our Guiding Principles</p>
+              <p className="text-white text-2xl font-bold leading-snug">
+                Shaping a sustainable world,{" "}
+                <span className="italic font-serif font-normal text-emerald-300">one institution at a time</span>
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Right: Vision & Mission cards stacked */}
+          <div className="flex flex-col gap-6">
+            {[
+              {
+                icon: <Eye className="w-5 h-5" />,
+                label: "Vision",
+                text: "Promoting a sustainable and resilient future for generations to come — through expert guidance, rigorous policy, and innovative finance.",
+              },
+              {
+                icon: <Target className="w-5 h-5" />,
+                label: "Mission",
+                text: "At EarnMore Consultants, our mission is to catalyse positive change by providing expert guidance and innovative solutions in sustainability. We are committed to partnering with government institutions and organisations globally, helping them navigate the complex landscape of environmental, social, and governance challenges. Through rigorous policy reviews, strategic advisory, sustainable finance, and capacity building, we aspire to shape a more sustainable world, one institution at a time.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                className="flex gap-5 p-7 rounded-2xl border border-border hover:border-primary/30 hover:shadow-md transition-all duration-300 group flex-grow"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+              >
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                  {item.icon}
+                </div>
+                <div>
+                  <p className="font-bold text-foreground mb-2">{item.label}</p>
+                  <p className="text-foreground/60 text-sm leading-relaxed">{item.text}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Full-width image break */}
+      <div className="relative h-56 md:h-72 my-0 overflow-hidden">
+        <img
+          src="/images/wind-farm.jpg"
+          alt="Wind farm — clean energy"
+          className="w-full h-full object-cover object-center"
+        />
+        <div
+          className="absolute inset-0 flex items-center justify-center"
+          style={{ background: "rgba(10,46,40,0.65)" }}
+        >
+          <motion.div
+            className="text-center px-6"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-3">Our Commitment</p>
+            <p className="text-white text-2xl md:text-3xl font-bold max-w-2xl mx-auto leading-snug">
+              A greener planet starts with{" "}
+              <span className="italic font-serif font-normal text-emerald-300">bold decisions today</span>
+            </p>
+          </motion.div>
         </div>
       </div>
 
