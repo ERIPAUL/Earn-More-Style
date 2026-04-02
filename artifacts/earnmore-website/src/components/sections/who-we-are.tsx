@@ -47,13 +47,13 @@ export default function WhoWeAreSection() {
           {[
             {
               icon: <Eye className="w-5 h-5" />,
-              label: "Our Vision",
-              text: "Promoting a sustainable and resilient future — where institutions, governments, and businesses operate in harmony with people and the planet.",
+              label: "Vision",
+              text: "\"Promoting a sustainable and resilient future\"",
             },
             {
               icon: <Target className="w-5 h-5" />,
-              label: "Our Mission",
-              text: "To catalyse positive change by providing expert guidance and innovative solutions in sustainability, partnering with government institutions and organisations globally to navigate complex ESG challenges.",
+              label: "Mission",
+              text: "At EarnMore Consultants, our mission is to catalyse positive change by providing expert guidance and innovative solutions in sustainability. We are committed to partnering with government institutions and organisations globally, helping them navigate the complex landscape of environmental, social, and governance challenges. Through rigorous policy reviews, strategic advisory, sustainable finance, and capacity building, we aspire to shape a more sustainable world, one institution at a time.",
             },
           ].map((item, i) => (
             <motion.div
