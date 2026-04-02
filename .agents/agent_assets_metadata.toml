@@ -155,3 +155,21 @@ id = "lA1X4hqCIeR_a8qqu1_Ux"
 uri = "file://attached_assets/stock_images/professional-training.jpg"
 type = "image"
 title = "professional training seminar conference classroom education learning"
+
+[[outputs]]
+id = "YZysuW9x_NdKzLK_syzOw"
+uri = "file://attached_assets/stock_images/corporate-training.jpg"
+type = "image"
+title = "corporate business training presenter conference room executives workshop professional"
+
+[[outputs]]
+id = "6vCuCTi-PPWeFR1IutLZ1"
+uri = "file://attached_assets/stock_images/corporate-boardroom-training.jpg"
+type = "image"
+title = "business people team meeting presentation boardroom executive training corporate seminar"
+
+[[outputs]]
+id = "2yEzArjmHBYIHRwePhDac"
+uri = "file://attached_assets/stock_images/presenter-workshop.jpg"
+type = "image"
+title = "presenter standing whiteboard office colleagues listening corporate workshop team"

@@ -34,7 +34,7 @@ const previewServices = [
     icon: <GraduationCap className="w-5 h-5" />,
     title: "Training & Capacity Building",
     description: "Workshops, seminars, and training sessions to build capacity for effective sustainability contributions.",
-    image: "/images/professional-training.jpg",
+    image: "/images/blog-training.jpg",
   },
 ];
 

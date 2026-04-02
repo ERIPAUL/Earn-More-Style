@@ -35,7 +35,7 @@ const services = [
     title: "Training and Capacity Building",
     description:
       "Education and skill development programs — workshops, seminars, and training sessions aimed at building capacity to effectively contribute to sustainability efforts.",
-    image: "/images/professional-training.jpg",
+    image: "/images/blog-training.jpg",
   },
 ];
 
