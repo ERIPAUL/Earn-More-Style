@@ -149,3 +149,9 @@ id = "Sl8RYi8GmsMw4202CPvAb"
 uri = "file://attached_assets/stock_images/clean-industry.jpg"
 type = "image"
 title = "factory industrial plant clean energy production manufacturing"
+
+[[outputs]]
+id = "lA1X4hqCIeR_a8qqu1_Ux"
+uri = "file://attached_assets/stock_images/professional-training.jpg"
+type = "image"
+title = "professional training seminar conference classroom education learning"
