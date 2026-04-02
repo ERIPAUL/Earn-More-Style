@@ -1,3 +1,13 @@
 <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="180" height="180" rx="36" fill="#FF3C00"/>
+  <!-- Dark green rounded background -->
+  <rect width="180" height="180" rx="36" fill="#0a2e28"/>
+  <!-- Leaf / sprout icon in brand green -->
+  <!-- Stem -->
+  <line x1="90" y1="130" x2="90" y2="75" stroke="#34d399" stroke-width="9" stroke-linecap="round"/>
+  <!-- Left branch -->
+  <path d="M90 100 Q62 88 58 62 Q82 62 90 100Z" fill="#059669"/>
+  <!-- Right leaf -->
+  <path d="M90 82 Q118 70 122 44 Q98 44 90 82Z" fill="#34d399"/>
+  <!-- Ground arc -->
+  <path d="M68 132 Q90 122 112 132" stroke="#34d399" stroke-width="7" stroke-linecap="round" fill="none"/>
 </svg>
