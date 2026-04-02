@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { ArrowRight, Clock } from "lucide-react";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import Seo from "@/components/seo";
 
 const featuredPost = {
   date: "December 11, 2023",
@@ -57,6 +58,12 @@ const posts = [
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans overflow-hidden">
+      <Seo
+        title="Sustainability & ESG Blog — EarnMore Consultants Nigeria"
+        description="Insights, analysis, and thought leadership on ESG, climate finance, IFRS sustainability reporting, and green bonds from EarnMore Consultants — Nigeria's sustainability advisory experts."
+        keywords="ESG blog Nigeria, sustainability blog Nigeria, IFRS S1 S2 Nigeria, climate finance blog, green bonds blog Nigeria, sustainability insights Africa"
+        canonical="/blog"
+      />
       <Navbar />
       <main className="flex-grow pt-20">
 

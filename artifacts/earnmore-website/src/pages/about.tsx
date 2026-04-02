@@ -4,10 +4,17 @@ import Footer from "@/components/layout/footer";
 import AboutSection from "@/components/sections/about";
 import WhoWeAreSection from "@/components/sections/who-we-are";
 import FaqSection from "@/components/sections/faq";
+import Seo from "@/components/seo";
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans overflow-hidden">
+      <Seo
+        title="About EarnMore Consultants — Sustainability Advisory Firm Nigeria"
+        description="Learn about EarnMore Consultants — a leading sustainability and ESG advisory firm in Nigeria. Our mission is to catalyse positive change through responsible finance and sustainable development across Africa."
+        keywords="about EarnMore Consultants, sustainability firm Nigeria, ESG advisory Nigeria, sustainability consultancy Africa"
+        canonical="/about"
+      />
       <Navbar />
       <main className="flex-grow pt-20">
 

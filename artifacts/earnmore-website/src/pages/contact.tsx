@@ -2,10 +2,17 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import ContactSection from "@/components/sections/contact";
+import Seo from "@/components/seo";
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans overflow-hidden">
+      <Seo
+        title="Contact EarnMore Consultants — ESG & Sustainability Advisory Nigeria"
+        description="Get in touch with EarnMore Consultants, Nigeria's leading ESG and sustainability advisory firm. Contact us to discuss your sustainability strategy, ESG framework, or climate finance needs."
+        keywords="contact EarnMore Consultants, ESG consultants Nigeria contact, sustainability advisory Nigeria, book ESG consultation Nigeria"
+        canonical="/contact"
+      />
       <Navbar />
       <main className="flex-grow pt-20">
 

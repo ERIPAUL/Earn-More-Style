@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2, Building2, Cloud, BarChart3, FileCheck, Gradu
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import HeroSection from "@/components/sections/hero";
+import Seo from "@/components/seo";
 
 const previewServices = [
   {
@@ -41,6 +42,64 @@ const previewServices = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans overflow-hidden">
+      <Seo
+        title="EarnMore Consultants — Sustainability & ESG Advisory Nigeria"
+        description="EarnMore Consultants is Nigeria's leading sustainability and ESG consulting firm. We deliver ESG frameworks, climate finance advisory, sustainability reporting, and green bonds solutions across Nigeria and Africa."
+        keywords="sustainability consulting Nigeria, ESG consulting Nigeria, climate finance Nigeria, green bonds Nigeria, ESG advisory Nigeria, sustainability advisory Africa"
+        canonical="/"
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://earnmoregroup.com/#organization",
+                "name": "EarnMore Consultants",
+                "url": "https://earnmoregroup.com",
+                "logo": "https://earnmoregroup.com/favicon.png",
+                "sameAs": ["https://earnmoreapp.co"],
+                "description": "Nigeria's leading sustainability and ESG consulting firm, providing ESG frameworks, climate finance advisory, green bonds, and sustainability reporting services.",
+                "foundingLocation": { "@type": "Place", "name": "Lagos, Nigeria" },
+                "areaServed": ["Nigeria", "Africa"],
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "email": "info@earnmoregroup.com",
+                  "contactType": "customer service",
+                  "availableLanguage": "English"
+                }
+              },
+              {
+                "@type": "LocalBusiness",
+                "@id": "https://earnmoregroup.com/#localbusiness",
+                "name": "EarnMore Consultants",
+                "url": "https://earnmoregroup.com",
+                "image": "https://earnmoregroup.com/favicon.png",
+                "description": "ESG and sustainability consulting firm in Lagos, Nigeria.",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Lagos",
+                  "addressCountry": "NG"
+                },
+                "geo": { "@type": "GeoCoordinates", "latitude": 6.5244, "longitude": 3.3792 },
+                "areaServed": ["Lagos", "Abuja", "Port Harcourt", "Nigeria"],
+                "priceRange": "$$",
+                "email": "info@earnmoregroup.com",
+                "serviceType": [
+                  "ESG Consulting",
+                  "Sustainability Advisory",
+                  "Climate Finance",
+                  "Green Bonds Advisory",
+                  "Sustainability Reporting",
+                  "ESG Training"
+                ]
+              }
+            ]
+          })
+        }}
+      />
       <Navbar />
       <main className="flex-grow">
         <HeroSection />

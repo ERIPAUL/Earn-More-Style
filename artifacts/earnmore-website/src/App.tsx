@@ -12,6 +12,12 @@ import BlogIfrsPart2 from "@/pages/blog-ifrs-part2";
 import BlogIfrsPart1 from "@/pages/blog-ifrs-part1";
 import BlogAfricaClimateSummit from "@/pages/blog-africa-climate-summit";
 import BlogAmazonSummit from "@/pages/blog-amazon-summit";
+import EsgConsultingNigeria from "@/pages/seo-esg-consulting-nigeria";
+import SustainabilityConsultingLagos from "@/pages/seo-sustainability-consulting-lagos";
+import ClimateFinanceNigeria from "@/pages/seo-climate-finance-nigeria";
+import IfrsSustainabilityReportingNigeria from "@/pages/seo-ifrs-sustainability-reporting-nigeria";
+import GreenBondsNigeria from "@/pages/seo-green-bonds-nigeria";
+import EsgTrainingNigeria from "@/pages/seo-esg-training-nigeria";
 import ScrollToTop from "@/components/scroll-to-top";
 
 const queryClient = new QueryClient();
@@ -28,6 +34,13 @@ function Router() {
       <Route path="/blog/ifrs-s1-s2-part-1" component={BlogIfrsPart1} />
       <Route path="/blog/africa-climate-summit" component={BlogAfricaClimateSummit} />
       <Route path="/blog/amazon-summit" component={BlogAmazonSummit} />
+      {/* SEO Landing Pages */}
+      <Route path="/services/esg-consulting-nigeria" component={EsgConsultingNigeria} />
+      <Route path="/services/sustainability-consulting-lagos" component={SustainabilityConsultingLagos} />
+      <Route path="/services/climate-finance-advisory-nigeria" component={ClimateFinanceNigeria} />
+      <Route path="/services/ifrs-sustainability-reporting-nigeria" component={IfrsSustainabilityReportingNigeria} />
+      <Route path="/services/green-bonds-advisory-nigeria" component={GreenBondsNigeria} />
+      <Route path="/services/esg-training-nigeria" component={EsgTrainingNigeria} />
       <Route component={NotFound} />
     </Switch>
   );
