@@ -15,7 +15,7 @@ export default function EsgSection() {
         >
           <p className="text-primary text-xs font-bold tracking-widest uppercase mb-4 flex items-center justify-center gap-2">
             <span className="w-6 h-px bg-primary" />
-            ESG Initiative
+            EarnMore Growth Gateway
             <span className="w-6 h-px bg-primary" />
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
@@ -35,7 +35,7 @@ export default function EsgSection() {
             transition={{ duration: 0.8 }}
           >
             <p className="text-foreground/65 leading-relaxed">
-              <strong className="text-foreground">EGG</strong> — EarnMore Consultants' ESG Initiative — is our dedicated platform for impact-oriented investing and sustainable development. We have built frameworks that make responsible finance measurable, transparent, and genuinely impactful.
+              <strong className="text-foreground">EGG</strong> — EarnMore Growth Gateway — is our dedicated platform for impact-oriented investing and sustainable development. We have built frameworks that make responsible finance measurable, transparent, and genuinely impactful.
             </p>
             <p className="text-foreground/65 leading-relaxed mb-8">
               Through EGG, we provide investors, institutions, and government partners with tools and strategies to align their portfolios and operations with their values — driving real change in communities and ecosystems around the world.
@@ -95,7 +95,7 @@ export default function EsgSection() {
                 </div>
                 <div>
                   <p className="text-white font-bold text-xl">EGG Platform</p>
-                  <p className="text-emerald-400 text-sm">EarnMore Consultants ESG Initiative</p>
+                  <p className="text-emerald-400 text-sm">EarnMore Growth Gateway</p>
                 </div>
               </div>
 
