@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "awIGpbGMVt-88hLFrrHgk"
@@ -18,3 +17,33 @@ id = "j_4iJ8J-vJ_d3cinBY0cn"
 uri = "file://artifacts/earnmore-website/public/images/esg-image.png"
 type = "image"
 title = "ESG sustainability finance"
+
+[[outputs]]
+id = "l2_exTcwzSZNtZF4mAY3m"
+uri = "file://attached_assets/stock_images/climate-energy_1.jpg"
+type = "image"
+title = "solar panels wind turbines green renewable energy landscape sustainability climate finance"
+
+[[outputs]]
+id = "-mD-7tHy5J6gHm-Tsmmlf"
+uri = "file://attached_assets/stock_images/climate-energy_2.jpg"
+type = "image"
+title = "solar panels wind turbines green renewable energy landscape sustainability climate finance"
+
+[[outputs]]
+id = "J2NLFMfSFHZqI5KTuZfxJ"
+uri = "file://attached_assets/stock_images/climate-energy_3.jpg"
+type = "image"
+title = "solar panels wind turbines green renewable energy landscape sustainability climate finance"
+
+[[outputs]]
+id = "fXWGJRk78vkhrf8zQWPHW"
+uri = "file://attached_assets/stock_images/sustainability-consulting_1.jpg"
+type = "image"
+title = "green sustainable city buildings forest nature environment ESG finance professionals"
+
+[[outputs]]
+id = "vt_oLYIkhJhn8QIq058x7"
+uri = "file://attached_assets/stock_images/sustainability-consulting_2.jpg"
+type = "image"
+title = "green sustainable city buildings forest nature environment ESG finance professionals"

@@ -44,22 +44,26 @@ export default function Home() {
         <section className="py-20 md:py-28 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              {/* Left card */}
+              {/* Left: Image */}
               <motion.div
-                className="rounded-2xl overflow-hidden shadow-lg"
-                style={{ background: "linear-gradient(135deg, #0a2e28 0%, #0d3d2e 100%)" }}
+                className="relative rounded-2xl overflow-hidden shadow-xl"
+                style={{ minHeight: "360px" }}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
               >
-                <div className="p-10">
-                  <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-5">About Us</p>
-                  <p className="text-white text-3xl font-bold leading-tight mb-6">
-                    Your Partner in{" "}
-                    <span className="italic font-serif font-normal text-emerald-300">Sustainability</span>
-                  </p>
-                  <div className="h-1 w-full bg-gradient-to-r from-emerald-500 via-teal-400 to-transparent rounded-full" />
+                <img
+                  src="/images/solar-panels.jpg"
+                  alt="Solar panels — sustainable infrastructure finance"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                {/* Gradient overlay at bottom for label */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                <div className="absolute bottom-6 left-6">
+                  <span className="inline-block bg-primary/90 text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-md">
+                    Sustainable Infrastructure
+                  </span>
                 </div>
               </motion.div>
 
