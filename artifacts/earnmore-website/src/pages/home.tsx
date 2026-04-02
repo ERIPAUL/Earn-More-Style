@@ -166,7 +166,7 @@ export default function Home() {
         </section>
 
         {/* ── Contact CTA Strip ── */}
-        <section className="py-20" style={{ backgroundColor: "#f0fdf8" }}>
+        <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <motion.div
               className="flex flex-col md:flex-row items-center justify-between gap-8"
