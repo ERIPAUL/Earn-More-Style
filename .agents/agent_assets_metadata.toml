@@ -47,3 +47,39 @@ id = "vt_oLYIkhJhn8QIq058x7"
 uri = "file://attached_assets/stock_images/sustainability-consulting_2.jpg"
 type = "image"
 title = "green sustainable city buildings forest nature environment ESG finance professionals"
+
+[[outputs]]
+id = "LIuM2kWRpuH0zE21shx2k"
+uri = "file://attached_assets/stock_images/blog-featured.jpg"
+type = "image"
+title = "sustainability ESG green finance business professionals meeting report charts"
+
+[[outputs]]
+id = "8a-bjiKjMzdjSdN8B12xY"
+uri = "file://attached_assets/stock_images/blog-green-bonds.jpg"
+type = "image"
+title = "green bonds sustainable finance investment capital markets"
+
+[[outputs]]
+id = "ctmtl6iKF39RGP6540tE1"
+uri = "file://attached_assets/stock_images/blog-climate-policy.jpg"
+type = "image"
+title = "climate policy government institution sustainability planning Africa"
+
+[[outputs]]
+id = "MwARcdDxkayZk4Ou6ukM4"
+uri = "file://attached_assets/stock_images/blog-renewable.jpg"
+type = "image"
+title = "renewable energy solar wind clean technology infrastructure development"
+
+[[outputs]]
+id = "TllCt4f2VFF5bBdNHFSJJ"
+uri = "file://attached_assets/stock_images/blog-esg-report.jpg"
+type = "image"
+title = "corporate ESG reporting environmental social governance framework"
+
+[[outputs]]
+id = "QphbRJ-lQhNwEqctkpRlc"
+uri = "file://attached_assets/stock_images/blog-training.jpg"
+type = "image"
+title = "capacity building training workshop sustainability professionals education"
