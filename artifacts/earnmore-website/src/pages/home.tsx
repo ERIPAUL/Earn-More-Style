@@ -22,7 +22,7 @@ const previewServices = [
     icon: <BarChart3 className="w-5 h-5" />,
     title: "ESG Structures",
     description: "Helping organisations set up and oversee ESG frameworks — from materiality assessments to governance strategies.",
-    image: "/images/data-analytics.jpg",
+    image: "/images/esg-building.jpg",
   },
   {
     icon: <FileCheck className="w-5 h-5" />,

@@ -21,7 +21,7 @@ const services = [
     title: "ESG Structures",
     description:
       "Assisting organizations to set up and oversee ESG structures — from materiality assessments to unique frameworks, policies, and strategies for addressing environmental, social, and governance issues.",
-    image: "/images/business-partnership.jpg",
+    image: "/images/esg-building.jpg",
   },
   {
     icon: <FileCheck className="w-6 h-6" />,
