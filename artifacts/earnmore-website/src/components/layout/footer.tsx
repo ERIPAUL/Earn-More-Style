@@ -1,4 +1,4 @@
-import { Mail, Globe } from "lucide-react";
+import { Mail } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Footer() {
@@ -67,12 +67,6 @@ export default function Footer() {
               <li className="flex items-center gap-2 hover:text-emerald-400 transition-colors">
                 <Mail className="w-4 h-4 flex-shrink-0" />
                 <a href="mailto:info@earnmoregroup.com">info@earnmoregroup.com</a>
-              </li>
-              <li className="flex items-center gap-2 hover:text-emerald-400 transition-colors">
-                <Globe className="w-4 h-4 flex-shrink-0" />
-                <a href="https://www.earnmoregroup.com" target="_blank" rel="noopener noreferrer">
-                  www.earnmoregroup.com
-                </a>
               </li>
             </ul>
 
