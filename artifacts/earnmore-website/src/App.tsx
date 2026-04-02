@@ -8,6 +8,7 @@ import AboutPage from "@/pages/about";
 import ServicesPage from "@/pages/services";
 import ContactPage from "@/pages/contact";
 import BlogPage from "@/pages/blog";
+import ScrollToTop from "@/components/scroll-to-top";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+          <ScrollToTop />
           <Router />
         </WouterRouter>
         <Toaster />
