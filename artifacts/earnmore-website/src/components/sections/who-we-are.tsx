@@ -55,8 +55,8 @@ export default function WhoWeAreSection() {
             transition={{ duration: 0.7 }}
           >
             <img
-              src="/images/green-terraces.jpg"
-              alt="Terraced green fields — sustainable agriculture"
+              src="/images/green-building.jpg"
+              alt="Rooftop solar panels — green infrastructure"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
@@ -107,8 +107,8 @@ export default function WhoWeAreSection() {
       {/* Full-width image break */}
       <div className="relative h-56 md:h-72 my-0 overflow-hidden">
         <img
-          src="/images/wind-farm.jpg"
-          alt="Wind farm — clean energy"
+          src="/images/blog-training.jpg"
+          alt="Capacity building workshop — sustainability training"
           className="w-full h-full object-cover object-center"
         />
         <div

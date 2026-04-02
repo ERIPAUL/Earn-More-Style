@@ -12,8 +12,8 @@ export default function ContactPage() {
         {/* ── Hero Banner ── */}
         <div className="relative h-72 md:h-96 flex items-center justify-center text-center overflow-hidden">
           <img
-            src="/images/blog-training.jpg"
-            alt="Team meeting"
+            src="/images/ocean-environment.jpg"
+            alt="Calm ocean — environmental stewardship"
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
           <div

@@ -7,35 +7,35 @@ const services = [
     title: "Sustainable Infrastructure Finance",
     description:
       "Securing financing for infrastructure projects that prioritize sustainability — identifying funding sources, developing financial models, and facilitating investment in projects with positive environmental and social impacts.",
-    image: "/images/solar-panels.jpg",
+    image: "/images/blog-featured.jpg",
   },
   {
     icon: <Cloud className="w-6 h-6" />,
     title: "Climate Finance Solutions",
     description:
       "Mobilising public and private capital to close investment gaps in low- and middle-income countries for renewables, afforestation, clean energy, water infrastructure, and agriculture.",
-    image: "/images/wind-turbines.jpg",
+    image: "/images/blog-green-bonds.jpg",
   },
   {
     icon: <BarChart3 className="w-6 h-6" />,
     title: "ESG Structures",
     description:
       "Assisting organizations to set up and oversee ESG structures — from materiality assessments to unique frameworks, policies, and strategies for addressing environmental, social, and governance issues.",
-    image: "/images/blog-featured.jpg",
+    image: "/images/business-partnership.jpg",
   },
   {
     icon: <FileCheck className="w-6 h-6" />,
     title: "Sustainability Policy Reviews",
     description:
       "Evaluating and analyzing existing sustainability policies of government institutions — identifying improvement areas and recommending changes to enhance sustainability efforts.",
-    image: "/images/blog-climate-policy.jpg",
+    image: "/images/agriculture-crops.jpg",
   },
   {
     icon: <GraduationCap className="w-6 h-6" />,
     title: "Training and Capacity Building",
     description:
       "Education and skill development programs — workshops, seminars, and training sessions aimed at building capacity to effectively contribute to sustainability efforts.",
-    image: "/images/blog-training.jpg",
+    image: "/images/glacier-climate.jpg",
   },
 ];
 

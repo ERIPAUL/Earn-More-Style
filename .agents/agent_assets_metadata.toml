@@ -89,3 +89,63 @@ id = "bKXIT3z0GeM6v_AV3RnZe"
 uri = "file://attached_assets/stock_images/city-sustainability.jpg"
 type = "image"
 title = "sustainable city skyline green urban building architecture"
+
+[[outputs]]
+id = "qK3kqcaaSIt1FIbt18wUq"
+uri = "file://attached_assets/stock_images/forest-conservation.jpg"
+type = "image"
+title = "tropical rainforest trees green canopy biodiversity conservation"
+
+[[outputs]]
+id = "RJMwEIvwkydOGgW1A-wnN"
+uri = "file://attached_assets/stock_images/green-building.jpg"
+type = "image"
+title = "modern green architecture sustainable building energy efficient"
+
+[[outputs]]
+id = "q1PWBEuDbofMshAlyXEDT"
+uri = "file://attached_assets/stock_images/ocean-environment.jpg"
+type = "image"
+title = "ocean sea blue water waves clean environment"
+
+[[outputs]]
+id = "K-3qZ_rt-Oo9QWNSU_aTP"
+uri = "file://attached_assets/stock_images/water-infrastructure.jpg"
+type = "image"
+title = "clean drinking water river lake freshwater developing country"
+
+[[outputs]]
+id = "BKFoqNf4OhOf3LhBNr-As"
+uri = "file://attached_assets/stock_images/business-partnership.jpg"
+type = "image"
+title = "business people professionals handshake partnership agreement meeting"
+
+[[outputs]]
+id = "uwLfUl5rsDgbyL1yQ3dQn"
+uri = "file://attached_assets/stock_images/glacier-climate.jpg"
+type = "image"
+title = "mountain glacier snow ice climate change landscape"
+
+[[outputs]]
+id = "1Jw_tmFvxi2LqZCQlX52N"
+uri = "file://attached_assets/stock_images/agriculture-crops.jpg"
+type = "image"
+title = "wheat field crops agriculture farmland harvest rural"
+
+[[outputs]]
+id = "Jj1fIWoJSrjG3nyiDjhj-"
+uri = "file://attached_assets/stock_images/data-analytics.jpg"
+type = "image"
+title = "data analytics financial charts graphs report documents office"
+
+[[outputs]]
+id = "XDR1Ts2T5pHiYwgtsxjCJ"
+uri = "file://attached_assets/stock_images/community-development.jpg"
+type = "image"
+title = "community village people Africa sustainability development"
+
+[[outputs]]
+id = "Sl8RYi8GmsMw4202CPvAb"
+uri = "file://attached_assets/stock_images/clean-industry.jpg"
+type = "image"
+title = "factory industrial plant clean energy production manufacturing"

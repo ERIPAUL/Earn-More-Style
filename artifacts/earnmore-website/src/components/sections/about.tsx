@@ -16,16 +16,16 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
           >
             <img
-              src="/images/green-terraces.jpg"
-              alt="Sustainable agriculture — green terraced fields"
+              src="/images/blog-renewable.jpg"
+              alt="Solar panels in green meadow — sustainable energy"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
-              <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-2">About Us</p>
+              <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-2">Our Approach</p>
               <p className="text-white text-xl font-bold leading-snug">
-                Our Path to Trust and{" "}
-                <span className="italic font-serif font-normal text-emerald-300">Sustainable Success</span>
+                Harnessing clean energy to build{" "}
+                <span className="italic font-serif font-normal text-emerald-300">a resilient future</span>
               </p>
             </div>
           </motion.div>

@@ -16,13 +16,13 @@ const previewServices = [
     icon: <Cloud className="w-5 h-5" />,
     title: "Climate Finance Solutions",
     description: "Mobilising public and private capital to close investment gaps for renewables, clean energy, water infrastructure, and agriculture.",
-    image: "/images/wind-turbines.jpg",
+    image: "/images/ocean-environment.jpg",
   },
   {
     icon: <BarChart3 className="w-5 h-5" />,
     title: "ESG Structures",
     description: "Helping organisations set up and oversee ESG frameworks — from materiality assessments to governance strategies.",
-    image: "/images/blog-featured.jpg",
+    image: "/images/data-analytics.jpg",
   },
   {
     icon: <FileCheck className="w-5 h-5" />,
@@ -34,7 +34,7 @@ const previewServices = [
     icon: <GraduationCap className="w-5 h-5" />,
     title: "Training & Capacity Building",
     description: "Workshops, seminars, and training sessions to build capacity for effective sustainability contributions.",
-    image: "/images/blog-training.jpg",
+    image: "/images/agriculture-crops.jpg",
   },
 ];
 
@@ -59,14 +59,14 @@ export default function Home() {
                 transition={{ duration: 0.7 }}
               >
                 <img
-                  src="/images/solar-panels.jpg"
-                  alt="Solar panels — sustainable infrastructure finance"
+                  src="/images/business-partnership.jpg"
+                  alt="Business handshake — strategic sustainability partnership"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                 <div className="absolute bottom-6 left-6">
                   <span className="inline-block bg-primary/90 text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-md">
-                    Sustainable Infrastructure
+                    Strategic Partnership
                   </span>
                 </div>
               </motion.div>
