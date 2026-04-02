@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Leaf, ArrowRight } from "lucide-react";
+import { ExternalLink, Leaf } from "lucide-react";
 
 export default function EsgSection() {
   return (
@@ -129,18 +129,6 @@ export default function EsgSection() {
               </div>
             </div>
 
-            {/* CTA strip */}
-            <div className="bg-primary/5 border border-primary/15 rounded-xl p-6 flex items-center justify-between gap-4">
-              <p className="text-foreground font-semibold text-sm">
-                Ready to implement an ESG framework?
-              </p>
-              <a
-                href="#contact"
-                className="flex-shrink-0 inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all"
-              >
-                Get started <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
           </motion.div>
         </div>
       </div>
