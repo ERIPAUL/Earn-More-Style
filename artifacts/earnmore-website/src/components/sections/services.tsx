@@ -7,7 +7,7 @@ const services = [
     title: "Sustainable Infrastructure Finance",
     description:
       "Securing financing for infrastructure projects that prioritize sustainability — identifying funding sources, developing financial models, and facilitating investment in projects with positive environmental and social impacts.",
-    image: "/images/blog-featured.jpg",
+    image: "/images/solar-panels.jpg",
   },
   {
     icon: <Cloud className="w-6 h-6" />,
