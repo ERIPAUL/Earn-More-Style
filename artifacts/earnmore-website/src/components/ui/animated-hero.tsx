@@ -14,8 +14,8 @@ const slides = [
   {
     image: "/images/solar-panels.jpg",
     eyebrow: "Sustainable Infrastructure Finance",
-    headline: "Securing Capital for",
-    accent: "A Greener Future",
+    headline: "Securing Capital for A",
+    accent: "Greener Future",
     sub: "We help governments and institutions identify funding sources and facilitate impactful investment in sustainable infrastructure projects worldwide.",
   },
   {
