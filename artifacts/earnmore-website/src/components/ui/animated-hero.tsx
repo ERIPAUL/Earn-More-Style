@@ -16,7 +16,7 @@ const slides = [
     eyebrow: "Sustainable Infrastructure Finance",
     headline: "Securing Capital for",
     accent: "A Greener Future",
-    sub: "We help governments and institutions identify funding sources and facilitate impactful investment in sustainable infrastructure projects across Nigeria.",
+    sub: "We help governments and institutions identify funding sources and facilitate impactful investment in sustainable infrastructure projects worldwide.",
   },
   {
     image: "/images/ocean-environment.jpg",

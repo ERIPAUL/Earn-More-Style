@@ -225,7 +225,7 @@ export default function Home() {
                     Welcome to EarnMore Consultants. We exist to make sustainability actionable — translating complex global frameworks into practical strategies that create real, measurable value for businesses, governments, and institutions.
                   </p>
                   <p>
-                    Since our founding, we have partnered with organisations across Nigeria and beyond to navigate ESG disclosures, mobilise climate finance, and build the internal capacity needed to thrive in a world demanding greater accountability and impact.
+                    Since our founding, we have partnered with organisations around the world to navigate ESG disclosures, mobilise climate finance, and build the internal capacity needed to thrive in a world demanding greater accountability and impact.
                   </p>
                   <p>
                     Whatever your sustainability challenge, our team of dedicated experts is here to guide every step of your journey — with the rigour, empathy, and local insight that sets us apart.
@@ -579,8 +579,8 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1">Our Office</p>
-                    <p className="text-white/80 text-sm leading-relaxed">Lagos, Nigeria</p>
-                    <p className="text-white/40 text-xs mt-0.5">Serving clients across Nigeria &amp; beyond</p>
+                    <p className="text-white/80 text-sm leading-relaxed">Lagos</p>
+                    <p className="text-white/40 text-xs mt-0.5">Serving clients globally</p>
                   </div>
                 </div>
 
