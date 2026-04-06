@@ -88,19 +88,6 @@ function AnimatedHero() {
             </a>
           </motion.div>
 
-          {/* Trust badge row */}
-          <motion.div
-            className="flex flex-wrap items-center gap-6 pt-4 border-t border-white/10 w-full"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            {["ESG Frameworks", "Climate Finance", "Green Bonds", "IFRS S1 & S2"].map((badge) => (
-              <span key={badge} className="text-xs font-semibold text-emerald-400/70 uppercase tracking-widest">
-                {badge}
-              </span>
-            ))}
-          </motion.div>
 
         </div>
       </div>
