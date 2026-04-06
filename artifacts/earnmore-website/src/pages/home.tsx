@@ -45,27 +45,35 @@ const previewServices = [
 
 const insights = [
   {
-    category: "Standards & Reporting",
-    title: "Understanding IFRS S1 & S2: What Every Nigerian Business Needs to Know",
-    excerpt: "The ISSB's landmark standards are reshaping how companies disclose sustainability and climate-related information globally. Here is what it means for Africa.",
-    date: "March 2024",
-    image: "/images/blog-training.jpg",
+    category: "(ESG) Structures",
+    title: "Understanding the ISSB's Sustainability Disclosure Standards: IFRS S1 and IFRS S2 — Part 2",
+    excerpt: "In the first part of this series, we looked at the governance and strategy elements of IFRS S1 and S2. In this second part we consider risk management plus metrics and targets — and what each reporting requirement means in practice.",
+    date: "December 11, 2023",
+    image: "https://d1yei2z3i6k35z.cloudfront.net/5190898/6576cd5073e40_valley-with-huge-wind-mills-solar-batteries-factories-renewable-sources-energy-care-environment-green-generate-electricity-eco-power-plant-ecology-concept-3d-rendering-illustration_76964-833.jpg",
+    href: "/blog/ifrs-s1-s2-part-2",
+  },
+  {
+    category: "(ESG) Structures",
+    title: "Understanding the ISSB's Sustainability Disclosure Standards: IFRS S1 and IFRS S2",
+    excerpt: "The ISSB was established to develop a comprehensive global baseline of sustainability-related disclosure standards. This article explores the governance and strategy pillars of IFRS S1 and IFRS S2 and what they mean for reporting organisations.",
+    date: "December 4, 2023",
+    image: "https://d1yei2z3i6k35z.cloudfront.net/5190898/656da9f4b3ab7_sunny-landscape-with-windmills.jpg",
     href: "/blog/ifrs-s1-s2-part-1",
   },
   {
-    category: "Climate Finance",
-    title: "Africa Climate Summit: Driving Climate Finance and Green Growth",
-    excerpt: "Leaders gathered to chart a bold new course for climate finance in Africa, outlining actionable commitments and new funding mechanisms for the continent.",
-    date: "September 2023",
-    image: "/images/ocean-environment.jpg",
+    category: "Sustainable Infrastructure Finance",
+    title: "Climate Summit: Towards Promoting Climate Finance and Green Growth",
+    excerpt: "Leaders gathered in Nairobi for the inaugural Climate Summit hosted by the Government of Kenya, under the theme 'Driving Green Growth and Climate Finance Solutions for the World'.",
+    date: "December 1, 2023",
+    image: "https://d1yei2z3i6k35z.cloudfront.net/5190898/656a6142aa695_drought.jpg",
     href: "/blog/africa-climate-summit",
   },
   {
-    category: "Conservation",
-    title: "Amazon Summit: Lessons for Protecting Africa's Rainforests",
-    excerpt: "The Amazon Summit offered a blueprint for how African nations can mobilise international coalitions to protect critical forest ecosystems from deforestation.",
-    date: "August 2023",
-    image: "/images/solar-panels.jpg",
+    category: "Sustainable Infrastructure Finance",
+    title: "Amazon Summit: Inspiration for Protecting Tropical Rainforests",
+    excerpt: "Eight Amazon countries recently concluded the Amazon Summit in Belém, Brazil — focused on environmental and climate challenges facing the Amazon. A key lesson emerges: the need for a similar concord to protect Equatorial Rainforests.",
+    date: "December 1, 2023",
+    image: "https://d1yei2z3i6k35z.cloudfront.net/5190898/6569e10ef1132_tranquil-scene-mountain-range-reflected-pond-generated-by-ai.jpg",
     href: "/blog/amazon-summit",
   },
 ];
@@ -168,7 +176,7 @@ export default function Home() {
                   >
                     <img
                       src="/ceo.png"
-                      alt="Founder & CEO, EarnMore Consultants"
+                      alt="Otito Nwaigwe-Chukwu, Managing Director, EarnMore Consultants"
                       className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[110%] object-contain object-bottom drop-shadow-2xl"
                       style={{ maxWidth: "none" }}
                     />
@@ -181,11 +189,11 @@ export default function Home() {
                         style={{ background: "rgba(13,61,46,0.85)", backdropFilter: "blur(8px)", border: "1px solid rgba(52,211,153,0.2)" }}
                       >
                         <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                          <span className="text-white text-xs font-bold">EC</span>
+                          <span className="text-white text-xs font-bold">ON</span>
                         </div>
                         <div>
-                          <p className="text-white text-sm font-semibold leading-none mb-0.5">EarnMore Consultants</p>
-                          <p className="text-emerald-400 text-xs">Founder & Chief Executive Officer</p>
+                          <p className="text-white text-sm font-semibold leading-none mb-0.5">Otito Nwaigwe-Chukwu</p>
+                          <p className="text-emerald-400 text-xs">Managing Director</p>
                         </div>
                       </div>
                     </div>
@@ -203,7 +211,7 @@ export default function Home() {
               >
                 <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase flex items-center gap-2">
                   <span className="w-6 h-px bg-emerald-400" />
-                  A Message from Our Founder
+                  A Message from Our Managing Director
                 </p>
 
                 <Quote className="w-10 h-10 text-emerald-500/40" />
@@ -214,19 +222,28 @@ export default function Home() {
 
                 <div className="space-y-4 text-white/65 leading-relaxed text-base">
                   <p>
-                    Welcome to EarnMore Consultants. We exist to make sustainability actionable — translating complex global frameworks into practical strategies that create real, measurable value for African businesses, governments, and institutions.
+                    Welcome to EarnMore Consultants. We exist to make sustainability actionable — translating complex global frameworks into practical strategies that create real, measurable value for businesses, governments, and institutions.
                   </p>
                   <p>
                     Since our founding, we have partnered with organisations across Nigeria and beyond to navigate ESG disclosures, mobilise climate finance, and build the internal capacity needed to thrive in a world demanding greater accountability and impact.
                   </p>
                   <p>
-                    Whatever your sustainability challenge, our team of dedicated experts is here to guide every step of your journey — with the rigour, empathy, and local insight that only a truly African consultancy can offer.
+                    Whatever your sustainability challenge, our team of dedicated experts is here to guide every step of your journey — with the rigour, empathy, and local insight that sets us apart.
                   </p>
                 </div>
 
                 <div className="pt-2 border-t border-emerald-800/50">
-                  <p className="text-white font-semibold">Founder & CEO</p>
-                  <p className="text-emerald-400 text-sm">EarnMore Consultants</p>
+                  <motion.p
+                    className="text-white font-bold text-lg"
+                    initial={{ opacity: 0, x: -12 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: 0.4 }}
+                    style={{ textShadow: "0 0 20px rgba(52,211,153,0.35)" }}
+                  >
+                    Otito Nwaigwe-Chukwu
+                  </motion.p>
+                  <p className="text-emerald-400 text-sm">Managing Director, EarnMore Consultants</p>
                 </div>
 
                 <Link
@@ -563,7 +580,7 @@ export default function Home() {
                   <div>
                     <p className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1">Our Office</p>
                     <p className="text-white/80 text-sm leading-relaxed">Lagos, Nigeria</p>
-                    <p className="text-white/40 text-xs mt-0.5">Serving clients across Nigeria &amp; Africa</p>
+                    <p className="text-white/40 text-xs mt-0.5">Serving clients across Nigeria &amp; beyond</p>
                   </div>
                 </div>
 
