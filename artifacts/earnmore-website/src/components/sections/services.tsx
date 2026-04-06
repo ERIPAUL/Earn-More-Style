@@ -43,7 +43,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-24 md:py-32"
+      className="py-12 md:py-32"
       style={{ backgroundColor: "#f0fdf8" }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">

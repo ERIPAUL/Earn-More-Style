@@ -103,7 +103,7 @@ function AnimatedHero() {
       <div className="absolute right-16 top-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full opacity-10 border border-emerald-400 z-10 pointer-events-none" />
 
       {/* Text content */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-10 py-20">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-10 py-12 md:py-20">
         <div className="flex flex-col items-start gap-8 max-w-3xl">
 
           <AnimatePresence mode="wait">

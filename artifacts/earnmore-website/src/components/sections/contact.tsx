@@ -58,7 +58,7 @@ export default function ContactSection() {
     "w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary transition";
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-white">
+    <section id="contact" className="py-12 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Header */}
         <motion.div

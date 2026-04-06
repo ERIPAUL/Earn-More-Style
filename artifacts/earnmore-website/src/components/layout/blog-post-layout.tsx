@@ -40,7 +40,7 @@ export default function BlogPostLayout({
 
         {/* Hero Banner */}
         <div
-          className="relative py-20 md:py-28 overflow-hidden"
+          className="relative py-12 md:py-28 overflow-hidden"
           style={{ background: "linear-gradient(135deg, #0a2e28 0%, #0d3d2e 100%)" }}
         >
           <div

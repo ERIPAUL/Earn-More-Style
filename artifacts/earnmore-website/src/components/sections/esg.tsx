@@ -3,7 +3,7 @@ import { ExternalLink, Leaf } from "lucide-react";
 
 export default function EsgSection() {
   return (
-    <section id="esg" className="py-24 md:py-32 bg-white">
+    <section id="esg" className="py-12 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Section header */}
         <motion.div

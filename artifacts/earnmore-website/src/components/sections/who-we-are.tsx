@@ -22,7 +22,7 @@ const values = [
 
 export default function WhoWeAreSection() {
   return (
-    <section id="who-we-are" className="py-24 md:py-32 bg-white">
+    <section id="who-we-are" className="py-12 md:py-32 bg-white">
       {/* Vision & Mission */}
       <div className="max-w-7xl mx-auto px-6 lg:px-10 mb-0">
         <motion.div

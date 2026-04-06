@@ -152,7 +152,7 @@ export default function Home() {
         <HeroSection />
 
         {/* ── CEO Welcome Note ── */}
-        <section className="py-20 md:py-28" style={{ backgroundColor: "#0a2e28" }}>
+        <section className="py-12 md:py-28" style={{ backgroundColor: "#0a2e28" }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
 
@@ -261,7 +261,7 @@ export default function Home() {
         </section>
 
         {/* ── About Teaser ── */}
-        <section className="py-20 md:py-28 bg-white">
+        <section className="py-12 md:py-28 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Left: Image */}
@@ -331,7 +331,7 @@ export default function Home() {
         </section>
 
         {/* ── Services Teaser ── */}
-        <section className="py-20 md:py-28" style={{ backgroundColor: "#f0fdf8" }}>
+        <section className="py-12 md:py-28" style={{ backgroundColor: "#f0fdf8" }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <motion.div
               className="text-center max-w-2xl mx-auto mb-12"
@@ -399,7 +399,7 @@ export default function Home() {
         </section>
 
         {/* ── Topics & Insights ── */}
-        <section className="py-20 md:py-28 bg-white">
+        <section className="py-12 md:py-28 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
               <motion.div
@@ -517,7 +517,7 @@ export default function Home() {
         {/* ── Contact CTA Strip + Office Address ── */}
         <section className="relative overflow-hidden">
           {/* CTA half */}
-          <div className="relative py-24">
+          <div className="relative py-14 md:py-24">
             <img
               src="/images/green-terraces.jpg"
               alt="Green terraced fields"
