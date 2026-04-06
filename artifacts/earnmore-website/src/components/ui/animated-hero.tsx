@@ -98,9 +98,9 @@ function AnimatedHero() {
         }}
       />
 
-      {/* Decorative circles */}
-      <div className="absolute right-[-100px] top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-5 border border-emerald-300 z-10 pointer-events-none" />
-      <div className="absolute right-16 top-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full opacity-10 border border-emerald-400 z-10 pointer-events-none" />
+      {/* Decorative circles — desktop only to avoid mobile overflow */}
+      <div className="hidden md:block absolute right-[-100px] top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-5 border border-emerald-300 z-10 pointer-events-none" />
+      <div className="hidden md:block absolute right-16 top-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full opacity-10 border border-emerald-400 z-10 pointer-events-none" />
 
       {/* Text content */}
       <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-10 py-12 md:py-20">
