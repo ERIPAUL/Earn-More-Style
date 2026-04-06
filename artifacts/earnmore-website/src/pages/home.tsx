@@ -1,6 +1,10 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, CheckCircle2, Building2, Cloud, BarChart3, FileCheck, GraduationCap } from "lucide-react";
+import {
+  ArrowRight, CheckCircle2, Building2, Cloud, BarChart3,
+  FileCheck, GraduationCap, Quote, MapPin, Mail, Phone, ChevronLeft, ChevronRight,
+} from "lucide-react";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import HeroSection from "@/components/sections/hero";
@@ -39,7 +43,41 @@ const previewServices = [
   },
 ];
 
+const insights = [
+  {
+    category: "Standards & Reporting",
+    title: "Understanding IFRS S1 & S2: What Every Nigerian Business Needs to Know",
+    excerpt: "The ISSB's landmark standards are reshaping how companies disclose sustainability and climate-related information globally. Here is what it means for Africa.",
+    date: "March 2024",
+    image: "/images/blog-training.jpg",
+    href: "/blog/ifrs-s1-s2-part-1",
+  },
+  {
+    category: "Climate Finance",
+    title: "Africa Climate Summit: Driving Climate Finance and Green Growth",
+    excerpt: "Leaders gathered to chart a bold new course for climate finance in Africa, outlining actionable commitments and new funding mechanisms for the continent.",
+    date: "September 2023",
+    image: "/images/ocean-environment.jpg",
+    href: "/blog/africa-climate-summit",
+  },
+  {
+    category: "Conservation",
+    title: "Amazon Summit: Lessons for Protecting Africa's Rainforests",
+    excerpt: "The Amazon Summit offered a blueprint for how African nations can mobilise international coalitions to protect critical forest ecosystems from deforestation.",
+    date: "August 2023",
+    image: "/images/solar-panels.jpg",
+    href: "/blog/amazon-summit",
+  },
+];
+
 export default function Home() {
+  const [insightIdx, setInsightIdx] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setInsightIdx((i) => (i + 1) % insights.length), 6000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans overflow-hidden">
       <Seo
@@ -102,7 +140,108 @@ export default function Home() {
       />
       <Navbar />
       <main className="flex-grow">
+        {/* ── Hero Carousel ── */}
         <HeroSection />
+
+        {/* ── CEO Welcome Note ── */}
+        <section className="py-20 md:py-28" style={{ backgroundColor: "#0a2e28" }}>
+          <div className="max-w-7xl mx-auto px-6 lg:px-10">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+              {/* CEO Image */}
+              <motion.div
+                className="flex justify-center lg:justify-start"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <div className="relative">
+                  {/* Decorative ring */}
+                  <div
+                    className="absolute -inset-4 rounded-full opacity-20"
+                    style={{ background: "radial-gradient(circle, #34d399 0%, transparent 70%)" }}
+                  />
+                  <div
+                    className="relative rounded-2xl overflow-hidden shadow-2xl"
+                    style={{ width: "340px", height: "420px", background: "linear-gradient(160deg, #0d3d2e 0%, #0a2e28 100%)" }}
+                  >
+                    <img
+                      src="/ceo.png"
+                      alt="Founder & CEO, EarnMore Consultants"
+                      className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[110%] object-contain object-bottom drop-shadow-2xl"
+                      style={{ maxWidth: "none" }}
+                    />
+                    {/* Subtle gradient at bottom */}
+                    <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0a2e28] to-transparent" />
+                    {/* Name badge */}
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div
+                        className="rounded-lg px-4 py-2.5 flex items-center gap-3"
+                        style={{ background: "rgba(13,61,46,0.85)", backdropFilter: "blur(8px)", border: "1px solid rgba(52,211,153,0.2)" }}
+                      >
+                        <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                          <span className="text-white text-xs font-bold">EC</span>
+                        </div>
+                        <div>
+                          <p className="text-white text-sm font-semibold leading-none mb-0.5">EarnMore Consultants</p>
+                          <p className="text-emerald-400 text-xs">Founder & Chief Executive Officer</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Welcome text */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.15 }}
+                className="flex flex-col gap-6"
+              >
+                <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase flex items-center gap-2">
+                  <span className="w-6 h-px bg-emerald-400" />
+                  A Message from Our Founder
+                </p>
+
+                <Quote className="w-10 h-10 text-emerald-500/40" />
+
+                <blockquote className="text-2xl md:text-3xl font-light text-white/90 leading-relaxed italic">
+                  "Sustainability is no longer optional — it is the foundation of every resilient, prosperous organisation in the 21st century."
+                </blockquote>
+
+                <div className="space-y-4 text-white/65 leading-relaxed text-base">
+                  <p>
+                    Welcome to EarnMore Consultants. We exist to make sustainability actionable — translating complex global frameworks into practical strategies that create real, measurable value for African businesses, governments, and institutions.
+                  </p>
+                  <p>
+                    Since our founding, we have partnered with organisations across Nigeria and beyond to navigate ESG disclosures, mobilise climate finance, and build the internal capacity needed to thrive in a world demanding greater accountability and impact.
+                  </p>
+                  <p>
+                    Whatever your sustainability challenge, our team of dedicated experts is here to guide every step of your journey — with the rigour, empathy, and local insight that only a truly African consultancy can offer.
+                  </p>
+                </div>
+
+                <div className="pt-2 border-t border-emerald-800/50">
+                  <p className="text-white font-semibold">Founder & CEO</p>
+                  <p className="text-emerald-400 text-sm">EarnMore Consultants</p>
+                </div>
+
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-md transition-all group w-fit"
+                >
+                  Our Story
+                  <span className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </Link>
+              </motion.div>
+            </div>
+          </div>
+        </section>
 
         {/* ── About Teaser ── */}
         <section className="py-20 md:py-28 bg-white">
@@ -205,7 +344,6 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.07 }}
                 >
-                  {/* Card thumbnail */}
                   <div className="relative overflow-hidden" style={{ height: "140px" }}>
                     <img
                       src={service.image}
@@ -214,8 +352,6 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                   </div>
-
-                  {/* Card body */}
                   <div className="p-7 flex flex-col flex-grow">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-300 flex-shrink-0 -mt-10 relative z-10 border-4 border-white shadow-sm">
                       {service.icon}
@@ -245,50 +381,224 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── Contact CTA Strip ── */}
-        <section className="relative py-24 overflow-hidden">
-          <img
-            src="/images/green-terraces.jpg"
-            alt="Green terraced fields"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          />
-          <div
-            className="absolute inset-0"
-            style={{ background: "linear-gradient(135deg, rgba(10,46,40,0.88) 0%, rgba(13,61,46,0.80) 100%)" }}
-          />
-          <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
-            <motion.div
-              className="flex flex-col md:flex-row items-center justify-between gap-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <div className="max-w-xl">
-                <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-3 flex items-center gap-2">
-                  <span className="w-6 h-px bg-emerald-400" />
-                  Get In Touch
+        {/* ── Topics & Insights ── */}
+        <section className="py-20 md:py-28 bg-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-10">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <p className="text-primary text-xs font-bold tracking-widest uppercase mb-3 flex items-center gap-2">
+                  <span className="w-6 h-px bg-primary" />
+                  Topics &amp; Insights
                 </p>
-                <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
-                  Ready to Build a More{" "}
-                  <span className="italic font-serif font-normal text-emerald-300">Sustainable Future?</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
+                  Thinking at the{" "}
+                  <span className="italic font-serif font-normal text-primary">Frontier of Sustainability</span>
                 </h2>
-                <p className="text-green-200/60 leading-relaxed">
-                  Contact us today for full-cycle support — from feasibility analysis to impact reporting and capacity building.
-                </p>
-              </div>
-              <div className="flex-shrink-0">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-4 rounded-md transition-all group text-base"
-                >
-                  Contact Us
-                  <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
+              </motion.div>
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline flex-shrink-0"
+              >
+                View All Articles <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Featured insight + side list */}
+            <div className="grid lg:grid-cols-5 gap-6">
+              {/* Featured (left, spans 3 cols) */}
+              <motion.div
+                className="lg:col-span-3"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <Link href={insights[insightIdx].href} className="group block rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all h-full">
+                  <div className="relative overflow-hidden" style={{ height: "280px" }}>
+                    <img
+                      src={insights[insightIdx].image}
+                      alt={insights[insightIdx].title}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                    <span className="absolute top-4 left-4 bg-primary/90 text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-md">
+                      {insights[insightIdx].category}
+                    </span>
+                  </div>
+                  <div className="p-6 bg-white border border-t-0 border-gray-100 rounded-b-2xl">
+                    <p className="text-xs text-foreground/40 mb-2">{insights[insightIdx].date}</p>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors leading-snug mb-3">
+                      {insights[insightIdx].title}
+                    </h3>
+                    <p className="text-foreground/55 text-sm leading-relaxed">
+                      {insights[insightIdx].excerpt}
+                    </p>
+                  </div>
                 </Link>
-              </div>
-            </motion.div>
+              </motion.div>
+
+              {/* Side list (right, spans 2 cols) */}
+              <motion.div
+                className="lg:col-span-2 flex flex-col gap-4"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+              >
+                {insights.map((post, i) => (
+                  <Link
+                    key={i}
+                    href={post.href}
+                    className={`group flex gap-4 p-4 rounded-xl border transition-all cursor-pointer ${i === insightIdx ? "border-primary/30 bg-primary/5 shadow-sm" : "border-gray-100 hover:border-primary/20 hover:bg-gray-50"}`}
+                    onClick={() => setInsightIdx(i)}
+                  >
+                    <div className="relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                      <img src={post.image} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
+                    </div>
+                    <div className="flex flex-col gap-1 min-w-0">
+                      <span className="text-primary text-xs font-bold uppercase tracking-wider">{post.category}</span>
+                      <h4 className={`text-sm font-semibold leading-snug line-clamp-2 transition-colors ${i === insightIdx ? "text-primary" : "text-foreground group-hover:text-primary"}`}>
+                        {post.title}
+                      </h4>
+                      <p className="text-xs text-foreground/40">{post.date}</p>
+                    </div>
+                  </Link>
+                ))}
+
+                {/* Navigation dots */}
+                <div className="flex items-center gap-2 pt-2">
+                  {insights.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setInsightIdx(i)}
+                      className="rounded-full transition-all duration-300"
+                      style={{
+                        width: i === insightIdx ? "24px" : "8px",
+                        height: "8px",
+                        background: i === insightIdx ? "#059669" : "#d1fae5",
+                      }}
+                    />
+                  ))}
+                  <div className="flex-1" />
+                  <button onClick={() => setInsightIdx((i) => (i - 1 + insights.length) % insights.length)} className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-foreground/50 hover:text-primary hover:border-primary/40 transition-all">
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button onClick={() => setInsightIdx((i) => (i + 1) % insights.length)} className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-foreground/50 hover:text-primary hover:border-primary/40 transition-all">
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Contact CTA Strip + Office Address ── */}
+        <section className="relative overflow-hidden">
+          {/* CTA half */}
+          <div className="relative py-24">
+            <img
+              src="/images/green-terraces.jpg"
+              alt="Green terraced fields"
+              className="absolute inset-0 w-full h-full object-cover object-center"
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(135deg, rgba(10,46,40,0.88) 0%, rgba(13,61,46,0.80) 100%)" }}
+            />
+            <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+              <motion.div
+                className="flex flex-col md:flex-row items-center justify-between gap-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <div className="max-w-xl">
+                  <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-3 flex items-center gap-2">
+                    <span className="w-6 h-px bg-emerald-400" />
+                    Get In Touch
+                  </p>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
+                    Ready to Build a More{" "}
+                    <span className="italic font-serif font-normal text-emerald-300">Sustainable Future?</span>
+                  </h2>
+                  <p className="text-green-200/60 leading-relaxed">
+                    Contact us today for full-cycle support — from feasibility analysis to impact reporting and capacity building.
+                  </p>
+                </div>
+                <div className="flex-shrink-0">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-4 rounded-md transition-all group text-base"
+                  >
+                    Contact Us
+                    <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Office address bar */}
+          <div style={{ background: "#061a16" }}>
+            <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10">
+              <motion.div
+                className="grid sm:grid-cols-3 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-emerald-900/60"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="flex items-start gap-4 pt-6 sm:pt-0 sm:pr-8">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-5 h-5 text-emerald-400" />
+                  </div>
+                  <div>
+                    <p className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1">Our Office</p>
+                    <p className="text-white/80 text-sm leading-relaxed">Lagos, Nigeria</p>
+                    <p className="text-white/40 text-xs mt-0.5">Serving clients across Nigeria &amp; Africa</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 pt-6 sm:pt-0 sm:px-8">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5 text-emerald-400" />
+                  </div>
+                  <div>
+                    <p className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1">Email Us</p>
+                    <a href="mailto:info@earnmoregroup.com" className="text-white/80 text-sm hover:text-emerald-400 transition-colors">
+                      info@earnmoregroup.com
+                    </a>
+                    <p className="text-white/40 text-xs mt-0.5">We respond within 24 hours</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 pt-6 sm:pt-0 sm:pl-8">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 text-emerald-400" />
+                  </div>
+                  <div>
+                    <p className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1">Book a Session</p>
+                    <a
+                      href="https://calendly.com/esg-earnmoreapp/30min"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/80 text-sm hover:text-emerald-400 transition-colors"
+                    >
+                      Schedule via Calendly
+                    </a>
+                    <p className="text-white/40 text-xs mt-0.5">Free 30-minute consultation</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
       </main>
