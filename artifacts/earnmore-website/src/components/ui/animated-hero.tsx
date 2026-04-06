@@ -1,22 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, CalendarDays } from "lucide-react";
 import { Link } from "wouter";
 
 function AnimatedHero() {
-  const [titleNumber, setTitleNumber] = useState(0);
-  const titles = useMemo(
-    () => ["Sustainable", "Resilient", "Impactful", "Credible", "Transformative"],
-    []
-  );
-
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setTitleNumber((prev) => (prev === titles.length - 1 ? 0 : prev + 1));
-    }, 2200);
-    return () => clearTimeout(timeoutId);
-  }, [titleNumber, titles]);
-
   return (
     <section
       id="home"
@@ -47,38 +33,20 @@ function AnimatedHero() {
             transition={{ duration: 0.5 }}
           >
             <span className="w-8 h-px bg-emerald-400 inline-block" />
-            Welcome to EarnMore Consultants
+            Welcome to Earnmore Consultants
           </motion.p>
 
-          {/* Animated H1 */}
+          {/* H1 */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1]">
-              Building{" "}
-              {/* Animated cycling word */}
-              <span className="relative inline-flex h-[1.1em] overflow-hidden align-bottom min-w-[340px] md:min-w-[420px]">
-                {titles.map((title, index) => (
-                  <motion.span
-                    key={index}
-                    className="absolute italic font-serif font-normal"
-                    style={{ color: "#34d399" }}
-                    initial={{ opacity: 0, y: 60 }}
-                    transition={{ type: "spring", stiffness: 60, damping: 15 }}
-                    animate={
-                      titleNumber === index
-                        ? { y: 0, opacity: 1 }
-                        : { y: titleNumber > index ? -60 : 60, opacity: 0 }
-                    }
-                  >
-                    {title}
-                  </motion.span>
-                ))}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05]">
+              Driving Change,{" "}
+              <span className="italic font-serif font-normal" style={{ color: "#34d399" }}>
+                Delivering Solutions
               </span>
-              <br />
-              Futures in Africa
             </h1>
           </motion.div>
 
@@ -89,7 +57,7 @@ function AnimatedHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            At EarnMore Consultants, we leverage our expertise to steer change and deliver tangible sustainability solutions — propelling organisations across Nigeria and Africa toward a greener, more prosperous future.
+            At EarnMore, we leverage our extensive expertise to steer change and offer tangible, impactful sustainability solutions to propel your organization toward a greener, more prosperous future.
           </motion.p>
 
           {/* CTAs */}
