@@ -30,7 +30,7 @@ const slides = [
     eyebrow: "ESG Frameworks & Reporting",
     headline: "ESG Structures That",
     accent: "Create Real Value",
-    sub: "From materiality assessments to IFRS S1 & S2 reporting — we build governance frameworks that satisfy investors and regulators alike.",
+    sub: "From materiality assessments to IFRS S1 & S2 reporting, we build governance frameworks that satisfy investors and regulators alike.",
   },
 ];
 
@@ -67,7 +67,7 @@ function AnimatedHero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20">
-      {/* Background images — crossfade */}
+      {/* Background images, crossfade */}
       <AnimatePresence initial={false}>
         <motion.div
           key={current}
@@ -98,7 +98,7 @@ function AnimatedHero() {
         }}
       />
 
-      {/* Decorative circles — desktop only to avoid mobile overflow */}
+      {/* Decorative circles, desktop only to avoid mobile overflow */}
       <div className="hidden md:block absolute right-[-100px] top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-5 border border-emerald-300 z-10 pointer-events-none" />
       <div className="hidden md:block absolute right-16 top-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full opacity-10 border border-emerald-400 z-10 pointer-events-none" />
 
@@ -166,7 +166,7 @@ function AnimatedHero() {
         </div>
       </div>
 
-      {/* Slide controls — bottom centre */}
+      {/* Slide controls, bottom centre */}
       <div className="absolute bottom-10 left-0 right-0 z-20 flex items-center justify-center gap-5">
         {/* Prev */}
         <button

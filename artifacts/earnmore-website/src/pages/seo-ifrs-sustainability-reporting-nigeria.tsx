@@ -8,7 +8,7 @@ export default function IfrsSustainabilityReportingNigeria() {
   return (
     <>
       <Seo
-        title="IFRS S1 S2 Sustainability Reporting Nigeria — EarnMore Consultants"
+        title="IFRS S1 S2 Sustainability Reporting Nigeria, EarnMore Consultants"
         description="Expert IFRS S1 and S2 sustainability reporting advisory in Nigeria. EarnMore Consultants helps Nigerian companies prepare for mandatory climate and sustainability disclosure under the new IFRS Standards."
         keywords="IFRS S1 Nigeria, IFRS S2 Nigeria, sustainability reporting Nigeria, climate disclosure Nigeria, TCFD Nigeria, sustainability disclosure standards Nigeria"
         canonical="/services/ifrs-sustainability-reporting-nigeria"
@@ -38,10 +38,10 @@ export default function IfrsSustainabilityReportingNigeria() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-4">IFRS S1 & S2 · Sustainability Reporting · Nigeria</p>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-            IFRS S1 & S2 Sustainability Reporting in Nigeria — Be Ready for the New Standard
+            IFRS S1 & S2 Sustainability Reporting in Nigeria, Be Ready for the New Standard
           </h1>
           <p className="text-green-200/70 text-lg leading-relaxed max-w-3xl mx-auto mb-10">
-            The International Financial Reporting Standards (IFRS) S1 and S2 represent the biggest change to corporate reporting in a generation. EarnMore Consultants helps Nigerian companies understand, prepare for, and implement these new sustainability disclosure requirements — before they become mandatory.
+            The International Financial Reporting Standards (IFRS) S1 and S2 represent the biggest change to corporate reporting in a generation. EarnMore Consultants helps Nigerian companies understand, prepare for, and implement these new sustainability disclosure requirements, before they become mandatory.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-3.5 rounded-md transition-colors">
@@ -62,33 +62,33 @@ export default function IfrsSustainabilityReportingNigeria() {
             The International Sustainability Standards Board (ISSB), established by the IFRS Foundation, published IFRS S1 (General Requirements for Disclosure of Sustainability-related Financial Information) and IFRS S2 (Climate-related Disclosures) in June 2023. These standards represent a major step towards a global baseline for sustainability reporting.
           </p>
           <p className="text-gray-600 leading-relaxed mb-6">
-            <strong>IFRS S1</strong> requires companies to disclose material sustainability-related risks and opportunities across governance, strategy, risk management, and metrics and targets — using the TCFD (Task Force on Climate-related Financial Disclosures) framework as its foundation. <strong>IFRS S2</strong> goes further, requiring specific, quantitative disclosure of climate-related risks and opportunities, including Scope 1, 2, and 3 greenhouse gas emissions.
+            <strong>IFRS S1</strong> requires companies to disclose material sustainability-related risks and opportunities across governance, strategy, risk management, and metrics and targets, using the TCFD (Task Force on Climate-related Financial Disclosures) framework as its foundation. <strong>IFRS S2</strong> goes further, requiring specific, quantitative disclosure of climate-related risks and opportunities, including Scope 1, 2, and 3 greenhouse gas emissions.
           </p>
           <p className="text-gray-600 leading-relaxed mb-6">
-            For Nigerian companies, the relevance of IFRS S1 and S2 is accelerating. Several major jurisdictions — including the EU, UK, Australia, and Singapore — have already adopted or are adopting these standards for listed companies. As Nigerian businesses deepen their integration with global capital markets and supply chains, IFRS-aligned sustainability disclosure will increasingly be required by international investors, lenders, and trading partners.
+            For Nigerian companies, the relevance of IFRS S1 and S2 is accelerating. Several major jurisdictions, including the EU, UK, Australia, and Singapore, have already adopted or are adopting these standards for listed companies. As Nigerian businesses deepen their integration with global capital markets and supply chains, IFRS-aligned sustainability disclosure will increasingly be required by international investors, lenders, and trading partners.
           </p>
 
           <h2 className="text-3xl font-bold text-[#0a2e28] mt-12 mb-6">Our IFRS S1 & S2 Advisory Services in Nigeria</h2>
           {[
             {
               title: "IFRS S1 & S2 Readiness Assessment",
-              body: "We assess your current sustainability reporting practices against IFRS S1 and S2 requirements, identifying the gaps that need to be addressed before you can comply. Our readiness assessments give you a clear, prioritised action plan — and a realistic timeline for achieving compliance."
+              body: "We assess your current sustainability reporting practices against IFRS S1 and S2 requirements, identifying the gaps that need to be addressed before you can comply. Our readiness assessments give you a clear, prioritised action plan, and a realistic timeline for achieving compliance."
             },
             {
               title: "Climate Risk & Opportunity Analysis (IFRS S2)",
-              body: "IFRS S2 requires companies to assess and disclose the financial impacts of climate-related risks and opportunities across short, medium, and long-term horizons. We facilitate climate scenario analysis, assess physical and transition climate risks relevant to Nigerian operations, and quantify the potential financial impact of these risks — meeting the rigorous requirements of IFRS S2."
+              body: "IFRS S2 requires companies to assess and disclose the financial impacts of climate-related risks and opportunities across short, medium, and long-term horizons. We facilitate climate scenario analysis, assess physical and transition climate risks relevant to Nigerian operations, and quantify the potential financial impact of these risks, meeting the rigorous requirements of IFRS S2."
             },
             {
               title: "GHG Emissions Inventory (Scope 1, 2 & 3)",
-              body: "IFRS S2 requires disclosure of Scope 1, 2, and 3 greenhouse gas emissions. We help Nigerian companies measure their full emissions footprint using the GHG Protocol, identify the most material sources of emissions, and develop a credible pathway to net zero — whether that involves renewable energy procurement, supply chain engagement, or carbon offsetting."
+              body: "IFRS S2 requires disclosure of Scope 1, 2, and 3 greenhouse gas emissions. We help Nigerian companies measure their full emissions footprint using the GHG Protocol, identify the most material sources of emissions, and develop a credible pathway to net zero, whether that involves renewable energy procurement, supply chain engagement, or carbon offsetting."
             },
             {
               title: "Sustainability Governance Framework",
-              body: "Both IFRS S1 and S2 require detailed disclosure of board and management oversight of sustainability risks and opportunities. We help Nigerian companies establish the governance structures — including board ESG committees, management sustainability functions, and ESG KPI frameworks — that IFRS-aligned disclosure requires."
+              body: "Both IFRS S1 and S2 require detailed disclosure of board and management oversight of sustainability risks and opportunities. We help Nigerian companies establish the governance structures, including board ESG committees, management sustainability functions, and ESG KPI frameworks, that IFRS-aligned disclosure requires."
             },
             {
               title: "IFRS S1 & S2 Report Preparation",
-              body: "We prepare IFRS S1 and S2 compliant sustainability disclosures — either as standalone sustainability reports or integrated into annual financial reports. Our reports are technically rigorous, clearly written, and designed to satisfy the expectations of sophisticated international investors."
+              body: "We prepare IFRS S1 and S2 compliant sustainability disclosures, either as standalone sustainability reports or integrated into annual financial reports. Our reports are technically rigorous, clearly written, and designed to satisfy the expectations of sophisticated international investors."
             },
             {
               title: "Staff Training on IFRS S1 & S2",
@@ -114,7 +114,7 @@ export default function IfrsSustainabilityReportingNigeria() {
               "The ability to identify and act on climate risks before they become financially material",
               "A competitive advantage in attracting international investors who are already screening for IFRS S1/S2 alignment",
               "Stronger relationships with DFIs and multilateral lenders, many of whom require TCFD/IFRS S2-aligned disclosure",
-              "The credibility that comes from voluntary early adoption — signalling sustainability leadership in Nigeria's market"
+              "The credibility that comes from voluntary early adoption, signalling sustainability leadership in Nigeria's market"
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-gray-600">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-1 flex-shrink-0" />

@@ -10,8 +10,8 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans overflow-hidden">
       <Seo
-        title="About EarnMore Consultants — Sustainability Advisory Firm Nigeria"
-        description="Learn about EarnMore Consultants — a leading sustainability and ESG advisory firm in Nigeria. Our mission is to catalyse positive change through responsible finance and sustainable development across Africa."
+        title="About EarnMore Consultants, Sustainability Advisory Firm Nigeria"
+        description="Learn about EarnMore Consultants, a leading sustainability and ESG advisory firm in Nigeria. Our mission is to catalyse positive change through responsible finance and sustainable development across Africa."
         keywords="about EarnMore Consultants, sustainability firm Nigeria, ESG advisory Nigeria, sustainability consultancy Africa"
         canonical="/about"
       />
@@ -22,7 +22,7 @@ export default function AboutPage() {
         <div className="relative h-72 md:h-96 flex items-center justify-center text-center overflow-hidden">
           <img
             src="/images/wind-farm.jpg"
-            alt="Wind farm — clean energy"
+            alt="Wind farm, clean energy"
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
           <div

@@ -14,7 +14,7 @@ const previewServices = [
   {
     icon: <Building2 className="w-5 h-5" />,
     title: "Sustainable Infrastructure Finance",
-    description: "Securing financing for infrastructure projects that prioritize sustainability — identifying funding sources and facilitating impactful investment.",
+    description: "Securing financing for infrastructure projects that prioritize sustainability, identifying funding sources and facilitating impactful investment.",
     image: "/images/solar-panels.jpg",
   },
   {
@@ -26,7 +26,7 @@ const previewServices = [
   {
     icon: <BarChart3 className="w-5 h-5" />,
     title: "ESG Structures",
-    description: "Helping organisations set up and oversee ESG frameworks — from materiality assessments to governance strategies.",
+    description: "Helping organisations set up and oversee ESG frameworks, from materiality assessments to governance strategies.",
     image: "/images/esg-building.jpg",
   },
   {
@@ -46,8 +46,8 @@ const previewServices = [
 const insights = [
   {
     category: "(ESG) Structures",
-    title: "Understanding the ISSB's Sustainability Disclosure Standards: IFRS S1 and IFRS S2 — Part 2",
-    excerpt: "In the first part of this series, we looked at the governance and strategy elements of IFRS S1 and S2. In this second part we consider risk management plus metrics and targets — and what each reporting requirement means in practice.",
+    title: "Understanding the ISSB's Sustainability Disclosure Standards: IFRS S1 and IFRS S2, Part 2",
+    excerpt: "In the first part of this series, we looked at the governance and strategy elements of IFRS S1 and S2. In this second part we consider risk management plus metrics and targets, and what each reporting requirement means in practice.",
     date: "December 11, 2023",
     image: "https://d1yei2z3i6k35z.cloudfront.net/5190898/6576cd5073e40_valley-with-huge-wind-mills-solar-batteries-factories-renewable-sources-energy-care-environment-green-generate-electricity-eco-power-plant-ecology-concept-3d-rendering-illustration_76964-833.jpg",
     href: "/blog/ifrs-s1-s2-part-2",
@@ -71,7 +71,7 @@ const insights = [
   {
     category: "Sustainable Infrastructure Finance",
     title: "Amazon Summit: Inspiration for Protecting Tropical Rainforests",
-    excerpt: "Eight Amazon countries recently concluded the Amazon Summit in Belém, Brazil — focused on environmental and climate challenges facing the Amazon. A key lesson emerges: the need for a similar concord to protect Equatorial Rainforests.",
+    excerpt: "Eight Amazon countries recently concluded the Amazon Summit in Belém, Brazil, focused on environmental and climate challenges facing the Amazon. A key lesson emerges: the need for a similar concord to protect Equatorial Rainforests.",
     date: "December 1, 2023",
     image: "https://d1yei2z3i6k35z.cloudfront.net/5190898/6569e10ef1132_tranquil-scene-mountain-range-reflected-pond-generated-by-ai.jpg",
     href: "/blog/amazon-summit",
@@ -89,7 +89,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans overflow-hidden">
       <Seo
-        title="EarnMore Consultants — Sustainability & ESG Advisory Nigeria"
+        title="EarnMore Consultants, Sustainability & ESG Advisory Nigeria"
         description="EarnMore Consultants is Nigeria's leading sustainability and ESG consulting firm. We deliver ESG frameworks, climate finance advisory, sustainability reporting, and green bonds solutions across Nigeria and Africa."
         keywords="sustainability consulting Nigeria, ESG consulting Nigeria, climate finance Nigeria, green bonds Nigeria, ESG advisory Nigeria, sustainability advisory Africa"
         canonical="/"
@@ -217,18 +217,18 @@ export default function Home() {
                 <Quote className="w-10 h-10 text-emerald-500/40" />
 
                 <blockquote className="text-2xl md:text-3xl font-light text-white/90 leading-relaxed italic">
-                  "Sustainability is no longer optional — it is the foundation of every resilient, prosperous organisation in the 21st century."
+                  "Sustainability is no longer optional, it is the foundation of every resilient, prosperous organisation in the 21st century."
                 </blockquote>
 
                 <div className="space-y-4 text-white/65 leading-relaxed text-base">
                   <p>
-                    Welcome to EarnMore Consultants. We exist to make sustainability actionable — translating complex global frameworks into practical strategies that create real, measurable value for businesses, governments, and institutions.
+                    Welcome to EarnMore Consultants. We exist to make sustainability actionable, translating complex global frameworks into practical strategies that create real, measurable value for businesses, governments, and institutions.
                   </p>
                   <p>
                     Since our founding, we have partnered with organisations around the world to navigate ESG disclosures, mobilise climate finance, and build the internal capacity needed to thrive in a world demanding greater accountability and impact.
                   </p>
                   <p>
-                    Whatever your sustainability challenge, our team of dedicated experts is here to guide every step of your journey — with the rigour, empathy, and local insight that sets us apart.
+                    Whatever your sustainability challenge, our team of dedicated experts is here to guide every step of your journey, with the rigour, empathy, and local insight that sets us apart.
                   </p>
                 </div>
 
@@ -275,7 +275,7 @@ export default function Home() {
               >
                 <img
                   src="/images/business-partnership.jpg"
-                  alt="Business handshake — strategic sustainability partnership"
+                  alt="Business handshake, strategic sustainability partnership"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
@@ -545,7 +545,7 @@ export default function Home() {
                     <span className="italic font-serif font-normal text-emerald-300">Sustainable Future?</span>
                   </h2>
                   <p className="text-green-200/60 leading-relaxed">
-                    Contact us today for full-cycle support — from feasibility analysis to impact reporting and capacity building.
+                    Contact us today for full-cycle support, from feasibility analysis to impact reporting and capacity building.
                   </p>
                 </div>
                 <div className="flex-shrink-0">

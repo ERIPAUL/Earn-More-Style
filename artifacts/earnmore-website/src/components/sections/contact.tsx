@@ -33,7 +33,7 @@ export default function ContactSection() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: `New enquiry from ${form.firstName} ${form.lastName} — EarnMore Consultants`,
+          subject: `New enquiry from ${form.firstName} ${form.lastName}, EarnMore Consultants`,
           from_name: `${form.firstName} ${form.lastName}`,
           email: form.email,
           organization: form.organization,
@@ -89,7 +89,7 @@ export default function ContactSection() {
             transition={{ duration: 0.8 }}
           >
             <p className="text-foreground/60 leading-relaxed">
-              Whether you're exploring sustainability strategies, seeking ESG guidance, or looking for a strategic partner — we're ready to start a meaningful conversation.
+              Whether you're exploring sustainability strategies, seeking ESG guidance, or looking for a strategic partner, we're ready to start a meaningful conversation.
             </p>
 
             {[

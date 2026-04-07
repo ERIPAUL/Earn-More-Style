@@ -8,7 +8,7 @@ export default function GreenBondsNigeria() {
   return (
     <>
       <Seo
-        title="Green Bonds Advisory Nigeria — EarnMore Consultants"
+        title="Green Bonds Advisory Nigeria, EarnMore Consultants"
         description="Leading green bonds advisory firm in Nigeria. EarnMore Consultants advises issuers on structuring, verifying, and marketing green bonds and sustainability-linked bonds in Nigeria's growing sustainable debt market."
         keywords="green bonds Nigeria, green bond advisory Nigeria, green bond issuance Nigeria, sustainability bonds Nigeria, sustainable debt Nigeria, green finance Nigeria"
         canonical="/services/green-bonds-advisory-nigeria"
@@ -38,10 +38,10 @@ export default function GreenBondsNigeria() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-4">Green Bonds · Sustainable Debt · Nigeria</p>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-            Green Bond Advisory in Nigeria — Structuring Sustainable Debt for a Greener Future
+            Green Bond Advisory in Nigeria, Structuring Sustainable Debt for a Greener Future
           </h1>
           <p className="text-green-200/70 text-lg leading-relaxed max-w-3xl mx-auto mb-10">
-            EarnMore Consultants is Nigeria's specialist green bond advisory firm. We guide sovereign, sub-sovereign, corporate, and financial institution issuers through every stage of the green bond journey — from framework development to issuance and ongoing impact reporting.
+            EarnMore Consultants is Nigeria's specialist green bond advisory firm. We guide sovereign, sub-sovereign, corporate, and financial institution issuers through every stage of the green bond journey, from framework development to issuance and ongoing impact reporting.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-3.5 rounded-md transition-colors">
@@ -62,29 +62,29 @@ export default function GreenBondsNigeria() {
             Nigeria was a pioneer in African sovereign green bond issuance, becoming the first African country to issue a sovereign green bond in 2017. Since then, Nigeria's green bond market has grown steadily, with the federal government issuing successive sovereign green bonds and a growing number of Nigerian corporates and financial institutions entering the sustainable debt market.
           </p>
           <p className="text-gray-600 leading-relaxed mb-6">
-            The Securities and Exchange Commission (SEC) Nigeria's Green Bond Rules, published in 2018, provide a regulatory framework for green bond issuance in Nigeria. The Nigerian Exchange (NGX) has developed a Sustainability Bonds Listing framework that includes green, social, and sustainability bonds — creating a visible market for Nigerian sustainable debt instruments.
+            The Securities and Exchange Commission (SEC) Nigeria's Green Bond Rules, published in 2018, provide a regulatory framework for green bond issuance in Nigeria. The Nigerian Exchange (NGX) has developed a Sustainability Bonds Listing framework that includes green, social, and sustainability bonds, creating a visible market for Nigerian sustainable debt instruments.
           </p>
           <p className="text-gray-600 leading-relaxed mb-6">
-            Global demand for green bonds and other ESG-labelled debt instruments continues to grow rapidly. International investors — including pension funds, insurance companies, and ESG-dedicated asset managers — are actively seeking exposure to Nigerian green bonds as part of their emerging market sustainable investment allocations. Nigerian issuers that can demonstrate credible green credentials have access to a larger and more diverse investor pool, with the potential for preferential pricing (the so-called "greenium").
+            Global demand for green bonds and other ESG-labelled debt instruments continues to grow rapidly. International investors, including pension funds, insurance companies, and ESG-dedicated asset managers, are actively seeking exposure to Nigerian green bonds as part of their emerging market sustainable investment allocations. Nigerian issuers that can demonstrate credible green credentials have access to a larger and more diverse investor pool, with the potential for preferential pricing (the so-called "greenium").
           </p>
 
           <h2 className="text-3xl font-bold text-[#0a2e28] mt-12 mb-6">Our Green Bond Advisory Services in Nigeria</h2>
           {[
             {
               title: "Green Bond Framework Development",
-              body: "A credible Green Bond Framework is the foundation of any successful green bond issuance. We develop frameworks aligned with the ICMA Green Bond Principles, the Climate Bonds Standard, and SEC Nigeria's Green Bond Rules — clearly defining eligible project categories, proceeds management, reporting requirements, and external review processes."
+              body: "A credible Green Bond Framework is the foundation of any successful green bond issuance. We develop frameworks aligned with the ICMA Green Bond Principles, the Climate Bonds Standard, and SEC Nigeria's Green Bond Rules, clearly defining eligible project categories, proceeds management, reporting requirements, and external review processes."
             },
             {
               title: "Use of Proceeds Advisory",
-              body: "Selecting and documenting eligible green projects is critical to the integrity of your green bond. We help issuers identify, evaluate, and document a robust pipeline of eligible projects — covering renewable energy, energy efficiency, clean transportation, sustainable water management, green buildings, and climate adaptation — ensuring proceeds are deployed in line with your framework and investor expectations."
+              body: "Selecting and documenting eligible green projects is critical to the integrity of your green bond. We help issuers identify, evaluate, and document a robust pipeline of eligible projects, covering renewable energy, energy efficiency, clean transportation, sustainable water management, green buildings, and climate adaptation, ensuring proceeds are deployed in line with your framework and investor expectations."
             },
             {
               title: "Second Party Opinion (SPO) & Verification",
-              body: "Most credible green bond issuances require an independent Second Party Opinion (SPO) or Climate Bonds Initiative certification. We work with leading SPO providers and CBi-approved verifiers to manage the external review process — coordinating the due diligence, documentation, and verification that investors require."
+              body: "Most credible green bond issuances require an independent Second Party Opinion (SPO) or Climate Bonds Initiative certification. We work with leading SPO providers and CBi-approved verifiers to manage the external review process, coordinating the due diligence, documentation, and verification that investors require."
             },
             {
               title: "Investor Relations & Green Bond Marketing",
-              body: "We advise on positioning your green bond to the right investor audience — including ESG-dedicated funds, development finance institutions, and mainstream institutional investors with sustainability mandates. Our investor relations support covers roadshow preparation, investor Q&A, and ongoing green bond communication."
+              body: "We advise on positioning your green bond to the right investor audience, including ESG-dedicated funds, development finance institutions, and mainstream institutional investors with sustainability mandates. Our investor relations support covers roadshow preparation, investor Q&A, and ongoing green bond communication."
             },
             {
               title: "Sustainability-Linked Bond (SLB) Advisory",
@@ -92,7 +92,7 @@ export default function GreenBondsNigeria() {
             },
             {
               title: "Annual Impact Reporting",
-              body: "Maintaining investor confidence requires robust annual impact reporting — quantifying the environmental and social outcomes achieved by green bond proceeds. We prepare ICMA-aligned allocation and impact reports, including verified greenhouse gas emissions avoided, renewable energy capacity installed, and other measurable project impacts."
+              body: "Maintaining investor confidence requires robust annual impact reporting, quantifying the environmental and social outcomes achieved by green bond proceeds. We prepare ICMA-aligned allocation and impact reports, including verified greenhouse gas emissions avoided, renewable energy capacity installed, and other measurable project impacts."
             }
           ].map((item, i) => (
             <div key={i} className="mb-8">
@@ -107,10 +107,10 @@ export default function GreenBondsNigeria() {
           <h2 className="text-3xl font-bold text-[#0a2e28] mt-12 mb-6">Types of Issuers We Support in Nigeria</h2>
           <ul className="space-y-3 mb-8">
             {[
-              "Federal and state government green bonds — Nigeria's sovereign and sub-sovereign green bond programme",
-              "Commercial banks and development finance institutions — sustainability bonds funding green lending portfolios",
+              "Federal and state government green bonds, Nigeria's sovereign and sub-sovereign green bond programme",
+              "Commercial banks and development finance institutions, sustainability bonds funding green lending portfolios",
               "Corporates in energy, infrastructure, real estate, and industry sectors",
-              "Microfinance institutions — social bonds for financial inclusion and clean energy access",
+              "Microfinance institutions, social bonds for financial inclusion and clean energy access",
               "Special purpose vehicles for renewable energy and infrastructure projects"
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-gray-600">

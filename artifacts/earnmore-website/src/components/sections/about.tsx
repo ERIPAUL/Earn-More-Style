@@ -17,7 +17,7 @@ export default function AboutSection() {
           >
             <img
               src="/images/blog-renewable.jpg"
-              alt="Solar panels in green meadow — sustainable energy"
+              alt="Solar panels in green meadow, sustainable energy"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
@@ -51,7 +51,7 @@ export default function AboutSection() {
               At EarnMore, our journey commenced with a clear and inspiring mission: to empower both individuals and businesses to realise their sustainability aspirations.
             </p>
             <p className="text-foreground/65 leading-relaxed mb-8">
-              We are dedicated to providing expert guidance and unwavering support — ensuring that our clients have the tools and knowledge to navigate the complex landscape of environmental, social, and governance challenges.
+              We are dedicated to providing expert guidance and unwavering support, ensuring that our clients have the tools and knowledge to navigate the complex landscape of environmental, social, and governance challenges.
             </p>
 
             <ul className="space-y-3 mb-10">

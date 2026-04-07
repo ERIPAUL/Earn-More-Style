@@ -35,10 +35,10 @@ export default function EsgSection() {
             transition={{ duration: 0.8 }}
           >
             <p className="text-foreground/65 leading-relaxed">
-              <strong className="text-foreground">EGG</strong> — EarnMore Growth Gateway — is our dedicated platform for impact-oriented investing and sustainable development. We have built frameworks that make responsible finance measurable, transparent, and genuinely impactful.
+              <strong className="text-foreground">EGG</strong>, EarnMore Growth Gateway, is our dedicated platform for impact-oriented investing and sustainable development. We have built frameworks that make responsible finance measurable, transparent, and genuinely impactful.
             </p>
             <p className="text-foreground/65 leading-relaxed mb-8">
-              Through EGG, we provide investors, institutions, and government partners with tools and strategies to align their portfolios and operations with their values — driving real change in communities and ecosystems around the world.
+              Through EGG, we provide investors, institutions, and government partners with tools and strategies to align their portfolios and operations with their values, driving real change in communities and ecosystems around the world.
             </p>
 
             {[

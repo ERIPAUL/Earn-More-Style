@@ -66,7 +66,7 @@ export default function TeamSection() {
             The minds behind the strategy.
           </h3>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Our leadership brings together decades of institutional, quantitative, and impact investing experience — united by a singular commitment to results.
+            Our leadership brings together decades of institutional, quantitative, and impact investing experience, united by a singular commitment to results.
           </p>
         </motion.div>
 

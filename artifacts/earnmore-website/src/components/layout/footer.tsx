@@ -74,7 +74,7 @@ export default function Footer() {
             <div className="bg-emerald-500/10 border border-emerald-400/20 rounded-lg p-4">
               <p className="text-emerald-300 text-xs font-bold uppercase tracking-wider mb-1">ESG Platform</p>
               <p className="text-green-200/60 text-xs mb-3 leading-relaxed">
-                Explore our ESG impact platform — EarnMore App.
+                Explore our ESG impact platform, EarnMore App.
               </p>
               <a
                 href="https://earnmoreapp.co"

@@ -43,7 +43,7 @@ export default function WhoWeAreSection() {
           </h2>
         </motion.div>
 
-        {/* Vision / Mission — now image + cards split layout */}
+        {/* Vision / Mission, now image + cards split layout */}
         <div className="grid lg:grid-cols-2 gap-10 items-stretch mb-16">
           {/* Left: photo */}
           <motion.div
@@ -56,7 +56,7 @@ export default function WhoWeAreSection() {
           >
             <img
               src="/images/green-building.jpg"
-              alt="Rooftop solar panels — green infrastructure"
+              alt="Rooftop solar panels, green infrastructure"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
@@ -108,7 +108,7 @@ export default function WhoWeAreSection() {
       <div className="relative h-56 md:h-72 my-0 overflow-hidden">
         <img
           src="/images/green-city-park.jpg"
-          alt="Green urban park — our commitment to a sustainable future"
+          alt="Green urban park, our commitment to a sustainable future"
           className="w-full h-full object-cover object-center"
         />
         <div

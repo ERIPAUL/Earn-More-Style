@@ -8,7 +8,7 @@ export default function EsgTrainingNigeria() {
   return (
     <>
       <Seo
-        title="ESG Training Nigeria — EarnMore Consultants"
+        title="ESG Training Nigeria, EarnMore Consultants"
         description="Professional ESG training and capacity building in Nigeria. EarnMore Consultants delivers board-level and staff ESG training programmes to help Nigerian organisations build the internal capacity to lead on sustainability."
         keywords="ESG training Nigeria, ESG capacity building Nigeria, sustainability training Nigeria, ESG workshop Nigeria, ESG certification Nigeria, corporate sustainability training Nigeria"
         canonical="/services/esg-training-nigeria"
@@ -38,10 +38,10 @@ export default function EsgTrainingNigeria() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-4">ESG Training & Capacity Building · Nigeria</p>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-            ESG Training in Nigeria — Building Sustainability Leaders from Within
+            ESG Training in Nigeria, Building Sustainability Leaders from Within
           </h1>
           <p className="text-green-200/70 text-lg leading-relaxed max-w-3xl mx-auto mb-10">
-            EarnMore Consultants delivers practical, expert-led ESG training programmes across Nigeria — from board-level awareness sessions to intensive capacity-building workshops for sustainability, finance, and risk teams. We equip your people with the knowledge and skills to drive genuine ESG performance.
+            EarnMore Consultants delivers practical, expert-led ESG training programmes across Nigeria, from board-level awareness sessions to intensive capacity-building workshops for sustainability, finance, and risk teams. We equip your people with the knowledge and skills to drive genuine ESG performance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-3.5 rounded-md transition-colors">
@@ -64,10 +64,10 @@ export default function EsgTrainingNigeria() {
 
           <h2 className="text-3xl font-bold text-[#0a2e28] mb-6">Why ESG Training Is Essential for Nigerian Organisations</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
-            The most sophisticated ESG strategy is only as effective as the people responsible for implementing it. Yet across Nigerian organisations — in financial services, manufacturing, energy, real estate, and the public sector — there is a significant gap between ESG ambition and ESG capability. Boards lack the confidence to oversee ESG risks and opportunities effectively. Finance teams struggle to understand sustainability reporting requirements. Operations managers are uncertain how to integrate environmental and social standards into their day-to-day work.
+            The most sophisticated ESG strategy is only as effective as the people responsible for implementing it. Yet across Nigerian organisations, in financial services, manufacturing, energy, real estate, and the public sector, there is a significant gap between ESG ambition and ESG capability. Boards lack the confidence to oversee ESG risks and opportunities effectively. Finance teams struggle to understand sustainability reporting requirements. Operations managers are uncertain how to integrate environmental and social standards into their day-to-day work.
           </p>
           <p className="text-gray-600 leading-relaxed mb-6">
-            EarnMore Consultants bridges this gap through targeted, practical ESG training that builds genuine competence — not just awareness. Our training programmes are designed for the Nigerian context, incorporating local regulatory requirements, sectoral examples from Nigerian industries, and the specific ESG challenges and opportunities that Nigerian organisations face.
+            EarnMore Consultants bridges this gap through targeted, practical ESG training that builds genuine competence, not just awareness. Our training programmes are designed for the Nigerian context, incorporating local regulatory requirements, sectoral examples from Nigerian industries, and the specific ESG challenges and opportunities that Nigerian organisations face.
           </p>
           <p className="text-gray-600 leading-relaxed mb-6">
             We deliver training in Lagos, Abuja, Port Harcourt, and other major Nigerian cities, as well as virtually for national and multinational organisations with teams across multiple locations.
@@ -93,11 +93,11 @@ export default function EsgTrainingNigeria() {
             },
             {
               title: "Sustainability Reporting Masterclass",
-              body: "An intensive, hands-on training programme for sustainability reporting practitioners — covering GRI Standards, IFRS S1/S2, stakeholder engagement best practice, materiality assessment, and the production of credible, investor-grade sustainability reports. Participants work through real-world Nigerian case studies and leave with practical templates and tools they can apply immediately."
+              body: "An intensive, hands-on training programme for sustainability reporting practitioners, covering GRI Standards, IFRS S1/S2, stakeholder engagement best practice, materiality assessment, and the production of credible, investor-grade sustainability reports. Participants work through real-world Nigerian case studies and leave with practical templates and tools they can apply immediately."
             },
             {
               title: "ESG for Financial Institutions",
-              body: "A specialist programme for banks, insurance companies, pension funds, and asset managers, covering the integration of ESG into lending decisions and investment processes, the Central Bank of Nigeria's Sustainable Banking Principles, ESG due diligence for project finance, green bond assessment, and responsible investment frameworks — including the UN Principles for Responsible Investment (PRI)."
+              body: "A specialist programme for banks, insurance companies, pension funds, and asset managers, covering the integration of ESG into lending decisions and investment processes, the Central Bank of Nigeria's Sustainable Banking Principles, ESG due diligence for project finance, green bond assessment, and responsible investment frameworks, including the UN Principles for Responsible Investment (PRI)."
             }
           ].map((item, i) => (
             <div key={i} className="mb-8">
@@ -111,13 +111,13 @@ export default function EsgTrainingNigeria() {
 
           <h2 className="text-3xl font-bold text-[#0a2e28] mt-12 mb-6">How We Deliver ESG Training in Nigeria</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
-            EarnMore Consultants takes a highly practical, engaging approach to ESG training. We avoid death by PowerPoint — our programmes are interactive, case study-rich, and grounded in the realities of doing business in Nigeria. Key features of our training delivery include:
+            EarnMore Consultants takes a highly practical, engaging approach to ESG training. We avoid death by PowerPoint, our programmes are interactive, case study-rich, and grounded in the realities of doing business in Nigeria. Key features of our training delivery include:
           </p>
           <ul className="space-y-3 mb-8">
             {[
               "In-person workshops in Lagos, Abuja, Port Harcourt, and other Nigerian cities, as well as live virtual sessions for distributed teams",
               "Customised content reflecting your industry, your organisation's ESG maturity, and your specific learning objectives",
-              "Facilitated group exercises and working sessions that produce practical outputs — not just theoretical knowledge",
+              "Facilitated group exercises and working sessions that produce practical outputs, not just theoretical knowledge",
               "Post-training support including access to our ESG resource library, Q&A sessions, and implementation guidance",
               "Certificates of participation for all attendees, and the option of continuing professional development (CPD) accreditation for qualifying programmes"
             ].map((item, i) => (
@@ -136,7 +136,7 @@ export default function EsgTrainingNigeria() {
           <div className="bg-[#f0fdf8] border border-emerald-100 rounded-2xl p-8 mt-12">
             <h3 className="text-2xl font-bold text-[#0a2e28] mb-3">Commission an ESG Training Programme for Your Organisation</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Tell us about your team's ESG training needs and we'll design a programme that builds the capability you need — tailored to your industry, your people, and your ESG ambitions.
+              Tell us about your team's ESG training needs and we'll design a programme that builds the capability you need, tailored to your industry, your people, and your ESG ambitions.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/contact" className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-md transition-colors">

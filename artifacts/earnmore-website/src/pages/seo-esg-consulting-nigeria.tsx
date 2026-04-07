@@ -8,7 +8,7 @@ export default function EsgConsultingNigeria() {
   return (
     <>
       <Seo
-        title="ESG Consulting Nigeria — EarnMore Consultants"
+        title="ESG Consulting Nigeria, EarnMore Consultants"
         description="Leading ESG consulting firm in Nigeria. EarnMore Consultants helps Nigerian businesses build robust ESG frameworks, meet regulatory standards, and attract sustainable investment."
         keywords="ESG consulting Nigeria, ESG advisory Nigeria, environmental social governance Nigeria, ESG framework Nigeria, ESG strategy Nigeria, ESG compliance Nigeria"
         canonical="/services/esg-consulting-nigeria"
@@ -39,7 +39,7 @@ export default function EsgConsultingNigeria() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-4">ESG Consulting · Nigeria</p>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-            ESG Consulting in Nigeria — Building Sustainable, Investable Businesses
+            ESG Consulting in Nigeria, Building Sustainable, Investable Businesses
           </h1>
           <p className="text-green-200/70 text-lg leading-relaxed max-w-3xl mx-auto mb-10">
             EarnMore Consultants is Nigeria's trusted ESG advisory firm. We help corporates, financial institutions, and government bodies design, implement, and report ESG frameworks that satisfy international investors, regulators, and stakeholders.
@@ -61,21 +61,21 @@ export default function EsgConsultingNigeria() {
 
           <h2 className="text-3xl font-bold text-[#0a2e28] mb-6">What Is ESG and Why Does It Matter for Nigerian Businesses?</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
-            ESG — Environmental, Social, and Governance — is a framework used by investors, regulators, and global supply chains to evaluate a company's long-term sustainability and ethical impact. In Nigeria, ESG compliance is no longer optional. The Securities and Exchange Commission (SEC Nigeria), the Nigerian Exchange Group (NGX), and international development finance institutions (DFIs) are all integrating ESG criteria into their investment and listing requirements.
+            ESG, Environmental, Social, and Governance, is a framework used by investors, regulators, and global supply chains to evaluate a company's long-term sustainability and ethical impact. In Nigeria, ESG compliance is no longer optional. The Securities and Exchange Commission (SEC Nigeria), the Nigerian Exchange Group (NGX), and international development finance institutions (DFIs) are all integrating ESG criteria into their investment and listing requirements.
           </p>
           <p className="text-gray-600 leading-relaxed mb-6">
-            For Nigerian businesses looking to access international capital markets, attract foreign direct investment, or partner with global corporations, having a credible ESG framework is increasingly a prerequisite. EarnMore Consultants has guided organisations across banking, manufacturing, energy, real estate, and the public sector through this journey — delivering ESG structures that are both locally relevant and globally recognised.
+            For Nigerian businesses looking to access international capital markets, attract foreign direct investment, or partner with global corporations, having a credible ESG framework is increasingly a prerequisite. EarnMore Consultants has guided organisations across banking, manufacturing, energy, real estate, and the public sector through this journey, delivering ESG structures that are both locally relevant and globally recognised.
           </p>
 
           <h2 className="text-3xl font-bold text-[#0a2e28] mt-12 mb-6">Our ESG Consulting Services in Nigeria</h2>
           <p className="text-gray-600 leading-relaxed mb-8">
-            Our ESG consulting practice in Nigeria covers the full lifecycle — from initial materiality assessments to ongoing ESG reporting and stakeholder engagement. Here is what we offer:
+            Our ESG consulting practice in Nigeria covers the full lifecycle, from initial materiality assessments to ongoing ESG reporting and stakeholder engagement. Here is what we offer:
           </p>
 
           {[
             {
               title: "ESG Materiality Assessments",
-              body: "We help your organisation identify which ESG issues are most material to your business and your stakeholders. This forms the foundation of your entire ESG strategy and ensures resources are focused where they create the most impact — and manage the highest risks."
+              body: "We help your organisation identify which ESG issues are most material to your business and your stakeholders. This forms the foundation of your entire ESG strategy and ensures resources are focused where they create the most impact, and manage the highest risks."
             },
             {
               title: "ESG Framework Design & Policy Development",
@@ -83,11 +83,11 @@ export default function EsgConsultingNigeria() {
             },
             {
               title: "ESG Governance Structures",
-              body: "Strong ESG performance starts at the board level. We help Nigerian companies establish ESG governance committees, define board-level ESG responsibilities, and integrate ESG KPIs into executive remuneration structures — meeting the expectations of international institutional investors."
+              body: "Strong ESG performance starts at the board level. We help Nigerian companies establish ESG governance committees, define board-level ESG responsibilities, and integrate ESG KPIs into executive remuneration structures, meeting the expectations of international institutional investors."
             },
             {
               title: "ESG Due Diligence for Investors",
-              body: "We conduct ESG due diligence reviews for private equity funds, development finance institutions, and strategic investors assessing Nigerian businesses and infrastructure projects — providing a clear, evidence-based picture of ESG risks and opportunities."
+              body: "We conduct ESG due diligence reviews for private equity funds, development finance institutions, and strategic investors assessing Nigerian businesses and infrastructure projects, providing a clear, evidence-based picture of ESG risks and opportunities."
             },
             {
               title: "ESG Reporting & Disclosure",
@@ -95,7 +95,7 @@ export default function EsgConsultingNigeria() {
             },
             {
               title: "Stakeholder Engagement & ESG Communication",
-              body: "We develop stakeholder engagement strategies and communication materials that build trust with communities, regulators, investors, and employees — a critical component of a resilient ESG programme in Nigeria's diverse operating environment."
+              body: "We develop stakeholder engagement strategies and communication materials that build trust with communities, regulators, investors, and employees, a critical component of a resilient ESG programme in Nigeria's diverse operating environment."
             }
           ].map((item, i) => (
             <div key={i} className="mb-8">
@@ -116,7 +116,7 @@ export default function EsgConsultingNigeria() {
               "The SEC Nigeria's Sustainability Disclosure Framework, which encourages listed companies to adopt ESG reporting standards aligned with the SDGs.",
               "The NGX Sustainability Disclosure Guidelines, which require companies listed on the Nigerian Exchange to report on ESG matters.",
               "The Central Bank of Nigeria's (CBN) Nigerian Sustainable Banking Principles, which mandate ESG integration across Nigeria's financial sector.",
-              "Growing DFI requirements — including from the International Finance Corporation (IFC), African Development Bank (AfDB), and the British International Investment (BII) — tying concessional finance to ESG performance.",
+              "Growing DFI requirements, including from the International Finance Corporation (IFC), African Development Bank (AfDB), and the British International Investment (BII), tying concessional finance to ESG performance.",
               "The global adoption of IFRS S1 and IFRS S2 sustainability disclosure standards, which are expected to influence Nigerian regulatory requirements in the near term."
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-gray-600">
@@ -126,15 +126,15 @@ export default function EsgConsultingNigeria() {
             ))}
           </ul>
           <p className="text-gray-600 leading-relaxed mb-6">
-            EarnMore Consultants tracks all of these regulatory developments closely, ensuring that our clients' ESG frameworks remain ahead of requirements — not playing catch-up.
+            EarnMore Consultants tracks all of these regulatory developments closely, ensuring that our clients' ESG frameworks remain ahead of requirements, not playing catch-up.
           </p>
 
           <h2 className="text-3xl font-bold text-[#0a2e28] mt-12 mb-6">Why Choose EarnMore Consultants for ESG Advisory in Nigeria?</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
-            EarnMore Consultants combines deep local market knowledge with international ESG expertise. We understand the realities of operating in Nigeria — the infrastructure challenges, the governance environments, the community dynamics — and we bring this understanding to every ESG engagement. Our consultants have worked across sectors including financial services, oil and gas, renewable energy, agriculture, and real estate.
+            EarnMore Consultants combines deep local market knowledge with international ESG expertise. We understand the realities of operating in Nigeria, the infrastructure challenges, the governance environments, the community dynamics, and we bring this understanding to every ESG engagement. Our consultants have worked across sectors including financial services, oil and gas, renewable energy, agriculture, and real estate.
           </p>
           <p className="text-gray-600 leading-relaxed mb-6">
-            We are not a one-size-fits-all consultancy. Every ESG programme we design is bespoke — built around your industry, your stakeholders, and your strategic objectives. We combine technical rigour with practical implementation support, ensuring that ESG is embedded in your operations, not just documented in a report.
+            We are not a one-size-fits-all consultancy. Every ESG programme we design is bespoke, built around your industry, your stakeholders, and your strategic objectives. We combine technical rigour with practical implementation support, ensuring that ESG is embedded in your operations, not just documented in a report.
           </p>
           <p className="text-gray-600 leading-relaxed mb-6">
             Our work spans Lagos, Abuja, Port Harcourt, and other major commercial centres, and we also support Nigerian businesses operating across West Africa and the broader African continent.

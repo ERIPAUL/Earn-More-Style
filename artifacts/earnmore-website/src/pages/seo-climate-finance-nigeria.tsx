@@ -8,7 +8,7 @@ export default function ClimateFinanceNigeria() {
   return (
     <>
       <Seo
-        title="Climate Finance Advisory Nigeria — EarnMore Consultants"
+        title="Climate Finance Advisory Nigeria, EarnMore Consultants"
         description="Expert climate finance advisory in Nigeria. EarnMore Consultants helps businesses, governments, and institutions access green bonds, climate funds, and concessional finance for sustainable projects in Nigeria."
         keywords="climate finance Nigeria, climate finance advisory Nigeria, green finance Nigeria, sustainable finance Nigeria, climate investment Nigeria, concessional finance Nigeria"
         canonical="/services/climate-finance-advisory-nigeria"
@@ -38,7 +38,7 @@ export default function ClimateFinanceNigeria() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-4">Climate Finance · Nigeria</p>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-            Climate Finance Advisory in Nigeria — Unlocking Capital for Sustainable Projects
+            Climate Finance Advisory in Nigeria, Unlocking Capital for Sustainable Projects
           </h1>
           <p className="text-green-200/70 text-lg leading-relaxed max-w-3xl mx-auto mb-10">
             EarnMore Consultants provides specialist climate finance advisory services to help Nigerian businesses, infrastructure developers, and public sector institutions access the growing pool of domestic and international climate capital available for sustainable development projects.
@@ -59,7 +59,7 @@ export default function ClimateFinanceNigeria() {
 
           <h2 className="text-3xl font-bold text-[#0a2e28] mb-6">The Climate Finance Opportunity in Nigeria</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
-            Nigeria has one of the most significant climate finance opportunities in Africa. As the continent's largest economy and most populous nation, Nigeria sits at the intersection of enormous climate risk — from desertification in the north to coastal flooding and oil pollution in the south — and enormous clean energy and sustainable infrastructure investment potential.
+            Nigeria has one of the most significant climate finance opportunities in Africa. As the continent's largest economy and most populous nation, Nigeria sits at the intersection of enormous climate risk, from desertification in the north to coastal flooding and oil pollution in the south, and enormous clean energy and sustainable infrastructure investment potential.
           </p>
           <p className="text-gray-600 leading-relaxed mb-6">
             Global climate finance flows are accelerating. The Green Climate Fund (GCF), the Global Environment Facility (GEF), the African Development Bank's Sustainable Energy Fund for Africa (SEFA), and bilateral DFIs including the British International Investment (BII), Proparco, and the US Development Finance Corporation (DFC) are all actively seeking to deploy capital into climate-aligned projects in Nigeria.
@@ -72,27 +72,27 @@ export default function ClimateFinanceNigeria() {
           {[
             {
               title: "Climate Finance Strategy & Readiness",
-              body: "Before approaching funders, your project or organisation needs to be climate finance-ready. We assess your project's climate credentials, identify the most suitable financing instruments and funders, and prepare a climate finance roadmap — reducing the time and cost of accessing capital."
+              body: "Before approaching funders, your project or organisation needs to be climate finance-ready. We assess your project's climate credentials, identify the most suitable financing instruments and funders, and prepare a climate finance roadmap, reducing the time and cost of accessing capital."
             },
             {
               title: "Green Bond Structuring & Issuance",
-              body: "Nigeria's green bond market is growing. We advise issuers — including corporates, financial institutions, and state governments — on structuring, third-party verification, and marketing of green bonds aligned with the ICMA Green Bond Principles and SEC Nigeria's Green Bond Rules."
+              body: "Nigeria's green bond market is growing. We advise issuers, including corporates, financial institutions, and state governments, on structuring, third-party verification, and marketing of green bonds aligned with the ICMA Green Bond Principles and SEC Nigeria's Green Bond Rules."
             },
             {
               title: "Blended Finance Advisory",
-              body: "Many sustainable projects in Nigeria require blended finance structures — combining concessional public finance with commercial private capital. We design and advise on blended finance transactions, working with DFIs, impact investors, and commercial lenders to structure deals that balance risk and return appropriately."
+              body: "Many sustainable projects in Nigeria require blended finance structures, combining concessional public finance with commercial private capital. We design and advise on blended finance transactions, working with DFIs, impact investors, and commercial lenders to structure deals that balance risk and return appropriately."
             },
             {
               title: "Climate Fund Applications",
-              body: "Accessing funds like the GCF, GEF, and Adaptation Fund requires technically rigorous project design and compelling funding proposals. Our team has deep experience preparing and reviewing climate fund applications — and we help Nigerian entities build the technical and fiduciary capacity required to access these facilities directly."
+              body: "Accessing funds like the GCF, GEF, and Adaptation Fund requires technically rigorous project design and compelling funding proposals. Our team has deep experience preparing and reviewing climate fund applications, and we help Nigerian entities build the technical and fiduciary capacity required to access these facilities directly."
             },
             {
               title: "Sustainability-Linked Finance",
-              body: "Sustainability-linked loans and bonds tie financing costs to ESG performance targets. We help Nigerian borrowers structure sustainability-linked financing, identify appropriate Key Performance Indicators (KPIs), and negotiate terms with lenders — accessing better pricing while creating accountability for sustainability outcomes."
+              body: "Sustainability-linked loans and bonds tie financing costs to ESG performance targets. We help Nigerian borrowers structure sustainability-linked financing, identify appropriate Key Performance Indicators (KPIs), and negotiate terms with lenders, accessing better pricing while creating accountability for sustainability outcomes."
             },
             {
               title: "Carbon Markets & Carbon Finance",
-              body: "Nigeria's voluntary carbon market is emerging, with opportunities in cookstoves, reforestation, renewable energy, and waste management. We advise project developers on carbon credit origination, Verra VCS and Gold Standard certification, and carbon credit sales — helping Nigerian projects generate additional revenue from their climate impact."
+              body: "Nigeria's voluntary carbon market is emerging, with opportunities in cookstoves, reforestation, renewable energy, and waste management. We advise project developers on carbon credit origination, Verra VCS and Gold Standard certification, and carbon credit sales, helping Nigerian projects generate additional revenue from their climate impact."
             }
           ].map((item, i) => (
             <div key={i} className="mb-8">
@@ -130,12 +130,12 @@ export default function ClimateFinanceNigeria() {
           </p>
           <ul className="space-y-3 mb-8">
             {[
-              "Renewable energy — solar, wind, and mini-grid projects across Nigeria",
-              "Energy efficiency — industrial, commercial, and residential efficiency programmes",
-              "Sustainable agriculture and food systems — climate-smart agriculture and land restoration",
-              "Climate-resilient infrastructure — roads, bridges, water systems, and urban drainage",
-              "Sustainable forestry and land use — REDD+ and ecosystem restoration projects",
-              "Clean transportation — electric vehicles, public transit, and low-carbon logistics"
+              "Renewable energy, solar, wind, and mini-grid projects across Nigeria",
+              "Energy efficiency, industrial, commercial, and residential efficiency programmes",
+              "Sustainable agriculture and food systems, climate-smart agriculture and land restoration",
+              "Climate-resilient infrastructure, roads, bridges, water systems, and urban drainage",
+              "Sustainable forestry and land use, REDD+ and ecosystem restoration projects",
+              "Clean transportation, electric vehicles, public transit, and low-carbon logistics"
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-gray-600">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-1 flex-shrink-0" />

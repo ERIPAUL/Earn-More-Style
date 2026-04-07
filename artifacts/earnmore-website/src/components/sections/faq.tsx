@@ -21,7 +21,7 @@ const faqs = [
   {
     question: "What kind of experience does the EarnMore consulting team possess?",
     answer:
-      "EarnMore boasts a multi-disciplinary team of consultants who bring cross-industry experience and in-depth knowledge to the table. Our teams have successfully guided various institutions — ranging from small enterprises to government agencies — in achieving their sustainability goals.",
+      "EarnMore boasts a multi-disciplinary team of consultants who bring cross-industry experience and in-depth knowledge to the table. Our teams have successfully guided various institutions, ranging from small enterprises to government agencies, in achieving their sustainability goals.",
   },
   {
     question: "How does EarnMore assist in implementation and compliance of sustainability initiatives?",

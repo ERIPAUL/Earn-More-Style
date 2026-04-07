@@ -8,7 +8,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans overflow-hidden">
       <Seo
-        title="Contact EarnMore Consultants — ESG & Sustainability Advisory Nigeria"
+        title="Contact EarnMore Consultants, ESG & Sustainability Advisory Nigeria"
         description="Get in touch with EarnMore Consultants, Nigeria's leading ESG and sustainability advisory firm. Contact us to discuss your sustainability strategy, ESG framework, or climate finance needs."
         keywords="contact EarnMore Consultants, ESG consultants Nigeria contact, sustainability advisory Nigeria, book ESG consultation Nigeria"
         canonical="/contact"
@@ -20,7 +20,7 @@ export default function ContactPage() {
         <div className="relative h-72 md:h-96 flex items-center justify-center text-center overflow-hidden">
           <img
             src="/images/ocean-environment.jpg"
-            alt="Calm ocean — environmental stewardship"
+            alt="Calm ocean, environmental stewardship"
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
           <div

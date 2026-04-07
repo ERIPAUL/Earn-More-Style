@@ -6,7 +6,7 @@ const services = [
     icon: <Building2 className="w-6 h-6" />,
     title: "Sustainable Infrastructure Finance",
     description:
-      "Securing financing for infrastructure projects that prioritize sustainability — identifying funding sources, developing financial models, and facilitating investment in projects with positive environmental and social impacts.",
+      "Securing financing for infrastructure projects that prioritize sustainability, identifying funding sources, developing financial models, and facilitating investment in projects with positive environmental and social impacts.",
     image: "/images/solar-panels.jpg",
   },
   {
@@ -20,21 +20,21 @@ const services = [
     icon: <BarChart3 className="w-6 h-6" />,
     title: "ESG Structures",
     description:
-      "Assisting organizations to set up and oversee ESG structures — from materiality assessments to unique frameworks, policies, and strategies for addressing environmental, social, and governance issues.",
+      "Assisting organizations to set up and oversee ESG structures, from materiality assessments to unique frameworks, policies, and strategies for addressing environmental, social, and governance issues.",
     image: "/images/esg-building.jpg",
   },
   {
     icon: <FileCheck className="w-6 h-6" />,
     title: "Sustainability Policy Reviews",
     description:
-      "Evaluating and analyzing existing sustainability policies of government institutions — identifying improvement areas and recommending changes to enhance sustainability efforts.",
+      "Evaluating and analyzing existing sustainability policies of government institutions, identifying improvement areas and recommending changes to enhance sustainability efforts.",
     image: "/images/policy-globe.jpg",
   },
   {
     icon: <GraduationCap className="w-6 h-6" />,
     title: "Training and Capacity Building",
     description:
-      "Education and skill development programs — workshops, seminars, and training sessions aimed at building capacity to effectively contribute to sustainability efforts.",
+      "Education and skill development programs, workshops, seminars, and training sessions aimed at building capacity to effectively contribute to sustainability efforts.",
     image: "/images/blog-training.jpg",
   },
 ];

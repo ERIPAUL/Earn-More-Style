@@ -8,8 +8,8 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans overflow-hidden">
       <Seo
-        title="Sustainability & ESG Services — EarnMore Consultants Nigeria"
-        description="Explore EarnMore Consultants' full range of sustainability and ESG services in Nigeria — including ESG frameworks, climate finance, green bonds, sustainability policy reviews, and ESG training."
+        title="Sustainability & ESG Services, EarnMore Consultants Nigeria"
+        description="Explore EarnMore Consultants' full range of sustainability and ESG services in Nigeria, including ESG frameworks, climate finance, green bonds, sustainability policy reviews, and ESG training."
         keywords="ESG services Nigeria, sustainability services Nigeria, climate finance services Nigeria, green bonds Nigeria, ESG framework Nigeria, sustainability policy Nigeria"
         canonical="/services"
       />
@@ -19,7 +19,7 @@ export default function ServicesPage() {
         <div className="relative h-56 md:h-72 overflow-hidden">
           <img
             src="/images/wind-turbines.jpg"
-            alt="Wind turbines — climate finance solutions"
+            alt="Wind turbines, climate finance solutions"
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />

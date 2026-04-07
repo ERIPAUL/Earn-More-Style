@@ -9,9 +9,9 @@ const featuredPost = {
   date: "December 11, 2023",
   category: "(ESG) Structures",
   categoryColor: "bg-teal-100 text-teal-700",
-  title: "Understanding the International Sustainability Standards Board's Sustainability Disclosure Standards: IFRS S1 and IFRS S2 — Part 2",
+  title: "Understanding the International Sustainability Standards Board's Sustainability Disclosure Standards: IFRS S1 and IFRS S2, Part 2",
   excerpt:
-    "In the first part of this series, we looked at the governance and strategy elements of the ISSB IFRS S1 and S2 standards. In this second part we consider risk management plus metrics and targets — and what each reporting requirement means in practice for organisations.",
+    "In the first part of this series, we looked at the governance and strategy elements of the ISSB IFRS S1 and S2 standards. In this second part we consider risk management plus metrics and targets, and what each reporting requirement means in practice for organisations.",
   author: "EarnMore Consultants",
   role: "Editorial Team",
   readTime: "6 min read",
@@ -48,7 +48,7 @@ const posts = [
     categoryColor: "bg-blue-100 text-blue-700",
     title: "Amazon Summit: Inspiration for Protecting African Rainforests",
     excerpt:
-      "Eight Amazon countries recently concluded the Amazon Summit in Belém, Brazil — focused on environmental and climate challenges facing the Amazon. A key lesson emerges for Africa: the need for a similar concord to protect the Equatorial Rainforest, funded through innovative climate finance.",
+      "Eight Amazon countries recently concluded the Amazon Summit in Belém, Brazil, focused on environmental and climate challenges facing the Amazon. A key lesson emerges for Africa: the need for a similar concord to protect the Equatorial Rainforest, funded through innovative climate finance.",
     readTime: "5 min read",
     image: "https://d1yei2z3i6k35z.cloudfront.net/5190898/6569e10ef1132_tranquil-scene-mountain-range-reflected-pond-generated-by-ai.jpg",
     url: "/blog/amazon-summit",
@@ -59,8 +59,8 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans overflow-hidden">
       <Seo
-        title="Sustainability & ESG Blog — EarnMore Consultants Nigeria"
-        description="Insights, analysis, and thought leadership on ESG, climate finance, IFRS sustainability reporting, and green bonds from EarnMore Consultants — Nigeria's sustainability advisory experts."
+        title="Sustainability & ESG Blog, EarnMore Consultants Nigeria"
+        description="Insights, analysis, and thought leadership on ESG, climate finance, IFRS sustainability reporting, and green bonds from EarnMore Consultants, Nigeria's sustainability advisory experts."
         keywords="ESG blog Nigeria, sustainability blog Nigeria, IFRS S1 S2 Nigeria, climate finance blog, green bonds blog Nigeria, sustainability insights Africa"
         canonical="/blog"
       />

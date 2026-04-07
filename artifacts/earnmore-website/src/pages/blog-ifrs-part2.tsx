@@ -3,7 +3,7 @@ import BlogPostLayout from "@/components/layout/blog-post-layout";
 export default function BlogIfrsPart2() {
   return (
     <BlogPostLayout
-      title="Understanding the International Sustainability Standards Board's Sustainability Disclosure Standards: IFRS S1 and IFRS S2 — Part 2"
+      title="Understanding the International Sustainability Standards Board's Sustainability Disclosure Standards: IFRS S1 and IFRS S2, Part 2"
       date="Monday, December 11, 2023"
       category="(ESG) Structures"
       categoryColor="bg-teal-100 text-teal-700"

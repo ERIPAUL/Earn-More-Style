@@ -8,7 +8,7 @@ export default function SustainabilityConsultingLagos() {
   return (
     <>
       <Seo
-        title="Sustainability Consulting Lagos — EarnMore Consultants"
+        title="Sustainability Consulting Lagos, EarnMore Consultants"
         description="Top sustainability consulting firm in Lagos, Nigeria. EarnMore Consultants delivers ESG strategy, sustainability reporting, and green finance advisory to Lagos-based businesses."
         keywords="sustainability consulting Lagos, sustainability consultants Lagos Nigeria, ESG Lagos, sustainability advisory Lagos, green business Lagos, corporate sustainability Lagos"
         canonical="/services/sustainability-consulting-lagos"
@@ -34,10 +34,10 @@ export default function SustainabilityConsultingLagos() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-4">Sustainability Consulting · Lagos, Nigeria</p>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-            Sustainability Consulting in Lagos — Turning Green Strategy into Business Growth
+            Sustainability Consulting in Lagos, Turning Green Strategy into Business Growth
           </h1>
           <p className="text-green-200/70 text-lg leading-relaxed max-w-3xl mx-auto mb-10">
-            EarnMore Consultants is Lagos's leading sustainability consulting firm. We partner with businesses, financial institutions, and public sector organisations to embed sustainability into strategy, operations, and reporting — creating lasting value in Lagos's fast-growing economy.
+            EarnMore Consultants is Lagos's leading sustainability consulting firm. We partner with businesses, financial institutions, and public sector organisations to embed sustainability into strategy, operations, and reporting, creating lasting value in Lagos's fast-growing economy.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-3.5 rounded-md transition-colors">
@@ -55,20 +55,20 @@ export default function SustainabilityConsultingLagos() {
 
           <h2 className="text-3xl font-bold text-[#0a2e28] mb-6">Why Lagos Businesses Need Sustainability Consulting Now</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
-            Lagos is the commercial engine of Nigeria and one of Africa's largest urban economies. With a population exceeding 15 million and a GDP that rivals many African countries, Lagos is home to some of the continent's most dynamic businesses — and some of its most acute environmental and social challenges.
+            Lagos is the commercial engine of Nigeria and one of Africa's largest urban economies. With a population exceeding 15 million and a GDP that rivals many African countries, Lagos is home to some of the continent's most dynamic businesses, and some of its most acute environmental and social challenges.
           </p>
           <p className="text-gray-600 leading-relaxed mb-6">
             From flooding and waste management to energy access and supply chain labour standards, Lagos-based companies face a unique set of sustainability pressures. At the same time, Lagos's integration into global trade and finance networks means that sustainability performance is increasingly scrutinised by international partners, investors, and regulators. Sustainability consulting in Lagos is therefore both a risk management imperative and a strategic growth opportunity.
           </p>
           <p className="text-gray-600 leading-relaxed mb-6">
-            EarnMore Consultants brings deep Lagos market knowledge alongside international sustainability expertise. We understand the local regulatory environment — including requirements from the Lagos State Environmental Protection Agency (LASEPA), the Lagos State Ministry of the Environment, and national bodies such as the National Environmental Standards and Regulations Enforcement Agency (NESREA) — and we help clients navigate these alongside global frameworks.
+            EarnMore Consultants brings deep Lagos market knowledge alongside international sustainability expertise. We understand the local regulatory environment, including requirements from the Lagos State Environmental Protection Agency (LASEPA), the Lagos State Ministry of the Environment, and national bodies such as the National Environmental Standards and Regulations Enforcement Agency (NESREA), and we help clients navigate these alongside global frameworks.
           </p>
 
           <h2 className="text-3xl font-bold text-[#0a2e28] mt-12 mb-6">Our Sustainability Consulting Services in Lagos</h2>
           {[
             {
               title: "Sustainability Strategy Development",
-              body: "We work with Lagos-based companies to develop comprehensive sustainability strategies that align with your business model, stakeholder expectations, and the city's environmental and social context. Our strategies are actionable, time-bound, and linked to measurable outcomes — not aspirational documents that sit on a shelf."
+              body: "We work with Lagos-based companies to develop comprehensive sustainability strategies that align with your business model, stakeholder expectations, and the city's environmental and social context. Our strategies are actionable, time-bound, and linked to measurable outcomes, not aspirational documents that sit on a shelf."
             },
             {
               title: "Environmental & Social Impact Assessments",
@@ -84,7 +84,7 @@ export default function SustainabilityConsultingLagos() {
             },
             {
               title: "Sustainability Training & Capacity Building",
-              body: "Embedding sustainability requires building internal capability. We deliver sustainability training workshops and capacity-building programmes for Lagos-based businesses — from board-level ESG awareness to operational-level environmental and social management."
+              body: "Embedding sustainability requires building internal capability. We deliver sustainability training workshops and capacity-building programmes for Lagos-based businesses, from board-level ESG awareness to operational-level environmental and social management."
             }
           ].map((item, i) => (
             <div key={i} className="mb-8">
@@ -98,13 +98,13 @@ export default function SustainabilityConsultingLagos() {
 
           <h2 className="text-3xl font-bold text-[#0a2e28] mt-12 mb-6">Lagos's Sustainability Ecosystem: Opportunities and Challenges</h2>
           <p className="text-gray-600 leading-relaxed mb-6">
-            Lagos is at the forefront of Nigeria's sustainability transition. The Lagos State Government has committed to a series of ambitious sustainability targets — including expanding renewable energy access, improving waste management infrastructure, and reducing urban flooding through improved drainage systems and green infrastructure. These public sector commitments are creating private sector opportunities for businesses that are positioned to deliver sustainable products and services.
+            Lagos is at the forefront of Nigeria's sustainability transition. The Lagos State Government has committed to a series of ambitious sustainability targets, including expanding renewable energy access, improving waste management infrastructure, and reducing urban flooding through improved drainage systems and green infrastructure. These public sector commitments are creating private sector opportunities for businesses that are positioned to deliver sustainable products and services.
           </p>
           <p className="text-gray-600 leading-relaxed mb-6">
             At the same time, Lagos faces formidable sustainability challenges. Air quality in Lagos remains a serious concern, with vehicle emissions and industrial activity contributing to some of the highest pollution levels in West Africa. Coastal erosion and flooding threaten significant portions of the city. Rapid urbanisation is straining infrastructure and creating social pressures around housing, water access, and employment.
           </p>
           <p className="text-gray-600 leading-relaxed mb-6">
-            EarnMore Consultants helps businesses understand both dimensions — the risks they must manage and the opportunities they can capture — and build sustainability strategies that position them to thrive in Lagos's evolving business environment.
+            EarnMore Consultants helps businesses understand both dimensions, the risks they must manage and the opportunities they can capture, and build sustainability strategies that position them to thrive in Lagos's evolving business environment.
           </p>
 
           <h2 className="text-3xl font-bold text-[#0a2e28] mt-12 mb-6">Industries We Serve in Lagos</h2>
@@ -113,12 +113,12 @@ export default function SustainabilityConsultingLagos() {
           </p>
           <ul className="space-y-3 mb-8">
             {[
-              "Financial services — banks, insurance companies, pension funds, and asset managers",
-              "Fast-moving consumer goods (FMCG) — including packaging, supply chain, and product lifecycle sustainability",
-              "Real estate and construction — green building standards, EDGE certification, and ESG due diligence",
-              "Energy and utilities — including renewable energy project development and sustainable energy access",
-              "Technology — digital sustainability, e-waste management, and responsible AI governance",
-              "Logistics and transportation — fleet decarbonisation and sustainable logistics planning"
+              "Financial services, banks, insurance companies, pension funds, and asset managers",
+              "Fast-moving consumer goods (FMCG), including packaging, supply chain, and product lifecycle sustainability",
+              "Real estate and construction, green building standards, EDGE certification, and ESG due diligence",
+              "Energy and utilities, including renewable energy project development and sustainable energy access",
+              "Technology, digital sustainability, e-waste management, and responsible AI governance",
+              "Logistics and transportation, fleet decarbonisation and sustainable logistics planning"
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-gray-600">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-1 flex-shrink-0" />
@@ -130,7 +130,7 @@ export default function SustainabilityConsultingLagos() {
           <div className="bg-[#f0fdf8] border border-emerald-100 rounded-2xl p-8 mt-12">
             <h3 className="text-2xl font-bold text-[#0a2e28] mb-3">Work With Lagos's Leading Sustainability Consultants</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Contact EarnMore Consultants today to discuss how we can help your Lagos business lead on sustainability — and turn ESG performance into competitive advantage.
+              Contact EarnMore Consultants today to discuss how we can help your Lagos business lead on sustainability, and turn ESG performance into competitive advantage.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/contact" className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-md transition-colors">
