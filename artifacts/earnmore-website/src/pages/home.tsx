@@ -107,9 +107,9 @@ export default function Home() {
                 "url": "https://earnmoregroup.com",
                 "logo": "https://earnmoregroup.com/favicon.png",
                 "sameAs": ["https://earnmoreapp.co"],
-                "description": "Nigeria's leading sustainability and ESG consulting firm, providing ESG frameworks, climate finance advisory, green bonds, and sustainability reporting services.",
-                "foundingLocation": { "@type": "Place", "name": "Lagos, Nigeria" },
-                "areaServed": ["Nigeria", "Africa"],
+                "description": "A leading global sustainability and ESG consulting firm, providing ESG frameworks, climate finance advisory, green bonds, and sustainability reporting services.",
+                "foundingLocation": { "@type": "Place", "name": "London, UK" },
+                "areaServed": ["United Kingdom", "Europe", "Africa", "Global"],
                 "contactPoint": {
                   "@type": "ContactPoint",
                   "email": "info@earnmoregroup.com",
@@ -123,14 +123,14 @@ export default function Home() {
                 "name": "EarnMore Consultants",
                 "url": "https://earnmoregroup.com",
                 "image": "https://earnmoregroup.com/favicon.png",
-                "description": "ESG and sustainability consulting firm in Lagos, Nigeria.",
+                "description": "ESG and sustainability consulting firm based in London, UK.",
                 "address": {
                   "@type": "PostalAddress",
-                  "addressLocality": "Lagos",
-                  "addressCountry": "NG"
+                  "addressLocality": "London",
+                  "addressCountry": "GB"
                 },
-                "geo": { "@type": "GeoCoordinates", "latitude": 6.5244, "longitude": 3.3792 },
-                "areaServed": ["Lagos", "Abuja", "Port Harcourt", "Nigeria"],
+                "geo": { "@type": "GeoCoordinates", "latitude": 51.5074, "longitude": -0.1278 },
+                "areaServed": ["London", "United Kingdom", "Europe", "Global"],
                 "priceRange": "$$",
                 "email": "info@earnmoregroup.com",
                 "serviceType": [
@@ -579,7 +579,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1">Our Office</p>
-                    <p className="text-white/80 text-sm leading-relaxed">Lagos</p>
+                    <p className="text-white/80 text-sm leading-relaxed">London</p>
                     <p className="text-white/40 text-xs mt-0.5">Serving clients globally</p>
                   </div>
                 </div>

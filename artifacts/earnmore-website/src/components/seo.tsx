@@ -41,8 +41,8 @@ export default function Seo({
       <meta name="twitter:image" content={ogImage} />
 
       {/* Geo / Local */}
-      <meta name="geo.region" content="NG" />
-      <meta name="geo.placename" content="Lagos, Nigeria" />
+      <meta name="geo.region" content="GB" />
+      <meta name="geo.placename" content="London, UK" />
     </Helmet>
   );
 }
