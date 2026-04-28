@@ -317,7 +317,7 @@ export default function Home() {
                   ))}
                 </ul>
                 <Link
-                  href="/about"
+                  href="/services"
                   className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-md transition-all group"
                 >
                   Learn More
