@@ -9,9 +9,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="mb-3">
+            <div className="mb-4">
               <img src="/logo.png" alt="Earnmore Consultants" className="h-9 w-auto object-contain" />
             </div>
+            <img
+              src="/esg-institute-badge.png"
+              alt="The ESG Institute Accredited Training Institution"
+              className="h-24 w-auto object-contain"
+            />
           </div>
 
           {/* Company */}
