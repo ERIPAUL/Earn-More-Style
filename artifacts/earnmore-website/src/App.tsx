@@ -19,6 +19,7 @@ import IfrsSustainabilityReportingNigeria from "@/pages/seo-ifrs-sustainability-
 import GreenBondsNigeria from "@/pages/seo-green-bonds-nigeria";
 import EsgTrainingNigeria from "@/pages/seo-esg-training-nigeria";
 import EggPage from "@/pages/egg";
+import InfrastructurePage from "@/pages/infrastructure";
 import ScrollToTop from "@/components/scroll-to-top";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ function Router() {
       <Route path="/about" component={AboutPage} />
       <Route path="/services" component={ServicesPage} />
       <Route path="/contact" component={ContactPage} />
+      <Route path="/infrastructure" component={InfrastructurePage} />
       <Route path="/egg" component={EggPage} />
       <Route path="/blog" component={BlogPage} />
       <Route path="/blog/ifrs-s1-s2-part-2" component={BlogIfrsPart2} />

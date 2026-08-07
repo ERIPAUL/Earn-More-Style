@@ -398,6 +398,93 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── Infrastructure Teaser ── */}
+        <section
+          className="py-12 md:py-28"
+          style={{ background: "linear-gradient(135deg, #061a16 0%, #0a2e28 60%, #0d3d2e 100%)" }}
+        >
+          <div className="max-w-7xl mx-auto px-6 lg:px-10">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+              {/* Left: content */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-4 flex items-center gap-2">
+                  <span className="w-6 h-px bg-emerald-400" />
+                  EarnMore Infrastructure Ltd
+                </p>
+                <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
+                  We Are Also Into{" "}
+                  <span className="italic font-serif font-normal text-emerald-300">Infrastructure</span>
+                </h2>
+                <p className="text-green-200/65 leading-relaxed mb-6">
+                  Beyond ESG advisory, Earnmore Infrastructure is our advisory and delivery-focused arm supporting
+                  large-scale infrastructure projects, from concept through financing to execution. We enable
+                  efficient project development, strengthen stakeholder confidence, and improve access to funding.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Infrastructure Development & Delivery",
+                    "Project Finance & Advisory",
+                    "Financing Solutions with Public & Private Partners",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-green-200/70 text-sm font-medium">
+                      <div className="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                      </div>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/infrastructure"
+                  className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-md transition-all group"
+                >
+                  Explore Infrastructure
+                  <span className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </Link>
+              </motion.div>
+
+              {/* Right: stat cards */}
+              <motion.div
+                className="grid grid-cols-2 gap-4"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.15 }}
+              >
+                {[
+                  { value: "$237M", label: "Broadband Infrastructure", sub: "North West InfraCo Project" },
+                  { value: "$1B+", label: "NITEL Privatisation", sub: "National carrier bid preparation" },
+                  { value: "$1B", label: "FESTAC II Real Estate", sub: "Winning technical & financial bid" },
+                  { value: "20+", label: "Years of Experience", sub: "Project finance & structuring" },
+                ].map((stat, i) => (
+                  <motion.div
+                    key={i}
+                    className="rounded-2xl p-6 border border-emerald-800/40 hover:border-emerald-600/60 transition-all duration-300"
+                    style={{ background: "rgba(13,61,46,0.45)", backdropFilter: "blur(8px)" }}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
+                  >
+                    <p className="text-3xl font-bold text-emerald-300 mb-1">{stat.value}</p>
+                    <p className="text-white text-sm font-semibold mb-1">{stat.label}</p>
+                    <p className="text-green-200/45 text-xs">{stat.sub}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+
+            </div>
+          </div>
+        </section>
+
         {/* ── Topics & Insights ── */}
         <section className="py-12 md:py-28 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
