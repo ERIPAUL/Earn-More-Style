@@ -28,6 +28,7 @@ export default function Footer() {
                 { label: "About Us", href: "/about" },
                 { label: "Services", href: "/services" },
                 { label: "Infrastructure", href: "/infrastructure" },
+                { label: "Training", href: "/training" },
                 { label: "EGG Platform", href: "/egg" },
                 { label: "Blog", href: "/blog" },
                 { label: "Contact", href: "/contact" },
