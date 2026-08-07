@@ -228,7 +228,10 @@ export default function Home() {
                     Since our founding, we have partnered with organisations around the world to navigate ESG disclosures, mobilise climate finance, and build the internal capacity needed to thrive in a world demanding greater accountability and impact.
                   </p>
                   <p>
-                    Whatever your sustainability challenge, our team of dedicated experts is here to guide every step of your journey, with the rigour, empathy, and local insight that sets us apart.
+                    Through EarnMore Infrastructure, we go beyond advisory — supporting the structuring, financing, and delivery of large-scale infrastructure projects across energy, telecommunications, water, and urban development. We believe that resilient infrastructure is the backbone of every sustainable economy.
+                  </p>
+                  <p>
+                    Whatever your challenge — sustainability strategy, ESG reporting, or infrastructure delivery — our team of dedicated experts is here to guide every step of your journey, with the rigour, empathy, and local insight that sets us apart.
                   </p>
                 </div>
 
