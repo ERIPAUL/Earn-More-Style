@@ -138,6 +138,7 @@ export default function InfrastructurePage() {
         description="EarnMore Infrastructure is an advisory and delivery-focused firm supporting infrastructure projects with project financing frameworks, resilient strategies, and clear reporting systems."
         keywords="infrastructure advisory Nigeria, project finance Africa, infrastructure development, broadband infrastructure, public private partnerships"
         canonical="/infrastructure"
+        ogImage="https://earnmoregroup.com/og/infrastructure.jpg"
       />
       <Navbar />
       <main className="min-h-screen bg-background text-foreground font-sans">

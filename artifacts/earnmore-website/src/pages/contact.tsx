@@ -12,6 +12,7 @@ export default function ContactPage() {
         description="Get in touch with EarnMore Consultants, Nigeria's leading ESG and sustainability advisory firm. Contact us to discuss your sustainability strategy, ESG framework, or climate finance needs."
         keywords="contact EarnMore Consultants, ESG consultants Nigeria contact, sustainability advisory Nigeria, book ESG consultation Nigeria"
         canonical="/contact"
+        ogImage="https://earnmoregroup.com/og/contact.jpg"
       />
       <Navbar />
       <main className="flex-grow pt-20">

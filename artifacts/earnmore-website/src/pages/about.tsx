@@ -14,6 +14,7 @@ export default function AboutPage() {
         description="Learn about EarnMore Consultants, a leading sustainability and ESG advisory firm in Nigeria. Our mission is to catalyse positive change through responsible finance and sustainable development across Africa."
         keywords="about EarnMore Consultants, sustainability firm Nigeria, ESG advisory Nigeria, sustainability consultancy Africa"
         canonical="/about"
+        ogImage="https://earnmoregroup.com/og/about.jpg"
       />
       <Navbar />
       <main className="flex-grow pt-20">

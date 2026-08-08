@@ -11,6 +11,8 @@ export default function EggPage() {
         title="EGG, EarnMore Growth Gateway | Impact Investing Platform"
         description="EGG (EarnMore Growth Gateway) is EarnMore Consultants' dedicated platform for impact-oriented investing and sustainable development. GRI, TCFD, ICMA aligned."
         keywords="EarnMore Growth Gateway, EGG platform, impact investing, ESG platform, sustainable finance, green bonds, responsible investing"
+        canonical="/egg"
+        ogImage="https://earnmoregroup.com/og/egg.jpg"
       />
       <Navbar />
 

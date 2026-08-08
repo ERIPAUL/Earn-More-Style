@@ -63,6 +63,7 @@ export default function BlogPage() {
         description="Insights, analysis, and thought leadership on ESG, climate finance, IFRS sustainability reporting, and green bonds from EarnMore Consultants, Nigeria's sustainability advisory experts."
         keywords="ESG blog Nigeria, sustainability blog Nigeria, IFRS S1 S2 Nigeria, climate finance blog, green bonds blog Nigeria, sustainability insights Africa"
         canonical="/blog"
+        ogImage="https://earnmoregroup.com/og/blog.jpg"
       />
       <Navbar />
       <main className="flex-grow pt-20">

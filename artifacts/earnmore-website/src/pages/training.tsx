@@ -353,6 +353,7 @@ export default function TrainingPage() {
         description="A full ESG training programme from entry level to senior executive. 48 hours across 8 days. Hybrid delivery. ESG Institute-accredited certificate on completion."
         keywords="ESG training Nigeria, ESG course Africa, sustainability training, corporate ESG programme, ESG Institute certificate"
         canonical="/training"
+        ogImage="https://earnmoregroup.com/og/training.jpg"
       />
       <Navbar />
       <main className="min-h-screen bg-background text-foreground font-sans">

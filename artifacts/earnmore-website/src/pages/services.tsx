@@ -12,6 +12,7 @@ export default function ServicesPage() {
         description="Explore EarnMore Consultants' full range of sustainability and ESG services in Nigeria, including ESG frameworks, climate finance, green bonds, sustainability policy reviews, and ESG training."
         keywords="ESG services Nigeria, sustainability services Nigeria, climate finance services Nigeria, green bonds Nigeria, ESG framework Nigeria, sustainability policy Nigeria"
         canonical="/services"
+        ogImage="https://earnmoregroup.com/og/services.jpg"
       />
       <Navbar />
       <main className="flex-grow pt-20">

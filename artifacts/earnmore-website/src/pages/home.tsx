@@ -93,6 +93,7 @@ export default function Home() {
         description="EarnMore Consultants is Nigeria's leading sustainability and ESG consulting firm. We deliver ESG frameworks, climate finance advisory, sustainability reporting, and green bonds solutions across Nigeria and Africa."
         keywords="sustainability consulting Nigeria, ESG consulting Nigeria, climate finance Nigeria, green bonds Nigeria, ESG advisory Nigeria, sustainability advisory Africa"
         canonical="/"
+        ogImage="https://earnmoregroup.com/og/home.jpg"
       />
       <script
         type="application/ld+json"
