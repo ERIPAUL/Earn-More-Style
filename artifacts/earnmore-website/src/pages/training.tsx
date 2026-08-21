@@ -129,124 +129,6 @@ const level1Modules = [
   },
 ];
 
-const level2Modules = [
-  {
-    num: "07",
-    title: "Foundations of Corporate Sustainability",
-    duration: "4 hours",
-    day: "Day 1, Session 1",
-    topics: [
-      "Evolution from CSR to ESG",
-      "The business case for sustainability",
-      "UN SDGs overview",
-      "Double materiality concept",
-      "ESG in emerging markets",
-      "Stakeholder versus shareholder theory",
-    ],
-    outcome:
-      "Participants articulate the strategic case for ESG, explain double materiality, and identify sector-specific ESG priorities for their organisation.",
-    exercise:
-      "Baseline materiality matrix for a selected industry sector, peer-reviewed in class.",
-    assessment: "Peer-reviewed in session. Informs the capstone ESG roadmap.",
-  },
-  {
-    num: "08",
-    title: "The E Pillar: Climate Action and Environmental Management",
-    duration: "4 hours",
-    day: "Day 1, Session 2",
-    topics: [
-      "GHG Protocol basics",
-      "Scope 1, 2 and 3 emissions",
-      "Circular economy principles",
-      "Biodiversity risk assessment",
-      "Transition risk using the ClearSight method",
-      "Net zero pathways and science-based targets",
-    ],
-    outcome:
-      "Participants quantify emissions across all three scopes for a provided company profile and outline a credible net-zero pathway.",
-    exercise:
-      "Emissions calculation exercise across Scope 1, 2 and 3 for a provided scenario.",
-    assessment: "Formative. Output feeds into the capstone roadmap.",
-  },
-  {
-    num: "09",
-    title: "The S and G Pillars: Social Capital and Ethical Governance",
-    duration: "4 hours",
-    day: "Day 2, Session 1",
-    topics: [
-      "Supply chain human rights due diligence",
-      "Labour standards and fair wages",
-      "DEI metrics and measurement",
-      "Board diversity and executive compensation",
-      "Anti-corruption and data privacy (FCPA, UK Bribery Act)",
-      "Whistleblower protections and ethics hotlines",
-    ],
-    outcome:
-      "Participants complete a supplier code of conduct using a provided template and identify governance gaps in a provided company profile.",
-    exercise:
-      "Supplier code of conduct draft using the provided template. 15-minute group debrief.",
-    assessment: "Graded submission. Reviewed by facilitator.",
-  },
-  {
-    num: "10",
-    title: "Global Regulatory and Disclosure Landscape",
-    duration: "4 hours",
-    day: "Day 2, Session 2",
-    topics: [
-      "GRI standards in depth",
-      "SASB and ISSB frameworks",
-      "EU CSRD mandatory requirements",
-      "TCFD climate risk reporting",
-      "Africa and emerging market disclosure trends",
-      "Geographic footprint obligation mapping",
-    ],
-    outcome:
-      "Participants map the regulatory obligations that apply to a provided company profile, by framework and jurisdiction.",
-    exercise:
-      "Regulatory obligation matrix completed for a provided company profile.",
-    assessment: "Graded submission. Reviewed by facilitator.",
-  },
-  {
-    num: "11",
-    title: "ESG Data Architecture and Anti-Greenwashing",
-    duration: "4 hours",
-    day: "Day 3, Session 1",
-    topics: [
-      "Internal data collection pipelines",
-      "Auditable metric design",
-      "Identifying greenwashing risk",
-      "Materiality-led disclosure principles",
-      "Limited versus reasonable assurance",
-      "Third-party verification preparation",
-    ],
-    outcome:
-      "Participants design a data collection pipeline and audit checklist for a provided organisation, and identify two greenwashing risks in a provided report extract.",
-    exercise:
-      "Data audit checklist development for a provided company scenario.",
-    assessment: "Graded submission. Reviewed by facilitator.",
-  },
-  {
-    num: "12",
-    title: "Capstone: Building the Corporate ESG Roadmap",
-    duration: "4 hours",
-    day: "Day 4 (Full Day)",
-    topics: [
-      "Group presentations and peer review",
-      "Integrating ESG into corporate budgets",
-      "Building an investor-ready ESG deck",
-      "Executive board sign-off mechanics",
-      "Communicating ESG to stakeholders",
-      "Continuous improvement frameworks",
-    ],
-    outcome:
-      "Participants present a complete, investor-ready corporate ESG roadmap covering all three pillars with a phased implementation timeline.",
-    exercise:
-      "Full ESG roadmap presentation (10 minutes plus Q and A). Peer and facilitator assessed using a structured rubric.",
-    assessment:
-      "30-question digital assessment. Pass mark: 80%. Participants who pass receive the ESG Institute-accredited certificate.",
-  },
-];
-
 /* ─── Module Accordion ─────────────────────────────────────── */
 
 function ModuleCard({ mod, index }: { mod: (typeof level1Modules)[0]; index: number }) {
@@ -344,13 +226,11 @@ function ModuleCard({ mod, index }: { mod: (typeof level1Modules)[0]; index: num
 /* ─── Page ─────────────────────────────────────────────────── */
 
 export default function TrainingPage() {
-  const [activeLevel, setActiveLevel] = useState<"l1" | "l2">("l1");
-
   return (
     <>
       <Seo
         title="Corporate ESG Training Programme | EarnMore Group"
-        description="A full ESG training programme from entry level to senior executive. 48 hours across 8 days. Hybrid delivery. ESG Institute-accredited certificate on completion."
+        description="Corporate ESG Strategy and Compliance Level 1 training for junior and early-career staff. Six practical modules across scheduled sessions on 10 and 17 October 2026. Contact EarnMore for Level 2 training."
         keywords="ESG training Nigeria, ESG course Africa, sustainability training, corporate ESG programme, ESG Institute certificate"
         canonical="/training"
         ogImage="https://earnmoregroup.com/og/training.jpg"
@@ -372,23 +252,23 @@ export default function TrainingPage() {
                 >
                   <p className="text-xs font-bold tracking-widest uppercase text-primary mb-4 flex items-center gap-2">
                     <span className="w-6 h-px bg-primary" />
-                    Full Training Programme
+                    Level 1 Training Programme
                   </p>
                   <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight mb-6">
                     Corporate ESG Strategy{" "}
                     <span className="italic font-serif font-normal text-primary">and Compliance</span>
                   </h1>
                   <p className="text-foreground/60 text-lg leading-relaxed mb-8 max-w-xl">
-                    A complete two-level programme covering the full ESG framework, from foundations for junior staff to advanced strategic and regulatory content for senior executives. Grounded in real reporting frameworks, global business cases, and practical exercises.
+                    A practical foundation programme covering the ESG framework for junior and early-career staff. Learn through real reporting frameworks, global business cases, and practical exercises that connect ESG to everyday work.
                   </p>
 
                   {/* Stat badges */}
                   <div className="flex flex-wrap gap-3 mb-10">
                     {[
-                      { icon: <Layers className="w-4 h-4" />, label: "12 Modules" },
-                      { icon: <Clock className="w-4 h-4" />, label: "48 Contact Hours" },
-                      { icon: <Users className="w-4 h-4" />, label: "All Levels Welcome" },
-                      { icon: <Calendar className="w-4 h-4" />, label: "Starts 28 Aug 2026" },
+                      { icon: <Layers className="w-4 h-4" />, label: "6 Modules" },
+                      { icon: <Clock className="w-4 h-4" />, label: "24 Contact Hours" },
+                      { icon: <Users className="w-4 h-4" />, label: "Level 1 Foundation" },
+                      { icon: <Calendar className="w-4 h-4" />, label: "10 & 17 October 2026" },
                     ].map((b, i) => (
                       <span
                         key={i}
@@ -432,12 +312,12 @@ export default function TrainingPage() {
                   {/* Detail rows */}
                   <div className="bg-white divide-y divide-gray-100">
                     {[
-                      { icon: <Calendar className="w-4 h-4" />, label: "Dates", value: "28 Aug – 4 Sep 2026" },
-                      { icon: <Clock className="w-4 h-4" />, label: "Duration", value: "8 days · 48 contact hours" },
+                      { icon: <Calendar className="w-4 h-4" />, label: "Dates", value: "10 & 17 October 2026" },
+                      { icon: <Clock className="w-4 h-4" />, label: "Duration", value: "24 contact hours" },
                       { icon: <Layers className="w-4 h-4" />, label: "Format", value: "Hybrid (in-person and online)" },
-                      { icon: <BookOpen className="w-4 h-4" />, label: "Modules", value: "12 (6 per level)" },
-                      { icon: <Award className="w-4 h-4" />, label: "Certificate", value: "ESG Institute-accredited (Level 2)" },
-                      { icon: <Users className="w-4 h-4" />, label: "Who Should Attend", value: "All staff, entry level to senior executive" },
+                      { icon: <BookOpen className="w-4 h-4" />, label: "Modules", value: "6 Level 1 modules" },
+                      { icon: <Award className="w-4 h-4" />, label: "Certificate", value: "EarnMore completion certificate" },
+                      { icon: <Users className="w-4 h-4" />, label: "Who Should Attend", value: "Junior and early-career staff" },
                     ].map((row, i) => (
                       <div key={i} className="flex items-start gap-4 px-7 py-4">
                         <span className="text-primary mt-0.5 flex-shrink-0">{row.icon}</span>
@@ -478,64 +358,58 @@ export default function TrainingPage() {
                 <span className="w-6 h-px bg-primary" />
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight mb-5">
-                Two Levels.{" "}
-                <span className="italic font-serif font-normal text-primary">One Complete Programme.</span>
+                ESG Foundations,{" "}
+                <span className="italic font-serif font-normal text-primary">Made Practical.</span>
               </h2>
               <p className="text-foreground/60 leading-relaxed">
-                This programme covers the full ESG framework across two levels. Both levels use global business case studies, practical exercises, and real reporting frameworks to make the content directly applicable to participants' day-to-day work. The two levels can be delivered sequentially as part of an organisation-wide ESG capability programme, or independently based on audience.
+                The scheduled programme is Level 1: Foundation. It introduces the environmental, social, and governance pillars using plain language, global business cases, and practical exercises for participants' day-to-day roles.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {[
-                {
-                  tag: "Level 1",
-                  title: "Foundation",
-                  audience: "Junior and early-career staff (0-5 years). No prior ESG knowledge needed.",
-                  details: ["6 modules", "24 contact hours", "4 days", "Pass mark: 70%", "Completion certificate"],
-                  days: "Days 1-4 (28-31 Aug 2026)",
-                  color: "#0a2e28",
-                },
-                {
-                  tag: "Level 2",
-                  title: "Advanced",
-                  audience: "Mid-to-senior executives, sustainability leads, finance and operations professionals.",
-                  details: ["6 modules", "24 contact hours", "4 days", "Pass mark: 80%", "ESG Institute-accredited certificate"],
-                  days: "Days 5-8 (1-4 Sep 2026)",
-                  color: "#059669",
-                },
-              ].map((level, i) => (
-                <motion.div
-                  key={i}
-                  className="rounded-2xl overflow-hidden shadow-sm border border-transparent hover:shadow-md transition-all duration-300"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                >
-                  <div className="px-8 py-5" style={{ background: `linear-gradient(135deg, ${level.color} 0%, #0d3d2e 100%)` }}>
-                    <span className="text-emerald-400 text-xs font-bold uppercase tracking-widest">{level.tag}</span>
-                    <h3 className="text-white text-2xl font-bold mt-1">{level.title}</h3>
+            <div className="grid md:grid-cols-5 gap-6">
+              <motion.div
+                className="md:col-span-3 rounded-2xl overflow-hidden shadow-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="px-8 py-5" style={{ background: "linear-gradient(135deg, #0a2e28 0%, #0d3d2e 100%)" }}>
+                  <span className="text-emerald-400 text-xs font-bold uppercase tracking-widest">Scheduled Programme</span>
+                  <h3 className="text-white text-2xl font-bold mt-1">Level 1: Foundation</h3>
+                </div>
+                <div className="bg-white px-8 py-6">
+                  <p className="text-xs font-bold text-foreground/40 uppercase tracking-wider mb-2">Target Audience</p>
+                  <p className="text-foreground/65 text-sm mb-5 leading-relaxed">Junior and early-career staff (0-5 years). No prior ESG knowledge needed.</p>
+                  <p className="text-xs font-bold text-foreground/40 uppercase tracking-wider mb-3">Programme Details</p>
+                  <ul className="space-y-2 mb-5">
+                    {["6 modules", "24 contact hours", "Pass mark: 70%", "EarnMore completion certificate"].map((detail) => (
+                      <li key={detail} className="flex items-center gap-2 text-sm text-foreground/70 font-medium">
+                        <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="inline-flex items-center gap-2 bg-emerald-50 px-3 py-2 rounded-lg">
+                    <Calendar className="w-3.5 h-3.5 text-primary" />
+                    <span className="text-xs text-primary font-semibold">10 & 17 October 2026</span>
                   </div>
-                  <div className="bg-white px-8 py-6">
-                    <p className="text-xs font-bold text-foreground/40 uppercase tracking-wider mb-2">Target Audience</p>
-                    <p className="text-foreground/65 text-sm mb-5 leading-relaxed">{level.audience}</p>
-                    <p className="text-xs font-bold text-foreground/40 uppercase tracking-wider mb-3">Programme Details</p>
-                    <ul className="space-y-2 mb-5">
-                      {level.details.map((d, j) => (
-                        <li key={j} className="flex items-center gap-2 text-sm text-foreground/70 font-medium">
-                          <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                          {d}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="inline-flex items-center gap-2 bg-emerald-50 px-3 py-2 rounded-lg">
-                      <Calendar className="w-3.5 h-3.5 text-primary" />
-                      <span className="text-xs text-primary font-semibold">{level.days}</span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+                </div>
+              </motion.div>
+              <motion.div
+                className="md:col-span-2 rounded-2xl border border-emerald-100 bg-white p-8 flex flex-col justify-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <p className="text-primary text-xs font-bold uppercase tracking-widest mb-3">Need Level 2?</p>
+                <h3 className="text-xl font-bold text-foreground mb-3">Talk to our team</h3>
+                <p className="text-sm text-foreground/60 leading-relaxed mb-5">Level 2 training is available on request. Contact EarnMore to discuss the right option for your team.</p>
+                <Link href="/contact" className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline">
+                  Contact Us <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -561,96 +435,28 @@ export default function TrainingPage() {
               </h2>
             </motion.div>
 
-            {/* Level tabs */}
-            <div className="flex justify-center mb-10">
-              <div className="inline-flex rounded-xl border border-gray-200 p-1 bg-gray-50">
-                {[
-                  { id: "l1" as const, label: "Level 1: Foundation", sub: "Modules 1-6 · Days 1-4" },
-                  { id: "l2" as const, label: "Level 2: Advanced", sub: "Modules 7-12 · Days 5-8" },
-                ].map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveLevel(tab.id)}
-                    className={`px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-200 text-left ${
-                      activeLevel === tab.id
-                        ? "bg-primary text-white shadow-sm"
-                        : "text-foreground/55 hover:text-foreground"
-                    }`}
-                  >
-                    <span className="block">{tab.label}</span>
-                    <span className={`block text-xs font-normal mt-0.5 ${activeLevel === tab.id ? "text-white/70" : "text-foreground/35"}`}>
-                      {tab.sub}
-                    </span>
-                  </button>
-                ))}
+            <div className="rounded-2xl border border-emerald-100 bg-emerald-50 px-7 py-5 mb-8 flex flex-col md:flex-row md:items-center gap-4">
+              <div className="flex-grow">
+                <p className="text-primary font-bold mb-1">Level 1: Foundation</p>
+                <p className="text-foreground/60 text-sm leading-relaxed">
+                  Designed for junior and early-career staff with no prior ESG knowledge. Six modules introduce ESG from the ground up using plain language, global examples, and practical exercises tied to participants' actual job roles. The programme ends with each participant building a personal ESG action plan.
+                </p>
+              </div>
+              <div className="flex-shrink-0 flex flex-wrap gap-2 md:flex-col">
+                <span className="text-xs bg-white border border-emerald-200 text-primary font-semibold px-3 py-1.5 rounded-lg">10 & 17 October 2026</span>
+                <span className="text-xs bg-white border border-emerald-200 text-primary font-semibold px-3 py-1.5 rounded-lg">Pass mark: 70%</span>
               </div>
             </div>
 
-            {/* Level context banner */}
-            <AnimatePresence mode="wait">
-              {activeLevel === "l1" ? (
-                <motion.div
-                  key="l1-banner"
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.25 }}
-                  className="rounded-2xl border border-emerald-100 bg-emerald-50 px-7 py-5 mb-8 flex flex-col md:flex-row md:items-center gap-4"
-                >
-                  <div className="flex-grow">
-                    <p className="text-primary font-bold mb-1">Level 1: Foundation</p>
-                    <p className="text-foreground/60 text-sm leading-relaxed">
-                      Designed for junior and early-career staff with no prior ESG knowledge. Six modules introduce ESG from the ground up using plain language, global examples, and practical exercises tied to participants' actual job roles. The programme ends with each participant building a personal ESG action plan.
-                    </p>
-                  </div>
-                  <div className="flex-shrink-0 flex flex-wrap gap-2 md:flex-col">
-                    <span className="text-xs bg-white border border-emerald-200 text-primary font-semibold px-3 py-1.5 rounded-lg">28-31 Aug 2026</span>
-                    <span className="text-xs bg-white border border-emerald-200 text-primary font-semibold px-3 py-1.5 rounded-lg">Pass mark: 70%</span>
-                  </div>
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="l2-banner"
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.25 }}
-                  className="rounded-2xl border border-emerald-100 bg-emerald-50 px-7 py-5 mb-8 flex flex-col md:flex-row md:items-center gap-4"
-                >
-                  <div className="flex-grow">
-                    <p className="text-primary font-bold mb-1">Level 2: Advanced</p>
-                    <p className="text-foreground/60 text-sm leading-relaxed">
-                      Designed for mid-to-senior executives, sustainability leads, finance and operations professionals. Six modules provide rigorous technical and strategic grounding in ESG, working with real reporting frameworks, regulatory requirements, and data architecture. The programme concludes with each participant developing an investor-ready corporate ESG roadmap.
-                    </p>
-                  </div>
-                  <div className="flex-shrink-0 flex flex-wrap gap-2 md:flex-col">
-                    <span className="text-xs bg-white border border-emerald-200 text-primary font-semibold px-3 py-1.5 rounded-lg">1-4 Sep 2026</span>
-                    <span className="text-xs bg-white border border-emerald-200 text-primary font-semibold px-3 py-1.5 rounded-lg">Pass mark: 80%</span>
-                    <span className="text-xs bg-white border border-emerald-200 text-primary font-semibold px-3 py-1.5 rounded-lg">ESG Institute accredited</span>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            {/* Module cards */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeLevel}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className="space-y-3"
-              >
-                {(activeLevel === "l1" ? level1Modules : level2Modules).map((mod, i) => (
-                  <ModuleCard key={mod.num} mod={mod} index={i} />
-                ))}
-              </motion.div>
-            </AnimatePresence>
+            <div className="space-y-3">
+              {level1Modules.map((mod, i) => (
+                <ModuleCard key={mod.num} mod={mod} index={i} />
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* ── Comparison Table ── */}
+        {/* ── Level 1 Summary ── */}
         <section className="py-14 md:py-20" style={{ backgroundColor: "#f0fdf8" }}>
           <div className="max-w-5xl mx-auto px-6 lg:px-10">
             <motion.div
@@ -662,7 +468,7 @@ export default function TrainingPage() {
             >
               <p className="text-primary text-xs font-bold tracking-widest uppercase mb-4 flex items-center justify-center gap-2">
                 <span className="w-6 h-px bg-primary" />
-                Programme Comparison
+                Level 1 Overview
                 <span className="w-6 h-px bg-primary" />
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
@@ -682,30 +488,26 @@ export default function TrainingPage() {
                 <thead>
                   <tr>
                     <th className="bg-white px-6 py-4 text-left text-xs font-bold text-foreground/40 uppercase tracking-wider w-1/3"></th>
-                    <th className="px-6 py-4 text-center text-white text-sm font-bold" style={{ background: "linear-gradient(135deg, #0a2e28 0%, #0d3d2e 100%)" }}>
+                    <th className="px-6 py-4 text-left text-white text-sm font-bold" style={{ background: "linear-gradient(135deg, #0a2e28 0%, #0d3d2e 100%)" }}>
                       Level 1: Foundation
-                    </th>
-                    <th className="px-6 py-4 text-center text-white text-sm font-bold bg-primary">
-                      Level 2: Advanced
                     </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {[
-                    { label: "Target Audience", l1: "Junior and early-career staff (0-5 years). No prior ESG knowledge needed.", l2: "Mid-to-senior executives, sustainability leads, finance and operations professionals." },
-                    { label: "Dates", l1: "28-31 August 2026", l2: "1-4 September 2026" },
-                    { label: "Duration", l1: "24 contact hours · 4 days", l2: "24 contact hours · 4 days" },
-                    { label: "Modules", l1: "6 modules covering all three ESG pillars", l2: "6 modules with deeper technical and strategic content" },
-                    { label: "Pass Mark", l1: "70% on 20-question written assessment", l2: "80% on 30-question digital assessment" },
-                    { label: "Certificate", l1: "EarnMore Group completion certificate", l2: "ESG Institute-accredited certificate" },
-                    { label: "Capstone", l1: "Personal ESG action plan (5-minute presentation)", l2: "Corporate ESG roadmap (10-minute presentation plus Q and A)" },
-                    { label: "Frameworks Covered", l1: "GRI, SASB, ISSB at introductory level", l2: "GRI, SASB, ISSB, CSRD, TCFD in depth" },
-                    { label: "African Context", l1: "Yes, throughout all modules", l2: "Yes, including JSE and Nigerian SEC guidelines" },
+                    { label: "Target Audience", value: "Junior and early-career staff (0-5 years). No prior ESG knowledge needed." },
+                    { label: "Scheduled Sessions", value: "10 and 17 October 2026" },
+                    { label: "Duration", value: "24 contact hours" },
+                    { label: "Modules", value: "6 modules covering all three ESG pillars" },
+                    { label: "Pass Mark", value: "70% on a 20-question written assessment" },
+                    { label: "Certificate", value: "EarnMore completion certificate" },
+                    { label: "Capstone", value: "Personal ESG action plan (5-minute presentation)" },
+                    { label: "Frameworks Covered", value: "GRI, SASB, ISSB at introductory level" },
+                    { label: "African Context", value: "Yes, throughout all modules" },
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50/60"}>
                       <td className="px-6 py-4 text-xs font-bold text-foreground/50 uppercase tracking-wider">{row.label}</td>
-                      <td className="px-6 py-4 text-foreground/65 text-center">{row.l1}</td>
-                      <td className="px-6 py-4 text-foreground/65 text-center">{row.l2}</td>
+                      <td className="px-6 py-4 text-foreground/65">{row.value}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -741,7 +543,7 @@ export default function TrainingPage() {
                 <span className="italic font-serif font-normal text-emerald-300">ESG Capability?</span>
               </h2>
               <p className="text-green-200/60 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-                The programme runs from 28 August to 4 September 2026. Places are limited. Contact us to discuss enrolment for your team.
+                Level 1 sessions take place on 10 and 17 October 2026. Places are limited. Contact us to enrol your team or to discuss Level 2 training.
               </p>
               <Link
                 href="/contact"

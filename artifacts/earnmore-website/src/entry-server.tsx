@@ -3,7 +3,7 @@ import { renderToString } from "react-dom/server";
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { memoryLocation } from "wouter/memory-location";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HelmetProvider, FilledContext } from "react-helmet-async";
+import { HelmetProvider, type HelmetServerState } from "react-helmet-async";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 // Page imports
@@ -55,7 +55,7 @@ function AppRoutes() {
 
 export function render(url: string) {
   const { hook } = memoryLocation({ path: url, static: true });
-  const helmetContext = {} as FilledContext;
+  const helmetContext: { helmet?: HelmetServerState | null } = {};
   const queryClient = new QueryClient();
 
   const html = renderToString(
