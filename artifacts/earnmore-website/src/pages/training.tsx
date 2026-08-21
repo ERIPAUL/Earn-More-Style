@@ -129,6 +129,15 @@ const level1Modules = [
   },
 ];
 
+const level2Highlights = [
+  "Foundations of Corporate Sustainability",
+  "The E Pillar: Climate Action and Environmental Management",
+  "The S and G Pillars: Social Capital and Ethical Governance",
+  "Global Regulatory and Disclosure Landscape",
+  "ESG Data Architecture and Anti-Greenwashing",
+  "Capstone: Building the Corporate ESG Roadmap",
+];
+
 /* ─── Module Accordion ─────────────────────────────────────── */
 
 function ModuleCard({ mod, index }: { mod: (typeof level1Modules)[0]; index: number }) {
@@ -453,6 +462,70 @@ export default function TrainingPage() {
                 <ModuleCard key={mod.num} mod={mod} index={i} />
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── Level 2 Interest Section ── */}
+        <section className="py-14 md:py-20" style={{ background: "linear-gradient(135deg, #061a16 0%, #0a2e28 55%, #0d3d2e 100%)" }}>
+          <div className="max-w-7xl mx-auto px-6 lg:px-10">
+            <motion.div
+              className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-start"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="lg:col-span-2">
+                <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-4 flex items-center gap-2">
+                  <span className="w-6 h-px bg-emerald-400" />
+                  Available on Request
+                </p>
+                <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-5">
+                  Take the Next Step with{" "}
+                  <span className="italic font-serif font-normal text-emerald-300">Level 2.</span>
+                </h2>
+                <p className="text-green-100/70 leading-relaxed mb-7">
+                  Level 2 is designed for mid-to-senior executives, sustainability leads, finance, and operations professionals who want deeper technical and strategic ESG capability.
+                </p>
+                <div className="space-y-3 mb-8">
+                  {[
+                    "6 advanced modules",
+                    "24 contact hours",
+                    "80% assessment pass mark",
+                    "ESG Institute-accredited certificate",
+                  ].map((detail) => (
+                    <p key={detail} className="flex items-center gap-3 text-sm text-green-100/80">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                      {detail}
+                    </p>
+                  ))}
+                </div>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white font-semibold px-7 py-3.5 rounded-md transition-all group"
+                >
+                  Enquire About Level 2
+                  <span className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </Link>
+              </div>
+
+              <div className="lg:col-span-3">
+                <p className="text-emerald-300 font-semibold mb-5">Advanced curriculum highlights</p>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {level2Highlights.map((module, index) => (
+                    <div key={module} className="rounded-xl border border-white/10 bg-white/5 p-5">
+                      <span className="text-emerald-400 text-xs font-bold tracking-wider">MODULE {String(index + 7).padStart(2, "0")}</span>
+                      <p className="text-white font-semibold text-sm leading-snug mt-2">{module}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-green-100/60 text-sm leading-relaxed mt-6">
+                  Explore materiality, climate action, responsible governance, global reporting frameworks, audit-ready ESG data, and an investor-ready corporate ESG roadmap. Contact EarnMore to discuss Level 2 delivery for your team.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </section>
 
