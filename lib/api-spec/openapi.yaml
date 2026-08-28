@@ -124,8 +124,11 @@ components:
           type: string
         message:
           type: string
+        confirmationEmailSent:
+          type: boolean
       required:
         - status
         - reference
         - message
+        - confirmationEmailSent
 

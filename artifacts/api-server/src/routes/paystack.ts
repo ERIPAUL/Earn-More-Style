@@ -6,6 +6,7 @@ import {
   VerifyPaystackTransactionParams,
   VerifyPaystackTransactionResponse,
 } from "@workspace/api-zod";
+import { sendTrainingConfirmationEmail } from "../lib/training-confirmation-email";
 
 const router: IRouter = Router();
 
@@ -30,6 +31,12 @@ interface PaystackVerifyResponse {
     reference?: string;
     amount?: number;
     currency?: string;
+    customer?: {
+      email?: string;
+    };
+    metadata?: {
+      participant_name?: string;
+    };
   };
 }
 
@@ -154,6 +161,40 @@ router.get("/paystack/verify/:reference", async (req, res): Promise<void> => {
     );
   }
 
+  let confirmationEmailSent = false;
+  if (isSuccessful) {
+    const participantEmail = transaction.customer?.email;
+    const participantName = transaction.metadata?.participant_name;
+
+    if (participantEmail && participantName) {
+      try {
+        const email = await sendTrainingConfirmationEmail({
+          participantEmail,
+          participantName,
+          reference: parsed.data.reference,
+        });
+        confirmationEmailSent = true;
+        req.log.info(
+          { reference: parsed.data.reference, emailId: email.id },
+          "Training confirmation email sent",
+        );
+      } catch (error) {
+        req.log.error(
+          {
+            reference: parsed.data.reference,
+            error: error instanceof Error ? error.message : "Unknown email error",
+          },
+          "Training payment verified but confirmation email failed",
+        );
+      }
+    } else {
+      req.log.error(
+        { reference: parsed.data.reference },
+        "Training payment verified without participant email metadata",
+      );
+    }
+  }
+
   const message =
     status === "success"
       ? "Payment confirmed. Your Level 1 training enrolment is complete."
@@ -166,6 +207,7 @@ router.get("/paystack/verify/:reference", async (req, res): Promise<void> => {
       status,
       reference: parsed.data.reference,
       message,
+      confirmationEmailSent,
     }),
   );
 });

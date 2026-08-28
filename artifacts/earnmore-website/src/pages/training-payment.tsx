@@ -17,7 +17,7 @@ export default function TrainingPaymentPage() {
   const verification = useVerifyPaystackTransaction(reference);
 
   const status = verification.data?.status;
-  const isLoading = !reference || verification.isLoading;
+  const isLoading = Boolean(reference) && verification.isLoading;
   const isSuccess = status === "success";
   const isPending = status === "pending";
 
@@ -43,6 +43,11 @@ export default function TrainingPaymentPage() {
               <CheckCircle2 className="w-16 h-16 text-primary mx-auto mb-5" />
               <h1 className="text-2xl md:text-3xl font-bold text-foreground">Enrollment confirmed</h1>
               <p className="text-foreground/60 mt-3 leading-relaxed">{verification.data?.message}</p>
+              <p className="text-sm text-foreground/55 mt-3">
+                {verification.data?.confirmationEmailSent
+                  ? "A confirmation email with your course details has been sent."
+                  : "Your payment is confirmed, but the confirmation email could not be sent. Please contact us for assistance."}
+              </p>
             </>
           ) : isPending ? (
             <>

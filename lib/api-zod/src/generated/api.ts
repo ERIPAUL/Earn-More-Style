@@ -57,4 +57,5 @@ export const VerifyPaystackTransactionResponse = zod.object({
   status: zod.enum(["success", "pending", "failed"]),
   reference: zod.string(),
   message: zod.string(),
+  confirmationEmailSent: zod.boolean(),
 });

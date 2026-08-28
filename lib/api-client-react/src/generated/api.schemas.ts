@@ -37,4 +37,5 @@ export interface PaystackVerification {
   status: PaystackVerificationStatus;
   reference: string;
   message: string;
+  confirmationEmailSent: boolean;
 }
