@@ -20,7 +20,8 @@ export default function TrainingEnrollmentDialog({
   open,
   onOpenChange,
 }: TrainingEnrollmentDialogProps) {
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [secondName, setSecondName] = useState("");
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const initializePayment = useInitializePaystackTransaction();
@@ -30,7 +31,13 @@ export default function TrainingEnrollmentDialog({
     setError("");
 
     initializePayment.mutate(
-      { data: { name: name.trim(), email: email.trim() } },
+      {
+        data: {
+          firstName: firstName.trim(),
+          secondName: secondName.trim(),
+          email: email.trim(),
+        },
+      },
       {
         onSuccess: ({ authorizationUrl }) => {
           window.location.assign(authorizationUrl);
@@ -63,20 +70,37 @@ export default function TrainingEnrollmentDialog({
             <p className="text-xl font-bold text-foreground">₦100,000</p>
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="enrollment-name">Participant name</Label>
-            <Input
-              id="enrollment-name"
-              name="name"
-              autoComplete="name"
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-              minLength={2}
-              maxLength={100}
-              required
-              className="h-11"
-              placeholder="Your full name"
-            />
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="enrollment-first-name">First name</Label>
+              <Input
+                id="enrollment-first-name"
+                name="firstName"
+                autoComplete="given-name"
+                value={firstName}
+                onChange={(event) => setFirstName(event.target.value)}
+                minLength={2}
+                maxLength={50}
+                required
+                className="h-11"
+                placeholder="First name"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="enrollment-second-name">Second name</Label>
+              <Input
+                id="enrollment-second-name"
+                name="secondName"
+                autoComplete="family-name"
+                value={secondName}
+                onChange={(event) => setSecondName(event.target.value)}
+                minLength={2}
+                maxLength={50}
+                required
+                className="h-11"
+                placeholder="Second name"
+              />
+            </div>
           </div>
 
           <div className="space-y-2">

@@ -1,9 +1,16 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
+
 const RESEND_API_URL = "https://api.resend.com/emails";
-const LOGO_URL = "https://earnmoregroup.com/logo.png";
 const FROM_ADDRESS = "EarnMore Consultants <training@earnmoregroup.com>";
+const LOGO_PATHS = [
+  path.resolve(process.cwd(), "../earnmore-website/public/logo.png"),
+  path.resolve(process.cwd(), "artifacts/earnmore-website/public/logo.png"),
+];
 
 interface TrainingConfirmationEmailInput {
-  participantName: string;
+  firstName: string;
+  secondName: string;
   participantEmail: string;
   reference: string;
 }
@@ -22,8 +29,27 @@ function escapeHtml(value: string): string {
     .replaceAll("'", "&#039;");
 }
 
+async function readLogoContent(): Promise<string> {
+  for (const logoPath of LOGO_PATHS) {
+    try {
+      return (await readFile(logoPath)).toString("base64");
+    } catch (error) {
+      const isMissingFile =
+        error instanceof Error &&
+        "code" in error &&
+        error.code === "ENOENT";
+      if (!isMissingFile) {
+        throw error;
+      }
+    }
+  }
+
+  throw new Error("EarnMore email logo file was not found");
+}
+
 export async function sendTrainingConfirmationEmail({
-  participantName,
+  firstName,
+  secondName,
   participantEmail,
   reference,
 }: TrainingConfirmationEmailInput): Promise<{ id: string }> {
@@ -32,9 +58,12 @@ export async function sendTrainingConfirmationEmail({
     throw new Error("RESEND_API_KEY is not configured");
   }
 
+  const participantName = `${firstName} ${secondName}`.trim();
+  const safeFirstName = escapeHtml(firstName);
   const safeName = escapeHtml(participantName);
   const safeReference = escapeHtml(reference);
   const subject = "Payment confirmed: Corporate ESG Level 1 Training";
+  const logoContent = await readLogoContent();
 
   const html = `<!doctype html>
 <html lang="en">
@@ -50,14 +79,14 @@ export async function sendTrainingConfirmationEmail({
           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:640px;background:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #d9eee7;">
             <tr>
               <td style="padding:28px 36px;background:#ffffff;border-bottom:1px solid #e7f2ee;">
-                <img src="${LOGO_URL}" width="184" alt="EarnMore Consultants" style="display:block;width:184px;max-width:100%;height:auto;">
+                <img src="cid:earnmore-logo" width="184" alt="EarnMore Consultants" style="display:block;width:184px;max-width:100%;height:auto;">
               </td>
             </tr>
             <tr>
               <td style="padding:38px 36px;background:#0a2e28;">
                 <div style="font-size:12px;line-height:18px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:#5ee0ad;">Payment confirmed</div>
-                <h1 style="margin:10px 0 12px;font-size:30px;line-height:38px;color:#ffffff;">Your Level 1 enrollment is confirmed</h1>
-                <p style="margin:0;font-size:16px;line-height:25px;color:#cce9df;">Thank you, ${safeName}. We have received your payment for the Corporate ESG Strategy and Compliance training programme.</p>
+                <h1 style="margin:10px 0 12px;font-size:30px;line-height:38px;color:#ffffff;">Congratulations, ${safeFirstName}!</h1>
+                <p style="margin:0;font-size:16px;line-height:25px;color:#cce9df;">Your Level 1 enrollment is confirmed. We have received your payment for the Corporate ESG Strategy and Compliance training programme.</p>
               </td>
             </tr>
             <tr>
@@ -82,7 +111,7 @@ export async function sendTrainingConfirmationEmail({
                   </tr>
                   <tr>
                     <td style="padding:12px 0;border-bottom:1px solid #edf3f1;color:#6c7f79;font-size:14px;">Format</td>
-                    <td align="right" style="padding:12px 0;border-bottom:1px solid #edf3f1;color:#17352f;font-size:14px;font-weight:700;">Hybrid, in-person and online</td>
+                    <td align="right" style="padding:12px 0;border-bottom:1px solid #edf3f1;color:#17352f;font-size:14px;font-weight:700;">Online</td>
                   </tr>
                   <tr>
                     <td style="padding:12px 0;border-bottom:1px solid #edf3f1;color:#6c7f79;font-size:14px;">Modules</td>
@@ -99,7 +128,7 @@ export async function sendTrainingConfirmationEmail({
                   <div style="margin-top:5px;font-size:14px;line-height:22px;color:#17352f;word-break:break-all;">${safeReference}</div>
                 </div>
 
-                <p style="margin:28px 0 0;font-size:15px;line-height:24px;color:#536a63;">Further joining instructions will be sent before the programme. If you have any questions, reply to this email or contact <a href="mailto:info@earnmoregroup.com" style="color:#059669;">info@earnmoregroup.com</a>.</p>
+                <p style="margin:28px 0 0;font-size:15px;line-height:24px;color:#536a63;">The link to join the live course will be sent one week before the course start date. If you have any questions, reply to this email or contact <a href="mailto:info@earnmoregroup.com" style="color:#059669;">info@earnmoregroup.com</a>.</p>
               </td>
             </tr>
             <tr>
@@ -117,18 +146,18 @@ export async function sendTrainingConfirmationEmail({
 
   const text = `Payment confirmed
 
-Hello ${participantName},
+Congratulations, ${firstName}!
 
 Your payment for the Corporate ESG Strategy and Compliance, Level 1: Foundation programme has been confirmed.
 
 Dates: 10 and 17 October 2026
 Duration: 8 hours total, 4 hours per day
-Format: Hybrid, in-person and online
+Format: Online
 Modules: 6 Level 1 modules
 Amount paid: ₦100,000 NGN
 Payment reference: ${reference}
 
-Further joining instructions will be sent before the programme.
+The link to join the live course will be sent one week before the course start date.
 
 EarnMore Consultants
 info@earnmoregroup.com`;
@@ -147,6 +176,13 @@ info@earnmoregroup.com`;
       subject,
       html,
       text,
+      attachments: [
+        {
+          content: logoContent,
+          filename: "earnmore-logo.png",
+          content_id: "earnmore-logo",
+        },
+      ],
     }),
   });
 

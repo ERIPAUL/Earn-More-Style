@@ -327,7 +327,7 @@ export default function TrainingPage() {
                     {[
                       { icon: <Calendar className="w-4 h-4" />, label: "Dates", value: "10 & 17 October 2026" },
                       { icon: <Clock className="w-4 h-4" />, label: "Duration", value: "8 hours total, 4 hours per day" },
-                      { icon: <Layers className="w-4 h-4" />, label: "Format", value: "Hybrid (in-person and online)" },
+                      { icon: <Layers className="w-4 h-4" />, label: "Format", value: "Online" },
                       { icon: <BookOpen className="w-4 h-4" />, label: "Modules", value: "6 Level 1 modules" },
                       { icon: <Award className="w-4 h-4" />, label: "Certificate", value: "EarnMore completion certificate" },
                       { icon: <Users className="w-4 h-4" />, label: "Who Should Attend", value: "Junior and early-career staff" },

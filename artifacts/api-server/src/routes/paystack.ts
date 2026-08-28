@@ -35,6 +35,8 @@ interface PaystackVerifyResponse {
       email?: string;
     };
     metadata?: {
+      first_name?: string;
+      second_name?: string;
       participant_name?: string;
     };
   };
@@ -49,7 +51,7 @@ router.post("/paystack/initialize", async (req, res): Promise<void> => {
   const parsed = InitializePaystackTransactionBody.safeParse(req.body);
   if (!parsed.success) {
     req.log.warn({ errors: parsed.error.flatten() }, "Invalid training enrolment details");
-    res.status(400).json({ error: "Please provide a valid name and email address." });
+    res.status(400).json({ error: "Please provide valid first name, second name, and email details." });
     return;
   }
 
@@ -81,9 +83,12 @@ router.post("/paystack/initialize", async (req, res): Promise<void> => {
       reference,
       callback_url: callbackUrl,
       metadata: {
-        participant_name: parsed.data.name,
+        first_name: parsed.data.firstName,
+        second_name: parsed.data.secondName,
+        participant_name: `${parsed.data.firstName} ${parsed.data.secondName}`,
         course: "Corporate ESG Strategy and Compliance, Level 1",
         training_dates: "10 and 17 October 2026",
+        delivery_format: "Online",
       },
     }),
   });
@@ -164,13 +169,18 @@ router.get("/paystack/verify/:reference", async (req, res): Promise<void> => {
   let confirmationEmailSent = false;
   if (isSuccessful) {
     const participantEmail = transaction.customer?.email;
-    const participantName = transaction.metadata?.participant_name;
+    const legacyNameParts = transaction.metadata?.participant_name?.trim().split(/\s+/) ?? [];
+    const firstName = transaction.metadata?.first_name ?? legacyNameParts[0];
+    const secondName =
+      transaction.metadata?.second_name ??
+      (legacyNameParts.length > 1 ? legacyNameParts.slice(1).join(" ") : undefined);
 
-    if (participantEmail && participantName) {
+    if (participantEmail && firstName && secondName) {
       try {
         const email = await sendTrainingConfirmationEmail({
           participantEmail,
-          participantName,
+          firstName,
+          secondName,
           reference: parsed.data.reference,
         });
         confirmationEmailSent = true;

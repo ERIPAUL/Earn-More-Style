@@ -18,16 +18,23 @@ export const HealthCheckResponse = zod.object({
 /**
  * @summary Initialize a Level 1 training payment
  */
-export const initializePaystackTransactionBodyNameMin = 2;
-export const initializePaystackTransactionBodyNameMax = 100;
+export const initializePaystackTransactionBodyFirstNameMin = 2;
+export const initializePaystackTransactionBodyFirstNameMax = 50;
+
+export const initializePaystackTransactionBodySecondNameMin = 2;
+export const initializePaystackTransactionBodySecondNameMax = 50;
 
 export const initializePaystackTransactionBodyEmailMax = 254;
 
 export const InitializePaystackTransactionBody = zod.object({
-  name: zod
+  firstName: zod
     .string()
-    .min(initializePaystackTransactionBodyNameMin)
-    .max(initializePaystackTransactionBodyNameMax),
+    .min(initializePaystackTransactionBodyFirstNameMin)
+    .max(initializePaystackTransactionBodyFirstNameMax),
+  secondName: zod
+    .string()
+    .min(initializePaystackTransactionBodySecondNameMin)
+    .max(initializePaystackTransactionBodySecondNameMax),
   email: zod.string().email().max(initializePaystackTransactionBodyEmailMax),
 });
 

@@ -12,9 +12,14 @@ export interface HealthStatus {
 export interface TrainingEnrollmentInput {
   /**
    * @minLength 2
-   * @maxLength 100
+   * @maxLength 50
    */
-  name: string;
+  firstName: string;
+  /**
+   * @minLength 2
+   * @maxLength 50
+   */
+  secondName: string;
   /** @maxLength 254 */
   email: string;
 }
