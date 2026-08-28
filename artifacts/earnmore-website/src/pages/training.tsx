@@ -8,6 +8,7 @@ import { Link } from "wouter";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import Seo from "@/components/seo";
+import TrainingEnrollmentDialog from "@/components/training-enrollment-dialog";
 
 /* ─── Data ─────────────────────────────────────────────────── */
 
@@ -235,6 +236,8 @@ function ModuleCard({ mod, index }: { mod: (typeof level1Modules)[0]; index: num
 /* ─── Page ─────────────────────────────────────────────────── */
 
 export default function TrainingPage() {
+  const [enrollmentOpen, setEnrollmentOpen] = useState(false);
+
   return (
     <>
       <Seo
@@ -290,15 +293,16 @@ export default function TrainingPage() {
                   </div>
 
                   <div className="flex flex-wrap gap-4">
-                    <Link
-                      href="/contact"
+                    <button
+                      type="button"
+                      onClick={() => setEnrollmentOpen(true)}
                       className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white font-semibold px-7 py-3.5 rounded-md transition-all group"
                     >
-                      Enquire Now
+                      Enroll Now
                       <span className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
                         <ArrowRight className="w-3.5 h-3.5" />
                       </span>
-                    </Link>
+                    </button>
                   </div>
                 </motion.div>
               </div>
@@ -338,12 +342,13 @@ export default function TrainingPage() {
                     ))}
                   </div>
                   <div className="px-7 py-5 bg-white border-t border-gray-100">
-                    <Link
-                      href="/contact"
+                    <button
+                      type="button"
+                      onClick={() => setEnrollmentOpen(true)}
                       className="block w-full text-center bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3.5 rounded-md transition-all"
                     >
-                      Enquire Now
-                    </Link>
+                      Enroll Now
+                    </button>
                   </div>
                 </div>
               </motion.div>
@@ -618,20 +623,22 @@ export default function TrainingPage() {
               <p className="text-green-200/60 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
                 Level 1 sessions take place on 10 and 17 October 2026. Places are limited. Contact us to enrol your team or to discuss Level 2 training.
               </p>
-              <Link
-                href="/contact"
+              <button
+                type="button"
+                onClick={() => setEnrollmentOpen(true)}
                 className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white font-semibold px-9 py-4 rounded-md transition-all group text-base"
               >
-                Enquire Now
+                Enroll Now
                 <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
                   <ArrowRight className="w-4 h-4" />
                 </span>
-              </Link>
+              </button>
             </motion.div>
           </div>
         </section>
 
       </main>
+      <TrainingEnrollmentDialog open={enrollmentOpen} onOpenChange={setEnrollmentOpen} />
       <Footer />
     </>
   );

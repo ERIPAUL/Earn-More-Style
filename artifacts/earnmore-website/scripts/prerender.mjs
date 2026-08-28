@@ -112,6 +112,7 @@ const routes = [
   "/contact",
   "/infrastructure",
   "/training",
+  "/training/payment",
   "/egg",
   "/blog",
   "/blog/ifrs-s1-s2-part-2",

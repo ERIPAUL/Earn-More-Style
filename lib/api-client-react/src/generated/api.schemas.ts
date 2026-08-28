@@ -8,3 +8,33 @@
 export interface HealthStatus {
   status: string;
 }
+
+export interface TrainingEnrollmentInput {
+  /**
+   * @minLength 2
+   * @maxLength 100
+   */
+  name: string;
+  /** @maxLength 254 */
+  email: string;
+}
+
+export interface PaystackInitialization {
+  authorizationUrl: string;
+  reference: string;
+}
+
+export type PaystackVerificationStatus =
+  (typeof PaystackVerificationStatus)[keyof typeof PaystackVerificationStatus];
+
+export const PaystackVerificationStatus = {
+  success: "success",
+  pending: "pending",
+  failed: "failed",
+} as const;
+
+export interface PaystackVerification {
+  status: PaystackVerificationStatus;
+  reference: string;
+  message: string;
+}

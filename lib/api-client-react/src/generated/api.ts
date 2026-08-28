@@ -5,18 +5,26 @@
  * API specification
  * OpenAPI spec version: 0.1.0
  */
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import type {
+  MutationFunction,
   QueryFunction,
   QueryKey,
+  UseMutationOptions,
+  UseMutationResult,
   UseQueryOptions,
   UseQueryResult,
 } from "@tanstack/react-query";
 
-import type { HealthStatus } from "./api.schemas";
+import type {
+  HealthStatus,
+  PaystackInitialization,
+  PaystackVerification,
+  TrainingEnrollmentInput,
+} from "./api.schemas";
 
 import { customFetch } from "../custom-fetch";
-import type { ErrorType } from "../custom-fetch";
+import type { ErrorType, BodyType } from "../custom-fetch";
 
 type AwaitedInput<T> = PromiseLike<T> | T;
 
@@ -92,6 +100,191 @@ export function useHealthCheck<
   request?: SecondParameter<typeof customFetch>;
 }): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
   const queryOptions = getHealthCheckQueryOptions(options);
+
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
+    queryKey: QueryKey;
+  };
+
+  return { ...query, queryKey: queryOptions.queryKey };
+}
+
+/**
+ * @summary Initialize a Level 1 training payment
+ */
+export const getInitializePaystackTransactionUrl = () => {
+  return `/api/paystack/initialize`;
+};
+
+export const initializePaystackTransaction = async (
+  trainingEnrollmentInput: TrainingEnrollmentInput,
+  options?: RequestInit,
+): Promise<PaystackInitialization> => {
+  return customFetch<PaystackInitialization>(
+    getInitializePaystackTransactionUrl(),
+    {
+      ...options,
+      method: "POST",
+      headers: { "Content-Type": "application/json", ...options?.headers },
+      body: JSON.stringify(trainingEnrollmentInput),
+    },
+  );
+};
+
+export const getInitializePaystackTransactionMutationOptions = <
+  TError = ErrorType<void>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof initializePaystackTransaction>>,
+    TError,
+    { data: BodyType<TrainingEnrollmentInput> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof initializePaystackTransaction>>,
+  TError,
+  { data: BodyType<TrainingEnrollmentInput> },
+  TContext
+> => {
+  const mutationKey = ["initializePaystackTransaction"];
+  const { mutation: mutationOptions, request: requestOptions } = options
+    ? options.mutation &&
+      "mutationKey" in options.mutation &&
+      options.mutation.mutationKey
+      ? options
+      : { ...options, mutation: { ...options.mutation, mutationKey } }
+    : { mutation: { mutationKey }, request: undefined };
+
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof initializePaystackTransaction>>,
+    { data: BodyType<TrainingEnrollmentInput> }
+  > = (props) => {
+    const { data } = props ?? {};
+
+    return initializePaystackTransaction(data, requestOptions);
+  };
+
+  return { mutationFn, ...mutationOptions };
+};
+
+export type InitializePaystackTransactionMutationResult = NonNullable<
+  Awaited<ReturnType<typeof initializePaystackTransaction>>
+>;
+export type InitializePaystackTransactionMutationBody =
+  BodyType<TrainingEnrollmentInput>;
+export type InitializePaystackTransactionMutationError = ErrorType<void>;
+
+/**
+ * @summary Initialize a Level 1 training payment
+ */
+export const useInitializePaystackTransaction = <
+  TError = ErrorType<void>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof initializePaystackTransaction>>,
+    TError,
+    { data: BodyType<TrainingEnrollmentInput> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationResult<
+  Awaited<ReturnType<typeof initializePaystackTransaction>>,
+  TError,
+  { data: BodyType<TrainingEnrollmentInput> },
+  TContext
+> => {
+  return useMutation(getInitializePaystackTransactionMutationOptions(options));
+};
+
+/**
+ * @summary Verify a Level 1 training payment
+ */
+export const getVerifyPaystackTransactionUrl = (reference: string) => {
+  return `/api/paystack/verify/${reference}`;
+};
+
+export const verifyPaystackTransaction = async (
+  reference: string,
+  options?: RequestInit,
+): Promise<PaystackVerification> => {
+  return customFetch<PaystackVerification>(
+    getVerifyPaystackTransactionUrl(reference),
+    {
+      ...options,
+      method: "GET",
+    },
+  );
+};
+
+export const getVerifyPaystackTransactionQueryKey = (reference: string) => {
+  return [`/api/paystack/verify/${reference}`] as const;
+};
+
+export const getVerifyPaystackTransactionQueryOptions = <
+  TData = Awaited<ReturnType<typeof verifyPaystackTransaction>>,
+  TError = ErrorType<void>,
+>(
+  reference: string,
+  options?: {
+    query?: UseQueryOptions<
+      Awaited<ReturnType<typeof verifyPaystackTransaction>>,
+      TError,
+      TData
+    >;
+    request?: SecondParameter<typeof customFetch>;
+  },
+) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {};
+
+  const queryKey =
+    queryOptions?.queryKey ?? getVerifyPaystackTransactionQueryKey(reference);
+
+  const queryFn: QueryFunction<
+    Awaited<ReturnType<typeof verifyPaystackTransaction>>
+  > = ({ signal }) =>
+    verifyPaystackTransaction(reference, { signal, ...requestOptions });
+
+  return {
+    queryKey,
+    queryFn,
+    enabled: !!reference,
+    ...queryOptions,
+  } as UseQueryOptions<
+    Awaited<ReturnType<typeof verifyPaystackTransaction>>,
+    TError,
+    TData
+  > & { queryKey: QueryKey };
+};
+
+export type VerifyPaystackTransactionQueryResult = NonNullable<
+  Awaited<ReturnType<typeof verifyPaystackTransaction>>
+>;
+export type VerifyPaystackTransactionQueryError = ErrorType<void>;
+
+/**
+ * @summary Verify a Level 1 training payment
+ */
+
+export function useVerifyPaystackTransaction<
+  TData = Awaited<ReturnType<typeof verifyPaystackTransaction>>,
+  TError = ErrorType<void>,
+>(
+  reference: string,
+  options?: {
+    query?: UseQueryOptions<
+      Awaited<ReturnType<typeof verifyPaystackTransaction>>,
+      TError,
+      TData
+    >;
+    request?: SecondParameter<typeof customFetch>;
+  },
+): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
+  const queryOptions = getVerifyPaystackTransactionQueryOptions(
+    reference,
+    options,
+  );
 
   const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
     queryKey: QueryKey;

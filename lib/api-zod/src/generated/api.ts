@@ -14,3 +14,47 @@ import * as zod from "zod";
 export const HealthCheckResponse = zod.object({
   status: zod.string(),
 });
+
+/**
+ * @summary Initialize a Level 1 training payment
+ */
+export const initializePaystackTransactionBodyNameMin = 2;
+export const initializePaystackTransactionBodyNameMax = 100;
+
+export const initializePaystackTransactionBodyEmailMax = 254;
+
+export const InitializePaystackTransactionBody = zod.object({
+  name: zod
+    .string()
+    .min(initializePaystackTransactionBodyNameMin)
+    .max(initializePaystackTransactionBodyNameMax),
+  email: zod.string().email().max(initializePaystackTransactionBodyEmailMax),
+});
+
+export const InitializePaystackTransactionResponse = zod.object({
+  authorizationUrl: zod.string().url(),
+  reference: zod.string(),
+});
+
+/**
+ * @summary Verify a Level 1 training payment
+ */
+export const verifyPaystackTransactionPathReferenceMax = 100;
+
+export const verifyPaystackTransactionPathReferenceRegExp = new RegExp(
+  "^[A-Za-z0-9._=-]+$",
+);
+
+export const VerifyPaystackTransactionParams = zod.object({
+  reference: zod.coerce
+    .string()
+    .min(1)
+    .max(verifyPaystackTransactionPathReferenceMax)
+    .regex(verifyPaystackTransactionPathReferenceRegExp),
+});
+
+export const VerifyPaystackTransactionResponse = zod.object({
+  status: zod.enum(["success", "pending", "failed"]),
+  reference: zod.string(),
+  message: zod.string(),
+});

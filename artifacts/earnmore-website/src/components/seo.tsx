@@ -6,6 +6,7 @@ interface SeoProps {
   keywords?: string;
   canonical?: string;
   ogImage?: string;
+  noIndex?: boolean;
 }
 
 export default function Seo({
@@ -14,6 +15,7 @@ export default function Seo({
   keywords,
   canonical,
   ogImage = "https://earnmoregroup.com/images/opengraph.jpg",
+  noIndex = false,
 }: SeoProps) {
   const fullTitle = title.includes("EarnMore") ? title : `${title} | EarnMore Consultants`;
   const baseUrl = "https://earnmoregroup.com";
@@ -23,6 +25,7 @@ export default function Seo({
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      {noIndex && <meta name="robots" content="noindex, nofollow" />}
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={canonicalUrl} />
 
