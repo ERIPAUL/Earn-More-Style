@@ -3,6 +3,7 @@ import path from "node:path";
 
 const RESEND_API_URL = "https://api.resend.com/emails";
 const FROM_ADDRESS = "EarnMore Consultants <training@earnmoregroup.com>";
+const EMAIL_TEMPLATE_VERSION = "v2";
 const LOGO_PATHS = [
   path.resolve(process.cwd(), "../earnmore-website/public/logo.png"),
   path.resolve(process.cwd(), "artifacts/earnmore-website/public/logo.png"),
@@ -167,7 +168,7 @@ info@earnmoregroup.com`;
     headers: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
-      "Idempotency-Key": `training-confirmation/${reference}`,
+      "Idempotency-Key": `training-confirmation-${EMAIL_TEMPLATE_VERSION}/${reference}`,
     },
     body: JSON.stringify({
       from: FROM_ADDRESS,

@@ -115,6 +115,8 @@ router.post("/paystack/initialize", async (req, res): Promise<void> => {
 });
 
 router.get("/paystack/verify/:reference", async (req, res): Promise<void> => {
+  res.set("Cache-Control", "no-store");
+
   const parsed = VerifyPaystackTransactionParams.safeParse(req.params);
   if (!parsed.success) {
     res.status(400).json({ error: "Invalid payment reference." });
