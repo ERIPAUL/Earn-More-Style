@@ -1,4 +1,5 @@
 import { createHmac, randomUUID, timingSafeEqual } from "node:crypto";
+import { resolveMx } from "node:dns/promises";
 import { Router, type IRouter } from "express";
 import {
   InitializePaystackTransactionBody,
@@ -13,6 +14,12 @@ const router: IRouter = Router();
 const PAYSTACK_API_URL = "https://api.paystack.co";
 const LEVEL_ONE_AMOUNT_KOBO = 10_000_000;
 const LEVEL_ONE_CURRENCY = "NGN";
+const EMAIL_DOMAIN_CACHE_TTL_MS = 60 * 60 * 1000;
+
+const emailDomainCache = new Map<
+  string,
+  { valid: boolean; expiresAt: number }
+>();
 
 interface PaystackInitializeResponse {
   status: boolean;
@@ -52,6 +59,45 @@ interface PaystackWebhookEvent {
 function getSecretKey(): string | null {
   const key = process.env.PAYSTACK_SECRET_KEY?.trim();
   return key && key.startsWith("sk_") ? key : null;
+}
+
+async function hasMailServer(email: string): Promise<boolean> {
+  const domain = email.slice(email.lastIndexOf("@") + 1).toLowerCase();
+  const cached = emailDomainCache.get(domain);
+  if (cached && cached.expiresAt > Date.now()) {
+    return cached.valid;
+  }
+
+  try {
+    const records = await resolveMx(domain);
+    const valid = records.some(
+      ({ exchange }) => exchange.trim() !== "" && exchange !== ".",
+    );
+
+    if (emailDomainCache.size >= 1_000) {
+      emailDomainCache.clear();
+    }
+    emailDomainCache.set(domain, {
+      valid,
+      expiresAt: Date.now() + EMAIL_DOMAIN_CACHE_TTL_MS,
+    });
+    return valid;
+  } catch (error) {
+    const code =
+      error instanceof Error && "code" in error
+        ? String(error.code)
+        : "UNKNOWN";
+
+    if (code === "ENOTFOUND" || code === "ENODATA") {
+      emailDomainCache.set(domain, {
+        valid: false,
+        expiresAt: Date.now() + EMAIL_DOMAIN_CACHE_TTL_MS,
+      });
+      return false;
+    }
+
+    throw new Error(`Email domain lookup temporarily failed: ${code}`);
+  }
 }
 
 function hasValidWebhookSignature(
@@ -139,6 +185,31 @@ router.post("/paystack/initialize", async (req, res): Promise<void> => {
   if (!parsed.success) {
     req.log.warn({ errors: parsed.error.flatten() }, "Invalid training enrolment details");
     res.status(400).json({ error: "Please provide valid first name, second name, and email details." });
+    return;
+  }
+
+  try {
+    if (!(await hasMailServer(parsed.data.email))) {
+      res.status(422).json({
+        error:
+          "Please enter an email address from a valid email domain that can receive messages.",
+      });
+      return;
+    }
+  } catch (error) {
+    req.log.warn(
+      {
+        error:
+          error instanceof Error
+            ? error.message
+            : "Unknown email domain lookup error",
+      },
+      "Email domain validation temporarily unavailable",
+    );
+    res.status(503).json({
+      error:
+        "We could not verify the email domain right now. Please try again shortly.",
+    });
     return;
   }
 

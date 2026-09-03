@@ -42,8 +42,27 @@ export default function TrainingEnrollmentDialog({
         onSuccess: ({ authorizationUrl }) => {
           window.location.assign(authorizationUrl);
         },
-        onError: () => {
-          setError("Checkout could not be started. Please check your details and try again.");
+        onError: (requestError) => {
+          const message =
+            requestError instanceof Error ? requestError.message : "";
+
+          if (message.includes("valid email domain")) {
+            setError(
+              "Please enter an email address from a valid provider, company, or university domain.",
+            );
+            return;
+          }
+
+          if (message.includes("could not verify the email domain")) {
+            setError(
+              "We could not verify the email domain right now. Please try again shortly.",
+            );
+            return;
+          }
+
+          setError(
+            "Checkout could not be started. Please check your details and try again.",
+          );
         },
       },
     );

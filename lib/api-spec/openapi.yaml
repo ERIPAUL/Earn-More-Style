@@ -46,8 +46,12 @@ paths:
                 $ref: "#/components/schemas/PaystackInitialization"
         "400":
           description: Invalid enrolment details
+        "422":
+          description: Email domain cannot receive messages
         "500":
           description: Payment service configuration error
+        "503":
+          description: Email domain validation temporarily unavailable
         "502":
           description: Paystack initialization failed
   /paystack/webhook:
