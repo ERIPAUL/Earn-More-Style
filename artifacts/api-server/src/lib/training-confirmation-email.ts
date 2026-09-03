@@ -130,6 +130,10 @@ export async function sendTrainingConfirmationEmail({
                 </div>
 
                 <p style="margin:28px 0 0;font-size:15px;line-height:24px;color:#536a63;">The link to join the live course will be sent one week before the course start date. If you have any questions, reply to this email or contact <a href="mailto:info@earnmoregroup.com" style="color:#059669;">info@earnmoregroup.com</a>.</p>
+
+                <div style="margin-top:22px;padding:16px 18px;background:#f7faf9;border:1px solid #e1ece8;border-radius:10px;color:#536a63;font-size:13px;line-height:21px;">
+                  <strong style="color:#17352f;">Payment safety reminder:</strong> EarnMore will never ask you to send card details, passwords, or other financial information by email or phone. If a message appears suspicious, visit <a href="https://earnmoregroup.com" style="color:#059669;">earnmoregroup.com</a> directly or contact <a href="mailto:info@earnmoregroup.com" style="color:#059669;">info@earnmoregroup.com</a>.
+                </div>
               </td>
             </tr>
             <tr>
@@ -159,6 +163,8 @@ Amount paid: ₦100,000 NGN
 Payment reference: ${reference}
 
 The link to join the live course will be sent one week before the course start date.
+
+Payment safety reminder: EarnMore will never ask you to send card details, passwords, or other financial information by email or phone. If a message appears suspicious, visit https://earnmoregroup.com directly or contact info@earnmoregroup.com.
 
 EarnMore Consultants
 info@earnmoregroup.com`;

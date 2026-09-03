@@ -1,5 +1,5 @@
 import { type FormEvent, useState } from "react";
-import { Loader2, ShieldCheck } from "lucide-react";
+import { LockKeyhole, Loader2, ShieldCheck } from "lucide-react";
 import { useInitializePaystackTransaction } from "@workspace/api-client-react";
 import {
   Dialog,
@@ -152,6 +152,19 @@ export default function TrainingEnrollmentDialog({
             {initializePayment.isPending && <Loader2 className="w-4 h-4 animate-spin" />}
             {initializePayment.isPending ? "Opening secure checkout..." : "Continue to Paystack"}
           </button>
+
+          <div className="rounded-xl border border-emerald-100 bg-emerald-50/70 px-4 py-3">
+            <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
+              <LockKeyhole className="h-4 w-4 text-primary" />
+              Payment safety
+            </div>
+            <ul className="mt-2 space-y-1.5 pl-6 text-xs leading-5 text-foreground/65 list-disc">
+              <li>Payment is completed on Paystack's secure HTTPS checkout.</li>
+              <li>EarnMore never receives or stores your card details.</li>
+              <li>Use a private connection and an up-to-date browser.</li>
+              <li>We will never request card details by email or phone.</li>
+            </ul>
+          </div>
 
           <p className="flex items-center justify-center gap-2 text-xs text-foreground/50">
             <ShieldCheck className="w-4 h-4 text-primary" />

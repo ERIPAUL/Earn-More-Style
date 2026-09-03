@@ -12,6 +12,8 @@ import { sendTrainingConfirmationEmail } from "../lib/training-confirmation-emai
 const router: IRouter = Router();
 
 const PAYSTACK_API_URL = "https://api.paystack.co";
+const PAYSTACK_CHECKOUT_HOST = "checkout.paystack.com";
+const PRODUCTION_SITE_URL = "https://earnmoregroup.com";
 const LEVEL_ONE_AMOUNT_KOBO = 10_000_000;
 const LEVEL_ONE_CURRENCY = "NGN";
 const EMAIL_DOMAIN_CACHE_TTL_MS = 60 * 60 * 1000;
@@ -59,6 +61,15 @@ interface PaystackWebhookEvent {
 function getSecretKey(): string | null {
   const key = process.env.PAYSTACK_SECRET_KEY?.trim();
   return key && key.startsWith("sk_") ? key : null;
+}
+
+function isValidPaystackCheckoutUrl(value: string): boolean {
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" && url.hostname === PAYSTACK_CHECKOUT_HOST;
+  } catch {
+    return false;
+  }
 }
 
 async function hasMailServer(email: string): Promise<boolean> {
@@ -227,7 +238,10 @@ router.post("/paystack/initialize", async (req, res): Promise<void> => {
     return;
   }
 
-  const callbackUrl = `${req.protocol}://${host}/training/payment`;
+  const callbackUrl =
+    process.env.NODE_ENV === "production"
+      ? `${PRODUCTION_SITE_URL}/training/payment`
+      : `${req.protocol}://${host}/training/payment`;
   const paystackResponse = await fetch(`${PAYSTACK_API_URL}/transaction/initialize`, {
     method: "POST",
     headers: {
@@ -255,7 +269,13 @@ router.post("/paystack/initialize", async (req, res): Promise<void> => {
   const authorizationUrl = payload.data?.authorization_url;
   const returnedReference = payload.data?.reference;
 
-  if (!paystackResponse.ok || !payload.status || !authorizationUrl || !returnedReference) {
+  if (
+    !paystackResponse.ok ||
+    !payload.status ||
+    !authorizationUrl ||
+    !isValidPaystackCheckoutUrl(authorizationUrl) ||
+    !returnedReference
+  ) {
     req.log.error(
       { paystackStatus: paystackResponse.status, paystackMessage: payload.message },
       "Paystack transaction initialization failed",
