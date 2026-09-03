@@ -67,7 +67,7 @@ export default function TrainingEnrollmentDialog({
               <p className="text-xs font-semibold uppercase tracking-wider text-primary">Course fee</p>
               <p className="text-sm text-foreground/60 mt-1">Level 1, 8 total hours</p>
             </div>
-            <p className="text-xl font-bold text-foreground">₦500</p>
+            <p className="text-xl font-bold text-foreground">₦100,000</p>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-4">

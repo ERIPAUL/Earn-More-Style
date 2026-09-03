@@ -11,7 +11,7 @@ import { sendTrainingConfirmationEmail } from "../lib/training-confirmation-emai
 const router: IRouter = Router();
 
 const PAYSTACK_API_URL = "https://api.paystack.co";
-const LEVEL_ONE_AMOUNT_KOBO = 50_000;
+const LEVEL_ONE_AMOUNT_KOBO = 10_000_000;
 const LEVEL_ONE_CURRENCY = "NGN";
 
 interface PaystackInitializeResponse {

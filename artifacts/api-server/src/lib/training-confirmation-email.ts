@@ -120,7 +120,7 @@ export async function sendTrainingConfirmationEmail({
                   </tr>
                   <tr>
                     <td style="padding:12px 0;color:#6c7f79;font-size:14px;">Amount paid</td>
-                    <td align="right" style="padding:12px 0;color:#059669;font-size:17px;font-weight:700;">₦500 NGN</td>
+                    <td align="right" style="padding:12px 0;color:#059669;font-size:17px;font-weight:700;">₦100,000 NGN</td>
                   </tr>
                 </table>
 
@@ -155,7 +155,7 @@ Dates: 10 and 17 October 2026
 Duration: 8 hours total, 4 hours per day
 Format: Online
 Modules: 6 Level 1 modules
-Amount paid: ₦500 NGN
+Amount paid: ₦100,000 NGN
 Payment reference: ${reference}
 
 The link to join the live course will be sent one week before the course start date.
