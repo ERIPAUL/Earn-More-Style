@@ -50,6 +50,21 @@ paths:
           description: Payment service configuration error
         "502":
           description: Paystack initialization failed
+  /paystack/webhook:
+    post:
+      operationId: receivePaystackWebhook
+      tags: [paystack]
+      summary: Receive signed Paystack payment events
+      description: Validates Paystack signatures and processes successful Level 1 payments
+      responses:
+        "200":
+          description: Event acknowledged
+        "400":
+          description: Payment details do not match
+        "401":
+          description: Invalid Paystack signature
+        "500":
+          description: Webhook processing failed
   /paystack/verify/{reference}:
     get:
       operationId: verifyPaystackTransaction

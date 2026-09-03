@@ -199,6 +199,88 @@ export const useInitializePaystackTransaction = <
 };
 
 /**
+ * Validates Paystack signatures and processes successful Level 1 payments
+ * @summary Receive signed Paystack payment events
+ */
+export const getReceivePaystackWebhookUrl = () => {
+  return `/api/paystack/webhook`;
+};
+
+export const receivePaystackWebhook = async (
+  options?: RequestInit,
+): Promise<void> => {
+  return customFetch<void>(getReceivePaystackWebhookUrl(), {
+    ...options,
+    method: "POST",
+  });
+};
+
+export const getReceivePaystackWebhookMutationOptions = <
+  TError = ErrorType<void>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof receivePaystackWebhook>>,
+    TError,
+    void,
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof receivePaystackWebhook>>,
+  TError,
+  void,
+  TContext
+> => {
+  const mutationKey = ["receivePaystackWebhook"];
+  const { mutation: mutationOptions, request: requestOptions } = options
+    ? options.mutation &&
+      "mutationKey" in options.mutation &&
+      options.mutation.mutationKey
+      ? options
+      : { ...options, mutation: { ...options.mutation, mutationKey } }
+    : { mutation: { mutationKey }, request: undefined };
+
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof receivePaystackWebhook>>,
+    void
+  > = () => {
+    return receivePaystackWebhook(requestOptions);
+  };
+
+  return { mutationFn, ...mutationOptions };
+};
+
+export type ReceivePaystackWebhookMutationResult = NonNullable<
+  Awaited<ReturnType<typeof receivePaystackWebhook>>
+>;
+
+export type ReceivePaystackWebhookMutationError = ErrorType<void>;
+
+/**
+ * @summary Receive signed Paystack payment events
+ */
+export const useReceivePaystackWebhook = <
+  TError = ErrorType<void>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof receivePaystackWebhook>>,
+    TError,
+    void,
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationResult<
+  Awaited<ReturnType<typeof receivePaystackWebhook>>,
+  TError,
+  void,
+  TContext
+> => {
+  return useMutation(getReceivePaystackWebhookMutationOptions(options));
+};
+
+/**
  * @summary Verify a Level 1 training payment
  */
 export const getVerifyPaystackTransactionUrl = (reference: string) => {
