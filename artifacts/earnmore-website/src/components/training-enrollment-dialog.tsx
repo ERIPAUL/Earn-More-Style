@@ -136,7 +136,7 @@ export default function TrainingEnrollmentDialog({
 
           <p className="flex items-center justify-center gap-2 text-xs text-foreground/50">
             <ShieldCheck className="w-4 h-4 text-primary" />
-            Secure test checkout powered by Paystack
+            Secure checkout powered by Paystack
           </p>
         </form>
       </DialogContent>
