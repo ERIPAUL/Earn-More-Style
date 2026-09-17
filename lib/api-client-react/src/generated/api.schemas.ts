@@ -22,6 +22,26 @@ export interface TrainingEnrollmentInput {
   secondName: string;
   /** @maxLength 254 */
   email: string;
+  /**
+   * @minLength 40
+   * @maxLength 2000
+   */
+  quoteToken: string;
+}
+
+export interface TrainingPaymentQuote {
+  quoteToken: string;
+  expiresAt: string;
+  /** @exclusiveMinimum 0 */
+  fxRateNgnPerUsd: number;
+  courseNgn: 100000;
+  /** @minimum 1 */
+  usdCourseEquivalentCents: number;
+  usdContingencyCents: 200;
+  /** @minimum 201 */
+  usdTotalCents: number;
+  /** @minimum 1 */
+  ngnPayableKobo: number;
 }
 
 export interface PaystackInitialization {

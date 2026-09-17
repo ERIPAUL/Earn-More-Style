@@ -14,6 +14,7 @@ interface TrainingConfirmationEmailInput {
   secondName: string;
   participantEmail: string;
   reference: string;
+  paidNgnKobo: number;
 }
 
 interface ResendEmailResponse {
@@ -48,11 +49,22 @@ async function readLogoContent(): Promise<string> {
   throw new Error("EarnMore email logo file was not found");
 }
 
+function formatNgnFromKobo(paidNgnKobo: number): string {
+  if (!Number.isSafeInteger(paidNgnKobo) || paidNgnKobo < 0) {
+    throw new Error("Payment amount must be a non-negative integer number of kobo");
+  }
+
+  const naira = Math.floor(paidNgnKobo / 100).toLocaleString("en-NG");
+  const kobo = paidNgnKobo % 100;
+  return kobo === 0 ? `₦${naira} NGN` : `₦${naira}.${String(kobo).padStart(2, "0")} NGN`;
+}
+
 export async function sendTrainingConfirmationEmail({
   firstName,
   secondName,
   participantEmail,
   reference,
+  paidNgnKobo,
 }: TrainingConfirmationEmailInput): Promise<{ id: string }> {
   const apiKey = process.env.RESEND_API_KEY?.trim();
   if (!apiKey) {
@@ -63,6 +75,7 @@ export async function sendTrainingConfirmationEmail({
   const safeFirstName = escapeHtml(firstName);
   const safeName = escapeHtml(participantName);
   const safeReference = escapeHtml(reference);
+  const amountPaid = formatNgnFromKobo(paidNgnKobo);
   const subject = "Payment confirmed: Corporate ESG Level 1 Training";
   const logoContent = await readLogoContent();
 
@@ -120,7 +133,7 @@ export async function sendTrainingConfirmationEmail({
                   </tr>
                   <tr>
                     <td style="padding:12px 0;color:#6c7f79;font-size:14px;">Amount paid</td>
-                    <td align="right" style="padding:12px 0;color:#059669;font-size:17px;font-weight:700;">₦100,000 NGN</td>
+                    <td align="right" style="padding:12px 0;color:#059669;font-size:17px;font-weight:700;">${amountPaid}</td>
                   </tr>
                 </table>
 
@@ -159,7 +172,7 @@ Dates: 10 and 17 October 2026
 Duration: 8 hours total, 4 hours per day
 Format: Online
 Modules: 6 Level 1 modules
-Amount paid: ₦100,000 NGN
+Amount paid: ${amountPaid}
 Payment reference: ${reference}
 
 The link to join the live course will be sent one week before the course start date.

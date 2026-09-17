@@ -16,6 +16,29 @@ export const HealthCheckResponse = zod.object({
 });
 
 /**
+ * Returns a server-signed NGN checkout quote using a current USD to NGN rate.
+ * @summary Get a short-lived Level 1 training price quote
+ */
+export const getTrainingPaymentQuoteResponseFxRateNgnPerUsdExclusiveMin = 0;
+
+export const getTrainingPaymentQuoteResponseUsdTotalCentsMin = 201;
+
+export const GetTrainingPaymentQuoteResponse = zod.object({
+  quoteToken: zod.string(),
+  expiresAt: zod.coerce.date(),
+  fxRateNgnPerUsd: zod
+    .number()
+    .gt(getTrainingPaymentQuoteResponseFxRateNgnPerUsdExclusiveMin),
+  courseNgn: zod.number(),
+  usdCourseEquivalentCents: zod.number().min(1),
+  usdContingencyCents: zod.number(),
+  usdTotalCents: zod
+    .number()
+    .min(getTrainingPaymentQuoteResponseUsdTotalCentsMin),
+  ngnPayableKobo: zod.number().min(1),
+});
+
+/**
  * @summary Initialize a Level 1 training payment
  */
 export const initializePaystackTransactionBodyFirstNameMin = 2;
@@ -25,6 +48,9 @@ export const initializePaystackTransactionBodySecondNameMin = 2;
 export const initializePaystackTransactionBodySecondNameMax = 50;
 
 export const initializePaystackTransactionBodyEmailMax = 254;
+
+export const initializePaystackTransactionBodyQuoteTokenMin = 40;
+export const initializePaystackTransactionBodyQuoteTokenMax = 2000;
 
 export const InitializePaystackTransactionBody = zod.object({
   firstName: zod
@@ -36,6 +62,10 @@ export const InitializePaystackTransactionBody = zod.object({
     .min(initializePaystackTransactionBodySecondNameMin)
     .max(initializePaystackTransactionBodySecondNameMax),
   email: zod.string().email().max(initializePaystackTransactionBodyEmailMax),
+  quoteToken: zod
+    .string()
+    .min(initializePaystackTransactionBodyQuoteTokenMin)
+    .max(initializePaystackTransactionBodyQuoteTokenMax),
 });
 
 export const InitializePaystackTransactionResponse = zod.object({

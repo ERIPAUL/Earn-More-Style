@@ -26,6 +26,21 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /paystack/quote:
+    get:
+      operationId: getTrainingPaymentQuote
+      tags: [paystack]
+      summary: Get a short-lived Level 1 training price quote
+      description: Returns a server-signed NGN checkout quote using a current USD to NGN rate.
+      responses:
+        "200":
+          description: Current signed training price quote
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TrainingPaymentQuote"
+        "503":
+          description: A current foreign exchange quote is unavailable
   /paystack/initialize:
     post:
       operationId: initializePaystackTransaction
@@ -121,10 +136,51 @@ components:
           type: string
           format: email
           maxLength: 254
+        quoteToken:
+          type: string
+          minLength: 40
+          maxLength: 2000
       required:
         - firstName
         - secondName
         - email
+        - quoteToken
+    TrainingPaymentQuote:
+      type: object
+      additionalProperties: false
+      properties:
+        quoteToken:
+          type: string
+        expiresAt:
+          type: string
+          format: date-time
+        fxRateNgnPerUsd:
+          type: number
+          exclusiveMinimum: 0
+        courseNgn:
+          type: integer
+          const: 100000
+        usdCourseEquivalentCents:
+          type: integer
+          minimum: 1
+        usdContingencyCents:
+          type: integer
+          const: 200
+        usdTotalCents:
+          type: integer
+          minimum: 201
+        ngnPayableKobo:
+          type: integer
+          minimum: 1
+      required:
+        - quoteToken
+        - expiresAt
+        - fxRateNgnPerUsd
+        - courseNgn
+        - usdCourseEquivalentCents
+        - usdContingencyCents
+        - usdTotalCents
+        - ngnPayableKobo
     PaystackInitialization:
       type: object
       additionalProperties: false

@@ -70,5 +70,9 @@ export function render(url: string) {
     </HelmetProvider>
   );
 
+  // React Query creates cache GC timers during prerendering. Dispose this
+  // per-render client so the prerender process can exit after all pages render.
+  queryClient.clear();
+
   return { html, helmet: helmetContext.helmet };
 }

@@ -5,6 +5,7 @@ import {
   CheckCircle2, BookOpen, ClipboardList, ArrowRight, Target,
 } from "lucide-react";
 import { Link } from "wouter";
+import { useGetTrainingPaymentQuote } from "@workspace/api-client-react";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import Seo from "@/components/seo";
@@ -237,6 +238,19 @@ function ModuleCard({ mod, index }: { mod: (typeof level1Modules)[0]; index: num
 
 export default function TrainingPage() {
   const [enrollmentOpen, setEnrollmentOpen] = useState(false);
+  const trainingPrice = useGetTrainingPaymentQuote({
+    query: {
+      queryKey: ["training-page-price"],
+      staleTime: 60_000,
+      retry: 1,
+    },
+  });
+  const usdPrice = trainingPrice.data
+    ? new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(trainingPrice.data.usdTotalCents / 100)
+    : null;
 
   return (
     <>
@@ -340,6 +354,21 @@ export default function TrainingPage() {
                         </div>
                       </div>
                     ))}
+                  </div>
+                  <div className="px-7 py-4 bg-emerald-50 border-t border-emerald-100">
+                    <p className="text-xs text-primary font-semibold uppercase tracking-wider">Course price</p>
+                    {usdPrice ? (
+                      <>
+                        <p className="mt-1 text-lg font-bold text-foreground">{usdPrice} USD equivalent</p>
+                        <p className="mt-1 text-xs text-foreground/60">
+                          NGN 100,000 course fee plus USD 2 contingency. The exact NGN amount is shown in your fresh checkout quote.
+                        </p>
+                      </>
+                    ) : (
+                      <p className="mt-1 text-xs text-foreground/60">
+                        NGN 100,000 course fee plus USD 2 contingency. A current USD equivalent is shown before checkout.
+                      </p>
+                    )}
                   </div>
                   <div className="px-7 py-5 bg-white border-t border-gray-100">
                     <button

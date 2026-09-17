@@ -11,3 +11,4 @@ export * from "./paystackInitialization";
 export * from "./paystackVerification";
 export * from "./paystackVerificationStatus";
 export * from "./trainingEnrollmentInput";
+export * from "./trainingPaymentQuote";

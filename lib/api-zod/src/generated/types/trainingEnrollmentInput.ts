@@ -19,4 +19,9 @@ export interface TrainingEnrollmentInput {
   secondName: string;
   /** @maxLength 254 */
   email: string;
+  /**
+   * @minLength 40
+   * @maxLength 2000
+   */
+  quoteToken: string;
 }

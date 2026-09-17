@@ -21,6 +21,7 @@ import type {
   PaystackInitialization,
   PaystackVerification,
   TrainingEnrollmentInput,
+  TrainingPaymentQuote,
 } from "./api.schemas";
 
 import { customFetch } from "../custom-fetch";
@@ -100,6 +101,83 @@ export function useHealthCheck<
   request?: SecondParameter<typeof customFetch>;
 }): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
   const queryOptions = getHealthCheckQueryOptions(options);
+
+  const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
+    queryKey: QueryKey;
+  };
+
+  return { ...query, queryKey: queryOptions.queryKey };
+}
+
+/**
+ * Returns a server-signed NGN checkout quote using a current USD to NGN rate.
+ * @summary Get a short-lived Level 1 training price quote
+ */
+export const getGetTrainingPaymentQuoteUrl = () => {
+  return `/api/paystack/quote`;
+};
+
+export const getTrainingPaymentQuote = async (
+  options?: RequestInit,
+): Promise<TrainingPaymentQuote> => {
+  return customFetch<TrainingPaymentQuote>(getGetTrainingPaymentQuoteUrl(), {
+    ...options,
+    method: "GET",
+  });
+};
+
+export const getGetTrainingPaymentQuoteQueryKey = () => {
+  return [`/api/paystack/quote`] as const;
+};
+
+export const getGetTrainingPaymentQuoteQueryOptions = <
+  TData = Awaited<ReturnType<typeof getTrainingPaymentQuote>>,
+  TError = ErrorType<void>,
+>(options?: {
+  query?: UseQueryOptions<
+    Awaited<ReturnType<typeof getTrainingPaymentQuote>>,
+    TError,
+    TData
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}) => {
+  const { query: queryOptions, request: requestOptions } = options ?? {};
+
+  const queryKey =
+    queryOptions?.queryKey ?? getGetTrainingPaymentQuoteQueryKey();
+
+  const queryFn: QueryFunction<
+    Awaited<ReturnType<typeof getTrainingPaymentQuote>>
+  > = ({ signal }) => getTrainingPaymentQuote({ signal, ...requestOptions });
+
+  return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
+    Awaited<ReturnType<typeof getTrainingPaymentQuote>>,
+    TError,
+    TData
+  > & { queryKey: QueryKey };
+};
+
+export type GetTrainingPaymentQuoteQueryResult = NonNullable<
+  Awaited<ReturnType<typeof getTrainingPaymentQuote>>
+>;
+export type GetTrainingPaymentQuoteQueryError = ErrorType<void>;
+
+/**
+ * @summary Get a short-lived Level 1 training price quote
+ */
+
+export function useGetTrainingPaymentQuote<
+  TData = Awaited<ReturnType<typeof getTrainingPaymentQuote>>,
+  TError = ErrorType<void>,
+>(options?: {
+  query?: UseQueryOptions<
+    Awaited<ReturnType<typeof getTrainingPaymentQuote>>,
+    TError,
+    TData
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseQueryResult<TData, TError> & { queryKey: QueryKey } {
+  const queryOptions = getGetTrainingPaymentQuoteQueryOptions(options);
 
   const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
     queryKey: QueryKey;

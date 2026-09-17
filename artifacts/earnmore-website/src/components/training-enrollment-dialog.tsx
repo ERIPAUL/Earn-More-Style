@@ -1,6 +1,9 @@
-import { type FormEvent, useState } from "react";
+import { type FormEvent, useEffect, useState } from "react";
 import { Loader2, ShieldCheck } from "lucide-react";
-import { useInitializePaystackTransaction } from "@workspace/api-client-react";
+import {
+  useGetTrainingPaymentQuote,
+  useInitializePaystackTransaction,
+} from "@workspace/api-client-react";
 import {
   Dialog,
   DialogContent,
@@ -25,10 +28,43 @@ export default function TrainingEnrollmentDialog({
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const initializePayment = useInitializePaystackTransaction();
+  const paymentQuote = useGetTrainingPaymentQuote({
+    query: {
+      queryKey: ["training-price-quote"],
+      enabled: open,
+      staleTime: 0,
+      refetchOnMount: "always",
+      retry: 1,
+    },
+  });
+
+  useEffect(() => {
+    if (open) {
+      setError("");
+    }
+  }, [open]);
+
+  const formatUsd = (cents: number) =>
+    new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(cents / 100);
+  const formatNgn = (kobo: number) =>
+    new Intl.NumberFormat("en-NG", {
+      style: "currency",
+      currency: "NGN",
+      minimumFractionDigits: kobo % 100 === 0 ? 0 : 2,
+      maximumFractionDigits: 2,
+    }).format(kobo / 100);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError("");
+
+    if (!paymentQuote.data) {
+      setError("A current price quote is required before checkout. Please try again shortly.");
+      return;
+    }
 
     initializePayment.mutate(
       {
@@ -36,6 +72,7 @@ export default function TrainingEnrollmentDialog({
           firstName: firstName.trim(),
           secondName: secondName.trim(),
           email: email.trim(),
+          quoteToken: paymentQuote.data.quoteToken,
         },
       },
       {
@@ -60,6 +97,12 @@ export default function TrainingEnrollmentDialog({
             return;
           }
 
+          if (message.includes("price quote")) {
+            setError("Your quote expired. Refreshing a new price quote now.");
+            void paymentQuote.refetch();
+            return;
+          }
+
           setError(
             "Checkout could not be started. Please check your details and try again.",
           );
@@ -81,12 +124,38 @@ export default function TrainingEnrollmentDialog({
         </div>
 
         <form onSubmit={handleSubmit} className="px-7 pb-7 space-y-5">
-          <div className="rounded-xl bg-emerald-50 border border-emerald-100 p-4 flex items-center justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-primary">Course fee</p>
-              <p className="text-sm text-foreground/60 mt-1">Level 1, 8 total hours</p>
-            </div>
-            <p className="text-xl font-bold text-foreground">₦100,000</p>
+          <div className="rounded-xl bg-emerald-50 border border-emerald-100 p-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-primary">Live course quote</p>
+            {paymentQuote.isLoading ? (
+              <p className="mt-2 flex items-center gap-2 text-sm text-foreground/60">
+                <Loader2 className="h-4 w-4 animate-spin" /> Loading the current USD equivalent…
+              </p>
+            ) : paymentQuote.data ? (
+              <>
+                <div className="mt-2 flex items-end justify-between gap-4">
+                  <div>
+                    <p className="text-sm text-foreground/60">NGN 100,000 course fee + USD 2 contingency</p>
+                    <p className="mt-1 text-xs text-foreground/50">
+                      USD equivalent: {formatUsd(paymentQuote.data.usdCourseEquivalentCents)} + {formatUsd(paymentQuote.data.usdContingencyCents)}
+                    </p>
+                  </div>
+                  <p className="text-xl font-bold text-foreground whitespace-nowrap">
+                    {formatUsd(paymentQuote.data.usdTotalCents)}
+                  </p>
+                </div>
+                <div className="mt-3 border-t border-emerald-200 pt-3">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-primary">Exact NGN payable through Paystack</p>
+                  <p className="mt-1 text-lg font-bold text-foreground">{formatNgn(paymentQuote.data.ngnPayableKobo)}</p>
+                  <p className="mt-1 text-xs text-foreground/50">
+                    Includes the USD 2 contingency converted at this quote’s rate. Quote expires {new Date(paymentQuote.data.expiresAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}.
+                  </p>
+                </div>
+              </>
+            ) : (
+              <p role="alert" className="mt-2 text-sm text-red-700">
+                We could not obtain a current USD/NGN quote. Checkout is unavailable until a live quote can be retrieved.
+              </p>
+            )}
           </div>
 
           <div className="grid sm:grid-cols-2 gap-4">
@@ -146,7 +215,7 @@ export default function TrainingEnrollmentDialog({
 
           <button
             type="submit"
-            disabled={initializePayment.isPending}
+            disabled={initializePayment.isPending || paymentQuote.isLoading || !paymentQuote.data}
             className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 disabled:opacity-60 text-white font-semibold px-6 py-3.5 rounded-md transition-all"
           >
             {initializePayment.isPending && <Loader2 className="w-4 h-4 animate-spin" />}

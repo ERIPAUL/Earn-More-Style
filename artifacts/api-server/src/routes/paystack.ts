@@ -4,17 +4,24 @@ import { Router, type IRouter } from "express";
 import {
   InitializePaystackTransactionBody,
   InitializePaystackTransactionResponse,
+  GetTrainingPaymentQuoteResponse,
   VerifyPaystackTransactionParams,
   VerifyPaystackTransactionResponse,
 } from "@workspace/api-zod";
 import { sendTrainingConfirmationEmail } from "../lib/training-confirmation-email";
+import {
+  COURSE_NGN_KOBO,
+  PRICING_VERSION,
+  createTrainingPaymentQuote,
+  validateCheckoutQuote,
+  validateFrozenPricingMetadata,
+} from "../lib/training-pricing";
 
 const router: IRouter = Router();
 
 const PAYSTACK_API_URL = "https://api.paystack.co";
 const PAYSTACK_CHECKOUT_HOST = "checkout.paystack.com";
 const PRODUCTION_SITE_URL = "https://earnmoregroup.com";
-const LEVEL_ONE_AMOUNT_KOBO = 10_000_000;
 const LEVEL_ONE_CURRENCY = "NGN";
 const EMAIL_DOMAIN_CACHE_TTL_MS = 60 * 60 * 1000;
 
@@ -43,7 +50,7 @@ interface PaystackVerifyResponse {
     customer?: {
       email?: string;
     };
-    metadata?: {
+    metadata?: Record<string, unknown> & {
       first_name?: string;
       second_name?: string;
       participant_name?: string;
@@ -155,11 +162,23 @@ function isExpectedTrainingPayment(
   transaction: NonNullable<PaystackVerifyResponse["data"]>,
   reference: string,
 ): boolean {
+  if (
+    transaction.status !== "success" ||
+    transaction.currency !== LEVEL_ONE_CURRENCY ||
+    transaction.reference !== reference
+  ) {
+    return false;
+  }
+
+  if (reference.startsWith("emg-l1-fx-")) {
+    const frozenPrice = validateFrozenPricingMetadata(transaction.metadata);
+    return transaction.amount === frozenPrice?.ngnPayableKobo;
+  }
+
+  // Fixed-fee verification is retained strictly for historical transactions.
   return (
-    transaction.status === "success" &&
-    transaction.amount === LEVEL_ONE_AMOUNT_KOBO &&
-    transaction.currency === LEVEL_ONE_CURRENCY &&
-    transaction.reference === reference
+    reference.startsWith("emg-l1-") &&
+    transaction.amount === COURSE_NGN_KOBO
   );
 }
 
@@ -186,16 +205,43 @@ async function sendConfirmationForTransaction(
     firstName,
     secondName,
     reference,
+    paidNgnKobo: transaction.amount!,
   });
 
   return { sent: true, emailId: email.id };
 }
+
+router.get("/paystack/quote", async (req, res): Promise<void> => {
+  res.set("Cache-Control", "no-store");
+
+  try {
+    const quote = await createTrainingPaymentQuote();
+    res.json(GetTrainingPaymentQuoteResponse.parse(quote));
+  } catch (error) {
+    req.log.warn(
+      { error: error instanceof Error ? error.message : "Unknown FX quote error" },
+      "Training FX quote unavailable",
+    );
+    res.status(503).json({
+      error: "A current price quote is unavailable. Please try again shortly.",
+    });
+  }
+});
 
 router.post("/paystack/initialize", async (req, res): Promise<void> => {
   const parsed = InitializePaystackTransactionBody.safeParse(req.body);
   if (!parsed.success) {
     req.log.warn({ errors: parsed.error.flatten() }, "Invalid training enrolment details");
     res.status(400).json({ error: "Please provide valid first name, second name, and email details." });
+    return;
+  }
+
+  const frozenPrice = validateCheckoutQuote(parsed.data.quoteToken);
+  if (!frozenPrice) {
+    res.status(400).json({
+      error:
+        "This price quote has expired or is invalid. Please refresh the quote and try again.",
+    });
     return;
   }
 
@@ -231,7 +277,7 @@ router.post("/paystack/initialize", async (req, res): Promise<void> => {
     return;
   }
 
-  const reference = `emg-l1-${randomUUID()}`;
+  const reference = `emg-l1-fx-${randomUUID()}`;
   const host = req.get("host");
   if (!host) {
     res.status(400).json({ error: "Unable to determine the checkout return address." });
@@ -250,7 +296,7 @@ router.post("/paystack/initialize", async (req, res): Promise<void> => {
     },
     body: JSON.stringify({
       email: parsed.data.email,
-      amount: LEVEL_ONE_AMOUNT_KOBO,
+      amount: frozenPrice.ngnPayableKobo,
       currency: LEVEL_ONE_CURRENCY,
       reference,
       callback_url: callbackUrl,
@@ -261,6 +307,10 @@ router.post("/paystack/initialize", async (req, res): Promise<void> => {
         course: "Corporate ESG Strategy and Compliance, Level 1",
         training_dates: "10 and 17 October 2026",
         delivery_format: "Online",
+        pricing_version: PRICING_VERSION,
+        pricing_quote: parsed.data.quoteToken,
+        ngn_payable_kobo: frozenPrice.ngnPayableKobo,
+        usd_total_cents: frozenPrice.usdTotalCents,
       },
     }),
   });
@@ -274,7 +324,8 @@ router.post("/paystack/initialize", async (req, res): Promise<void> => {
     !payload.status ||
     !authorizationUrl ||
     !isValidPaystackCheckoutUrl(authorizationUrl) ||
-    !returnedReference
+    !returnedReference ||
+    returnedReference !== reference
   ) {
     req.log.error(
       { paystackStatus: paystackResponse.status, paystackMessage: payload.message },
@@ -333,7 +384,10 @@ router.post("/paystack/webhook", async (req, res): Promise<void> => {
       req.log.error(
         {
           reference,
-          amountMatches: transaction.amount === LEVEL_ONE_AMOUNT_KOBO,
+          amountMatches: transaction.amount ===
+            (reference.startsWith("emg-l1-fx-")
+              ? validateFrozenPricingMetadata(transaction.metadata)?.ngnPayableKobo
+              : COURSE_NGN_KOBO),
           currencyMatches: transaction.currency === LEVEL_ONE_CURRENCY,
           referenceMatches: transaction.reference === reference,
         },
@@ -410,7 +464,10 @@ router.get("/paystack/verify/:reference", async (req, res): Promise<void> => {
     req.log.error(
       {
         reference: parsed.data.reference,
-        amountMatches: transaction.amount === LEVEL_ONE_AMOUNT_KOBO,
+        amountMatches: transaction.amount ===
+          (parsed.data.reference.startsWith("emg-l1-fx-")
+            ? validateFrozenPricingMetadata(transaction.metadata)?.ngnPayableKobo
+            : COURSE_NGN_KOBO),
         currencyMatches: transaction.currency === LEVEL_ONE_CURRENCY,
       },
       "Verified Paystack transaction did not match the expected course payment",
