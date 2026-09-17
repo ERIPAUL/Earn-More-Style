@@ -358,15 +358,10 @@ export default function TrainingPage() {
                   <div className="px-7 py-4 bg-emerald-50 border-t border-emerald-100">
                     <p className="text-xs text-primary font-semibold uppercase tracking-wider">Course price</p>
                     {usdPrice ? (
-                      <>
-                        <p className="mt-1 text-lg font-bold text-foreground">{usdPrice} USD equivalent</p>
-                        <p className="mt-1 text-xs text-foreground/60">
-                          NGN 100,000 course fee plus USD 2 contingency. The exact NGN amount is shown in your fresh checkout quote.
-                        </p>
-                      </>
+                      <p className="mt-1 text-lg font-bold text-foreground">{usdPrice}</p>
                     ) : (
                       <p className="mt-1 text-xs text-foreground/60">
-                        NGN 100,000 course fee plus USD 2 contingency. A current USD equivalent is shown before checkout.
+                        Current price available at checkout.
                       </p>
                     )}
                   </div>
