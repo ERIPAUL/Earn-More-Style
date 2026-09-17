@@ -49,13 +49,6 @@ export default function TrainingEnrollmentDialog({
       style: "currency",
       currency: "USD",
     }).format(cents / 100);
-  const formatNgn = (kobo: number) =>
-    new Intl.NumberFormat("en-NG", {
-      style: "currency",
-      currency: "NGN",
-      minimumFractionDigits: kobo % 100 === 0 ? 0 : 2,
-      maximumFractionDigits: 2,
-    }).format(kobo / 100);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -125,35 +118,17 @@ export default function TrainingEnrollmentDialog({
 
         <form onSubmit={handleSubmit} className="px-7 pb-7 space-y-5">
           <div className="rounded-xl bg-emerald-50 border border-emerald-100 p-4">
-            <p className="text-xs font-semibold uppercase tracking-wider text-primary">Live course quote</p>
             {paymentQuote.isLoading ? (
-              <p className="mt-2 flex items-center gap-2 text-sm text-foreground/60">
-                <Loader2 className="h-4 w-4 animate-spin" /> Loading the current USD equivalent…
+              <p className="flex items-center gap-2 text-sm text-foreground/60">
+                <Loader2 className="h-4 w-4 animate-spin" /> Loading price…
               </p>
             ) : paymentQuote.data ? (
-              <>
-                <div className="mt-2 flex items-end justify-between gap-4">
-                  <div>
-                    <p className="text-sm text-foreground/60">NGN 100,000 course fee + USD 2 contingency</p>
-                    <p className="mt-1 text-xs text-foreground/50">
-                      USD equivalent: {formatUsd(paymentQuote.data.usdCourseEquivalentCents)} + {formatUsd(paymentQuote.data.usdContingencyCents)}
-                    </p>
-                  </div>
-                  <p className="text-xl font-bold text-foreground whitespace-nowrap">
-                    {formatUsd(paymentQuote.data.usdTotalCents)}
-                  </p>
-                </div>
-                <div className="mt-3 border-t border-emerald-200 pt-3">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-primary">Exact NGN payable through Paystack</p>
-                  <p className="mt-1 text-lg font-bold text-foreground">{formatNgn(paymentQuote.data.ngnPayableKobo)}</p>
-                  <p className="mt-1 text-xs text-foreground/50">
-                    Includes the USD 2 contingency converted at this quote’s rate. Quote expires {new Date(paymentQuote.data.expiresAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}.
-                  </p>
-                </div>
-              </>
+              <p className="text-xl font-bold text-foreground text-right whitespace-nowrap">
+                {formatUsd(paymentQuote.data.usdTotalCents)}
+              </p>
             ) : (
-              <p role="alert" className="mt-2 text-sm text-red-700">
-                We could not obtain a current USD/NGN quote. Checkout is unavailable until a live quote can be retrieved.
+              <p role="alert" className="text-sm text-red-700">
+                Price unavailable. Please try again shortly.
               </p>
             )}
           </div>
