@@ -1,0 +1,1 @@
+- [Browser form patterns](browser-patterns.md) — HTML patterns use Unicode sets; check with the JavaScript `v` flag.

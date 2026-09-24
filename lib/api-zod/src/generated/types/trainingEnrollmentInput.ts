@@ -5,6 +5,7 @@
  * API specification
  * OpenAPI spec version: 0.1.0
  */
+import type { TrainingEnrollmentInputGender } from "./trainingEnrollmentInputGender";
 
 export interface TrainingEnrollmentInput {
   /**
@@ -19,6 +20,22 @@ export interface TrainingEnrollmentInput {
   secondName: string;
   /** @maxLength 254 */
   email: string;
+  /**
+   * @minLength 7
+   * @maxLength 25
+   * @pattern ^\+?[0-9 ()-]{7,25}$
+   */
+  phone: string;
+  /** @maxLength 150 */
+  organisation?: string;
+  /** @maxLength 100 */
+  jobTitle?: string;
+  gender?: TrainingEnrollmentInputGender;
+  /**
+   * @minimum 1
+   * @maximum 120
+   */
+  age?: number;
   /**
    * @minLength 40
    * @maxLength 2000

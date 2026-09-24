@@ -3,6 +3,7 @@ import { Loader2, ShieldCheck } from "lucide-react";
 import {
   useGetTrainingPaymentQuote,
   useInitializePaystackTransaction,
+  type TrainingEnrollmentInput,
 } from "@workspace/api-client-react";
 import {
   Dialog,
@@ -26,6 +27,11 @@ export default function TrainingEnrollmentDialog({
   const [firstName, setFirstName] = useState("");
   const [secondName, setSecondName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [organisation, setOrganisation] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
+  const [gender, setGender] = useState<TrainingEnrollmentInput["gender"]>();
+  const [age, setAge] = useState("");
   const [error, setError] = useState("");
   const initializePayment = useInitializePaystackTransaction();
   const paymentQuote = useGetTrainingPaymentQuote({
@@ -65,6 +71,11 @@ export default function TrainingEnrollmentDialog({
           firstName: firstName.trim(),
           secondName: secondName.trim(),
           email: email.trim(),
+          phone: phone.trim(),
+          organisation: organisation.trim() || undefined,
+          jobTitle: jobTitle.trim() || undefined,
+          gender,
+          age: age ? Number(age) : undefined,
           quoteToken: paymentQuote.data.quoteToken,
         },
       },
@@ -106,7 +117,7 @@ export default function TrainingEnrollmentDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-md rounded-2xl p-0 overflow-hidden border-0">
+      <DialogContent className="max-w-xl max-h-[90dvh] rounded-2xl p-0 overflow-y-auto border-0">
         <div className="px-7 py-6 text-white" style={{ background: "linear-gradient(135deg, #0a2e28 0%, #0d3d2e 100%)" }}>
           <DialogHeader>
             <DialogTitle className="text-2xl text-white">Enroll in Level 1</DialogTitle>
@@ -133,9 +144,12 @@ export default function TrainingEnrollmentDialog({
             )}
           </div>
 
+          <fieldset className="space-y-4">
+          <legend className="text-base font-semibold">Participant details</legend>
+          <p className="text-xs text-foreground/60">Fields marked * are required.</p>
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="enrollment-first-name">First name</Label>
+              <Label htmlFor="enrollment-first-name">First name *</Label>
               <Input
                 id="enrollment-first-name"
                 name="firstName"
@@ -150,7 +164,7 @@ export default function TrainingEnrollmentDialog({
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="enrollment-second-name">Second name</Label>
+              <Label htmlFor="enrollment-second-name">Last name *</Label>
               <Input
                 id="enrollment-second-name"
                 name="secondName"
@@ -161,13 +175,13 @@ export default function TrainingEnrollmentDialog({
                 maxLength={50}
                 required
                 className="h-11"
-                placeholder="Second name"
+                placeholder="Last name"
               />
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="enrollment-email">Email address</Label>
+            <Label htmlFor="enrollment-email">Email address *</Label>
             <Input
               id="enrollment-email"
               name="email"
@@ -181,6 +195,57 @@ export default function TrainingEnrollmentDialog({
               placeholder="you@example.com"
             />
           </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="enrollment-phone">Phone number *</Label>
+            <Input id="enrollment-phone" name="phone" type="tel" autoComplete="tel"
+              value={phone} onChange={(event) => setPhone(event.target.value)}
+              required minLength={7} maxLength={25} pattern={"\\+?[0-9 \\(\\)\\-]{7,25}"}
+              title="Enter a phone number with country code, using digits, spaces, brackets or hyphens."
+              placeholder="e.g. +234 801 234 5678" className="h-11" />
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="enrollment-gender">Gender (optional)</Label>
+              <select id="enrollment-gender" name="gender" value={gender ?? ""}
+                onChange={(event) => setGender((event.target.value || undefined) as TrainingEnrollmentInput["gender"])}
+                className="flex h-11 w-full rounded-md border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                <option value="">Select an option</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+                <option value="prefer-not-to-say">Prefer not to say</option>
+              </select>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="enrollment-age">Age (optional)</Label>
+              <Input id="enrollment-age" name="age" type="number" min={1} max={120} step={1}
+                value={age} onChange={(event) => setAge(event.target.value)} placeholder="Age in years" className="h-11" />
+            </div>
+          </div>
+          </fieldset>
+
+          <fieldset className="space-y-4 border-t pt-5">
+            <legend className="text-base font-semibold">Professional details</legend>
+            <div className="space-y-2">
+              <Label htmlFor="enrollment-organisation">Organisation / company (optional)</Label>
+              <Input id="enrollment-organisation" name="organisation" autoComplete="organization"
+                value={organisation} onChange={(event) => setOrganisation(event.target.value)}
+                maxLength={150} placeholder="Organisation, company or independent professional" className="h-11" />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="enrollment-job-title">Job title / role (optional)</Label>
+              <Input id="enrollment-job-title" name="jobTitle" autoComplete="organization-title"
+                value={jobTitle} onChange={(event) => setJobTitle(event.target.value)}
+                maxLength={100} placeholder="Your current role" className="h-11" />
+            </div>
+          </fieldset>
+
+          <fieldset className="space-y-2 border-t pt-5">
+            <legend className="text-base font-semibold">Training programme</legend>
+            <p className="text-sm font-medium">Corporate ESG Strategy and Compliance</p>
+            <p className="text-sm text-foreground/60">Level 1: Foundation · Online · 10 and 17 October 2026</p>
+          </fieldset>
 
           {error && (
             <p role="alert" className="text-sm text-red-700 bg-red-50 rounded-lg px-4 py-3">

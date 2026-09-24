@@ -9,6 +9,16 @@ export interface HealthStatus {
   status: string;
 }
 
+export type TrainingEnrollmentInputGender =
+  (typeof TrainingEnrollmentInputGender)[keyof typeof TrainingEnrollmentInputGender];
+
+export const TrainingEnrollmentInputGender = {
+  male: "male",
+  female: "female",
+  other: "other",
+  "prefer-not-to-say": "prefer-not-to-say",
+} as const;
+
 export interface TrainingEnrollmentInput {
   /**
    * @minLength 2
@@ -22,6 +32,22 @@ export interface TrainingEnrollmentInput {
   secondName: string;
   /** @maxLength 254 */
   email: string;
+  /**
+   * @minLength 7
+   * @maxLength 25
+   * @pattern ^\+?[0-9 ()-]{7,25}$
+   */
+  phone: string;
+  /** @maxLength 150 */
+  organisation?: string;
+  /** @maxLength 100 */
+  jobTitle?: string;
+  gender?: TrainingEnrollmentInputGender;
+  /**
+   * @minimum 1
+   * @maximum 120
+   */
+  age?: number;
   /**
    * @minLength 40
    * @maxLength 2000

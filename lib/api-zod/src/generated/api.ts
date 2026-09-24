@@ -49,6 +49,18 @@ export const initializePaystackTransactionBodySecondNameMax = 50;
 
 export const initializePaystackTransactionBodyEmailMax = 254;
 
+export const initializePaystackTransactionBodyPhoneMin = 7;
+export const initializePaystackTransactionBodyPhoneMax = 25;
+
+export const initializePaystackTransactionBodyPhoneRegExp = new RegExp(
+  "^\\+?[0-9 ()-]{7,25}$",
+);
+export const initializePaystackTransactionBodyOrganisationMax = 150;
+
+export const initializePaystackTransactionBodyJobTitleMax = 100;
+
+export const initializePaystackTransactionBodyAgeMax = 120;
+
 export const initializePaystackTransactionBodyQuoteTokenMin = 40;
 export const initializePaystackTransactionBodyQuoteTokenMax = 2000;
 
@@ -62,6 +74,25 @@ export const InitializePaystackTransactionBody = zod.object({
     .min(initializePaystackTransactionBodySecondNameMin)
     .max(initializePaystackTransactionBodySecondNameMax),
   email: zod.string().email().max(initializePaystackTransactionBodyEmailMax),
+  phone: zod
+    .string()
+    .min(initializePaystackTransactionBodyPhoneMin)
+    .max(initializePaystackTransactionBodyPhoneMax)
+    .regex(initializePaystackTransactionBodyPhoneRegExp),
+  organisation: zod
+    .string()
+    .max(initializePaystackTransactionBodyOrganisationMax)
+    .optional(),
+  jobTitle: zod
+    .string()
+    .max(initializePaystackTransactionBodyJobTitleMax)
+    .optional(),
+  gender: zod.enum(["male", "female", "other", "prefer-not-to-say"]).optional(),
+  age: zod
+    .number()
+    .min(1)
+    .max(initializePaystackTransactionBodyAgeMax)
+    .optional(),
   quoteToken: zod
     .string()
     .min(initializePaystackTransactionBodyQuoteTokenMin)

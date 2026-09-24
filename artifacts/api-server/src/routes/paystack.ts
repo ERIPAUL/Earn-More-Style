@@ -232,7 +232,7 @@ router.post("/paystack/initialize", async (req, res): Promise<void> => {
   const parsed = InitializePaystackTransactionBody.safeParse(req.body);
   if (!parsed.success) {
     req.log.warn({ errors: parsed.error.flatten() }, "Invalid training enrolment details");
-    res.status(400).json({ error: "Please provide valid first name, second name, and email details." });
+    res.status(400).json({ error: "Please provide valid participant details, including name, email and phone number." });
     return;
   }
 
@@ -304,6 +304,11 @@ router.post("/paystack/initialize", async (req, res): Promise<void> => {
         first_name: parsed.data.firstName,
         second_name: parsed.data.secondName,
         participant_name: `${parsed.data.firstName} ${parsed.data.secondName}`,
+        phone: parsed.data.phone,
+        organisation: parsed.data.organisation,
+        job_title: parsed.data.jobTitle,
+        gender: parsed.data.gender,
+        age: parsed.data.age,
         course: "Corporate ESG Strategy and Compliance, Level 1",
         training_dates: "10 and 17 October 2026",
         delivery_format: "Online",
