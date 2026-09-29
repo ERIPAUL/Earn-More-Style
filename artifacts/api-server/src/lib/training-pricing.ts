@@ -8,9 +8,9 @@ const QUOTE_TTL_MS = 10 * 60 * 1_000;
 const RATE_SCALE = 1_000_000n;
 
 export const COURSE_NGN_KOBO = 10_000_000;
-export const COURSE_NGN = 100_000;
-export const USD_CONTINGENCY_CENTS = 200;
-export const PRICING_VERSION = "fx-v1";
+export const COURSE_USD_CENTS = 5_000;
+export const USD_CONTINGENCY_CENTS = 0;
+export const PRICING_VERSION = "usd50-v1";
 
 interface FxApiResponse {
   result?: string;
@@ -19,13 +19,13 @@ interface FxApiResponse {
 }
 
 interface QuotePayload {
-  version: typeof PRICING_VERSION;
+  version: typeof PRICING_VERSION | "fx-v1";
   issuedAt: number;
   expiresAt: number;
   rateMicros: string;
   courseNgnKobo: number;
   usdCourseEquivalentCents: number;
-  usdContingencyCents: typeof USD_CONTINGENCY_CENTS;
+  usdContingencyCents: number;
   usdTotalCents: number;
   ngnPayableKobo: number;
 }
@@ -127,22 +127,24 @@ function parsePayload(token: string, secret: string): QuotePayload | null {
     const value = JSON.parse(decoded) as Partial<QuotePayload>;
     const usdCourseEquivalentCents = value.usdCourseEquivalentCents;
     const ngnPayableKobo = value.ngnPayableKobo;
+    const legacy = value.version === "fx-v1";
+    const contingency = legacy ? 200 : USD_CONTINGENCY_CENTS;
     if (
-      value.version !== PRICING_VERSION ||
+      (!legacy && value.version !== PRICING_VERSION) ||
       !Number.isSafeInteger(value.issuedAt) ||
       !Number.isSafeInteger(value.expiresAt) ||
       typeof value.rateMicros !== "string" ||
       !/^\d+$/.test(value.rateMicros) ||
-      value.courseNgnKobo !== COURSE_NGN_KOBO ||
+      !Number.isSafeInteger(value.courseNgnKobo) ||
       !Number.isSafeInteger(usdCourseEquivalentCents) ||
       usdCourseEquivalentCents == null ||
       usdCourseEquivalentCents < 1 ||
-      value.usdContingencyCents !== USD_CONTINGENCY_CENTS ||
+      value.usdContingencyCents !== contingency ||
       value.usdTotalCents !==
-        usdCourseEquivalentCents + USD_CONTINGENCY_CENTS ||
+        usdCourseEquivalentCents + contingency ||
       !Number.isSafeInteger(ngnPayableKobo) ||
       ngnPayableKobo == null ||
-      ngnPayableKobo < COURSE_NGN_KOBO
+      ngnPayableKobo < 1
     ) {
       return null;
     }
@@ -151,20 +153,21 @@ function parsePayload(token: string, secret: string): QuotePayload | null {
     if (rateMicros < 1n) {
       return null;
     }
-    const expectedUsdCourseCents = Number(
+    const expectedUsdCourseCents = legacy ? Number(
       roundedDivide(
         BigInt(COURSE_NGN_KOBO) * RATE_SCALE,
         rateMicros,
       ),
-    );
-    const expectedNgnPayableKobo = Number(
+    ) : COURSE_USD_CENTS;
+    const expectedNgnPayableKobo = legacy ? Number(
       BigInt(COURSE_NGN_KOBO) +
         roundedDivide(
-          BigInt(USD_CONTINGENCY_CENTS) * rateMicros,
+          200n * rateMicros,
           RATE_SCALE,
         ),
-    );
+    ) : Number(roundedDivide(BigInt(COURSE_USD_CENTS) * rateMicros, RATE_SCALE));
     if (
+      value.courseNgnKobo !== (legacy ? COURSE_NGN_KOBO : expectedNgnPayableKobo) ||
       value.usdCourseEquivalentCents !== expectedUsdCourseCents ||
       value.ngnPayableKobo !== expectedNgnPayableKobo
     ) {
@@ -229,19 +232,16 @@ export async function createTrainingPaymentQuote(
     throw new Error("Current foreign exchange pricing is unavailable");
   }
 
-  const usdCourseEquivalentCents = Number(
-    roundedDivide(BigInt(COURSE_NGN_KOBO) * RATE_SCALE, rateMicros),
-  );
+  const usdCourseEquivalentCents = COURSE_USD_CENTS;
   const ngnPayableKobo = Number(
-    BigInt(COURSE_NGN_KOBO) +
-      roundedDivide(BigInt(USD_CONTINGENCY_CENTS) * rateMicros, RATE_SCALE),
+    roundedDivide(BigInt(COURSE_USD_CENTS) * rateMicros, RATE_SCALE),
   );
   const quotePayload: QuotePayload = {
     version: PRICING_VERSION,
     issuedAt: now,
     expiresAt: now + QUOTE_TTL_MS,
     rateMicros: rateMicros.toString(),
-    courseNgnKobo: COURSE_NGN_KOBO,
+    courseNgnKobo: ngnPayableKobo,
     usdCourseEquivalentCents,
     usdContingencyCents: USD_CONTINGENCY_CENTS,
     usdTotalCents: usdCourseEquivalentCents + USD_CONTINGENCY_CENTS,
@@ -252,7 +252,7 @@ export async function createTrainingPaymentQuote(
     quoteToken: signPayload(quotePayload, secret),
     expiresAt: new Date(quotePayload.expiresAt).toISOString(),
     fxRateNgnPerUsd: rateFromMicros(quotePayload.rateMicros),
-    courseNgn: COURSE_NGN,
+    courseNgn: ngnPayableKobo / 100,
     usdCourseEquivalentCents,
     usdContingencyCents: USD_CONTINGENCY_CENTS,
     usdTotalCents: quotePayload.usdTotalCents,
@@ -269,7 +269,7 @@ export function validateCheckoutQuote(
     return null;
   }
   const payload = parsePayload(quoteToken, secret);
-  if (!payload || payload.expiresAt <= now || payload.issuedAt > now) {
+  if (!payload || payload.version !== PRICING_VERSION || payload.expiresAt <= now || payload.issuedAt > now) {
     return null;
   }
   return asFrozenPrice(payload);
@@ -279,7 +279,7 @@ export function validateFrozenPricingMetadata(
   metadata: Record<string, unknown> | undefined,
 ): FrozenTrainingPrice | null {
   const quoteToken = metadata?.pricing_quote;
-  if (metadata?.pricing_version !== PRICING_VERSION || typeof quoteToken !== "string") {
+  if (typeof quoteToken !== "string") {
     return null;
   }
   const secret = getSigningSecret();
@@ -287,5 +287,5 @@ export function validateFrozenPricingMetadata(
     return null;
   }
   const payload = parsePayload(quoteToken, secret);
-  return payload ? asFrozenPrice(payload) : null;
+  return payload && metadata?.pricing_version === payload.version ? asFrozenPrice(payload) : null;
 }

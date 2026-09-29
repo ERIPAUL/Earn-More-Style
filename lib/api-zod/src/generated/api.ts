@@ -21,7 +21,7 @@ export const HealthCheckResponse = zod.object({
  */
 export const getTrainingPaymentQuoteResponseFxRateNgnPerUsdExclusiveMin = 0;
 
-export const getTrainingPaymentQuoteResponseUsdTotalCentsMin = 201;
+export const getTrainingPaymentQuoteResponseCourseNgnExclusiveMin = 0;
 
 export const GetTrainingPaymentQuoteResponse = zod.object({
   quoteToken: zod.string(),
@@ -29,12 +29,12 @@ export const GetTrainingPaymentQuoteResponse = zod.object({
   fxRateNgnPerUsd: zod
     .number()
     .gt(getTrainingPaymentQuoteResponseFxRateNgnPerUsdExclusiveMin),
-  courseNgn: zod.number(),
+  courseNgn: zod
+    .number()
+    .gt(getTrainingPaymentQuoteResponseCourseNgnExclusiveMin),
   usdCourseEquivalentCents: zod.number().min(1),
   usdContingencyCents: zod.number(),
-  usdTotalCents: zod
-    .number()
-    .min(getTrainingPaymentQuoteResponseUsdTotalCentsMin),
+  usdTotalCents: zod.number(),
   ngnPayableKobo: zod.number().min(1),
 });
 

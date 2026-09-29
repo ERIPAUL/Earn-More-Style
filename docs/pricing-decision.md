@@ -1,9 +1,9 @@
 # Training Pricing Decision
 
-Level 1 retains its NGN 100,000 course fee, expressed to visitors as the live
-USD equivalent plus a USD 2 contingency. Checkout is charged in NGN: the
-contingency is converted using the same current USD/NGN quote and added to the
-NGN course fee.
+Level 1 costs USD 50 total with no added contingency. Checkout is charged in
+NGN using the current USD/NGN quote, rounded to the nearest kobo.
+Previously issued payments retain their original signed amounts for verification,
+but older pricing quotes cannot initialize new checkouts.
 
 Quotes come only from the public USD/NGN FX endpoint when its timestamp is
 fresh; there is intentionally no static or guessed FX fallback. Each short

@@ -11,12 +11,12 @@ export interface TrainingPaymentQuote {
   expiresAt: Date;
   /** @exclusiveMinimum 0 */
   fxRateNgnPerUsd: number;
-  courseNgn: 100000;
+  /** @exclusiveMinimum 0 */
+  courseNgn: number;
   /** @minimum 1 */
   usdCourseEquivalentCents: number;
-  usdContingencyCents: 200;
-  /** @minimum 201 */
-  usdTotalCents: number;
+  usdContingencyCents: 0;
+  usdTotalCents: 5000;
   /** @minimum 1 */
   ngnPayableKobo: number;
 }

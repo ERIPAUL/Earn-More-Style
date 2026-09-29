@@ -177,17 +177,17 @@ components:
           type: number
           exclusiveMinimum: 0
         courseNgn:
-          type: integer
-          const: 100000
+          type: number
+          exclusiveMinimum: 0
         usdCourseEquivalentCents:
           type: integer
           minimum: 1
         usdContingencyCents:
           type: integer
-          const: 200
+          const: 0
         usdTotalCents:
           type: integer
-          minimum: 201
+          const: 5000
         ngnPayableKobo:
           type: integer
           minimum: 1
