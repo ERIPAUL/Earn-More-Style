@@ -122,7 +122,7 @@ export default function TrainingEnrollmentDialog({
           <DialogHeader>
             <DialogTitle className="text-2xl text-white">Enroll in Level 1</DialogTitle>
             <DialogDescription className="text-green-100/75">
-              Corporate ESG Strategy and Compliance, 10 and 17 October 2026
+              Corporate ESG Strategy and Compliance, 14 November 2026
             </DialogDescription>
           </DialogHeader>
         </div>
@@ -244,7 +244,7 @@ export default function TrainingEnrollmentDialog({
           <fieldset className="space-y-2 border-t pt-5">
             <legend className="text-base font-semibold">Training programme</legend>
             <p className="text-sm font-medium">Corporate ESG Strategy and Compliance</p>
-            <p className="text-sm text-foreground/60">Level 1: Foundation · Online · 10 and 17 October 2026</p>
+            <p className="text-sm text-foreground/60">Level 1: Foundation · Online · 14 November 2026 · 4 hours, one day</p>
           </fieldset>
 
           {error && (

@@ -116,12 +116,12 @@ export async function sendTrainingConfirmationEmail({
                     <td align="right" style="padding:12px 0;border-bottom:1px solid #edf3f1;color:#17352f;font-size:14px;font-weight:700;">Level 1: Foundation</td>
                   </tr>
                   <tr>
-                    <td style="padding:12px 0;border-bottom:1px solid #edf3f1;color:#6c7f79;font-size:14px;">Dates</td>
-                    <td align="right" style="padding:12px 0;border-bottom:1px solid #edf3f1;color:#17352f;font-size:14px;font-weight:700;">10 and 17 October 2026</td>
+                    <td style="padding:12px 0;border-bottom:1px solid #edf3f1;color:#6c7f79;font-size:14px;">Date</td>
+                    <td align="right" style="padding:12px 0;border-bottom:1px solid #edf3f1;color:#17352f;font-size:14px;font-weight:700;">14 November 2026</td>
                   </tr>
                   <tr>
                     <td style="padding:12px 0;border-bottom:1px solid #edf3f1;color:#6c7f79;font-size:14px;">Duration</td>
-                    <td align="right" style="padding:12px 0;border-bottom:1px solid #edf3f1;color:#17352f;font-size:14px;font-weight:700;">8 hours total, 4 hours per day</td>
+                    <td align="right" style="padding:12px 0;border-bottom:1px solid #edf3f1;color:#17352f;font-size:14px;font-weight:700;">4 hours, one day</td>
                   </tr>
                   <tr>
                     <td style="padding:12px 0;border-bottom:1px solid #edf3f1;color:#6c7f79;font-size:14px;">Format</td>
@@ -168,8 +168,8 @@ Congratulations, ${firstName}!
 
 Your payment for the Corporate ESG Strategy and Compliance, Level 1: Foundation programme has been confirmed.
 
-Dates: 10 and 17 October 2026
-Duration: 8 hours total, 4 hours per day
+Date: 14 November 2026
+Duration: 4 hours, one day
 Format: Online
 Modules: 6 Level 1 modules
 Amount paid: ${amountPaid}

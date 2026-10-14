@@ -17,8 +17,8 @@ const level1Modules = [
   {
     num: "01",
     title: "Introduction to ESG and Why It Matters",
-    duration: "1 hour 20 minutes",
-    day: "10 October 2026, Session 1",
+    duration: "40 minutes",
+    day: "14 November 2026, Module 1",
     topics: [
       "What is ESG? Definitions and real-world relevance",
       "How ESG affects everyday business decisions",
@@ -36,8 +36,8 @@ const level1Modules = [
   {
     num: "02",
     title: "Environment Basics: Climate, Carbon and Your Company",
-    duration: "1 hour 20 minutes",
-    day: "10 October 2026, Session 2",
+    duration: "40 minutes",
+    day: "14 November 2026, Module 2",
     topics: [
       "Climate change explained plainly",
       "What is a carbon footprint?",
@@ -55,8 +55,8 @@ const level1Modules = [
   {
     num: "03",
     title: "Social Responsibility: People, Fair Work and Community",
-    duration: "1 hour 20 minutes",
-    day: "10 October 2026, Session 3",
+    duration: "40 minutes",
+    day: "14 November 2026, Module 3",
     topics: [
       "What social responsibility means at work",
       "Fair wages, labour rights and safe conditions",
@@ -74,8 +74,8 @@ const level1Modules = [
   {
     num: "04",
     title: "Governance Foundations: Rules, Ethics and Accountability",
-    duration: "1 hour 20 minutes",
-    day: "17 October 2026, Session 1",
+    duration: "40 minutes",
+    day: "14 November 2026, Module 4",
     topics: [
       "What is corporate governance?",
       "Boards, management and accountability structures",
@@ -93,8 +93,8 @@ const level1Modules = [
   {
     num: "05",
     title: "ESG Reporting and Measurement: Reading the Numbers",
-    duration: "1 hour 20 minutes",
-    day: "17 October 2026, Session 2",
+    duration: "40 minutes",
+    day: "14 November 2026, Module 5",
     topics: [
       "Why companies report ESG data",
       "Key frameworks: GRI, SASB and ISSB simplified",
@@ -112,8 +112,8 @@ const level1Modules = [
   {
     num: "06",
     title: "Capstone: Your Personal ESG Action Plan",
-    duration: "1 hour 20 minutes",
-    day: "17 October 2026, Session 3",
+    duration: "40 minutes",
+    day: "14 November 2026, Module 6",
     topics: [
       "Linking ESG to your day-to-day role",
       "Building a personal ESG commitment",
@@ -256,7 +256,7 @@ export default function TrainingPage() {
     <>
       <Seo
         title="Corporate ESG Training Programme | EarnMore Group"
-        description="An 8-hour Corporate ESG Strategy and Compliance Level 1 training for junior and early-career staff, delivered on 10 and 17 October 2026. Contact EarnMore for Level 2 training."
+        description="A one-day, 4-hour Corporate ESG Strategy and Compliance Level 1 training for junior and early-career staff, delivered on 14 November 2026. Contact EarnMore for Level 2 training."
         keywords="ESG training Nigeria, ESG course Africa, sustainability training, corporate ESG programme, ESG Institute certificate"
         canonical="/training"
         ogImage="https://earnmoregroup.com/og/training.jpg"
@@ -292,9 +292,9 @@ export default function TrainingPage() {
                   <div className="flex flex-wrap gap-3 mb-10">
                     {[
                       { icon: <Layers className="w-4 h-4" />, label: "6 Modules" },
-                      { icon: <Clock className="w-4 h-4" />, label: "8 Total Hours" },
+                      { icon: <Clock className="w-4 h-4" />, label: "4 Hours · 1 Day" },
                       { icon: <Users className="w-4 h-4" />, label: "Level 1 Foundation" },
-                      { icon: <Calendar className="w-4 h-4" />, label: "10 & 17 October 2026" },
+                      { icon: <Calendar className="w-4 h-4" />, label: "14 November 2026" },
                     ].map((b, i) => (
                       <span
                         key={i}
@@ -339,8 +339,8 @@ export default function TrainingPage() {
                   {/* Detail rows */}
                   <div className="bg-white divide-y divide-gray-100">
                     {[
-                      { icon: <Calendar className="w-4 h-4" />, label: "Dates", value: "10 & 17 October 2026" },
-                      { icon: <Clock className="w-4 h-4" />, label: "Duration", value: "8 hours total, 4 hours per day" },
+                      { icon: <Calendar className="w-4 h-4" />, label: "Date", value: "14 November 2026" },
+                      { icon: <Clock className="w-4 h-4" />, label: "Duration", value: "4 hours, one day" },
                       { icon: <Layers className="w-4 h-4" />, label: "Format", value: "Online" },
                       { icon: <BookOpen className="w-4 h-4" />, label: "Modules", value: "6 Level 1 modules" },
                       { icon: <Award className="w-4 h-4" />, label: "Certificate", value: "EarnMore completion certificate" },
@@ -421,7 +421,7 @@ export default function TrainingPage() {
                   <p className="text-foreground/65 text-sm mb-5 leading-relaxed">Junior and early-career staff (0-5 years). No prior ESG knowledge needed.</p>
                   <p className="text-xs font-bold text-foreground/40 uppercase tracking-wider mb-3">Programme Details</p>
                   <ul className="space-y-2 mb-5">
-                    {["6 modules", "8 hours total", "4 hours on each training day", "Pass mark: 70%", "EarnMore completion certificate"].map((detail) => (
+                    {["6 modules", "4 hours total", "One-day training", "Pass mark: 70%", "EarnMore completion certificate"].map((detail) => (
                       <li key={detail} className="flex items-center gap-2 text-sm text-foreground/70 font-medium">
                         <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
                         {detail}
@@ -430,7 +430,7 @@ export default function TrainingPage() {
                   </ul>
                   <div className="inline-flex items-center gap-2 bg-emerald-50 px-3 py-2 rounded-lg">
                     <Calendar className="w-3.5 h-3.5 text-primary" />
-                    <span className="text-xs text-primary font-semibold">10 & 17 October 2026</span>
+                    <span className="text-xs text-primary font-semibold">14 November 2026</span>
                   </div>
                 </div>
               </motion.div>
@@ -481,7 +481,7 @@ export default function TrainingPage() {
                 </p>
               </div>
               <div className="flex-shrink-0 flex flex-wrap gap-2 md:flex-col">
-                <span className="text-xs bg-white border border-emerald-200 text-primary font-semibold px-3 py-1.5 rounded-lg">10 & 17 October 2026</span>
+                <span className="text-xs bg-white border border-emerald-200 text-primary font-semibold px-3 py-1.5 rounded-lg">14 November 2026</span>
                 <span className="text-xs bg-white border border-emerald-200 text-primary font-semibold px-3 py-1.5 rounded-lg">Pass mark: 70%</span>
               </div>
             </div>
@@ -598,8 +598,8 @@ export default function TrainingPage() {
                 <tbody className="divide-y divide-gray-100">
                   {[
                     { label: "Target Audience", value: "Junior and early-career staff (0-5 years). No prior ESG knowledge needed." },
-                    { label: "Scheduled Sessions", value: "10 and 17 October 2026" },
-                    { label: "Duration", value: "8 hours total, 4 hours per training day" },
+                    { label: "Scheduled Date", value: "14 November 2026" },
+                    { label: "Duration", value: "4 hours, one day" },
                     { label: "Modules", value: "6 modules covering all three ESG pillars" },
                     { label: "Pass Mark", value: "70% on a 20-question written assessment" },
                     { label: "Certificate", value: "EarnMore completion certificate" },
@@ -645,7 +645,7 @@ export default function TrainingPage() {
                 <span className="italic font-serif font-normal text-emerald-300">ESG Capability?</span>
               </h2>
               <p className="text-green-200/60 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-                Level 1 sessions take place on 10 and 17 October 2026. Places are limited. Contact us to enrol your team or to discuss Level 2 training.
+                Level 1 takes place on 14 November 2026 in one 4-hour session. Places are limited. Contact us to enrol your team or to discuss Level 2 training.
               </p>
               <button
                 type="button"
