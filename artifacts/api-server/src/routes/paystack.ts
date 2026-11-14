@@ -229,6 +229,10 @@ router.get("/paystack/quote", async (req, res): Promise<void> => {
 });
 
 router.post("/paystack/initialize", async (req, res): Promise<void> => {
+  if (process.env.TRAINING_REGISTRATION_OPEN !== "true") {
+    res.status(403).json({ error: "Registration for the next cohort has not opened yet. Please check back soon." });
+    return;
+  }
   const parsed = InitializePaystackTransactionBody.safeParse(req.body);
   if (!parsed.success) {
     req.log.warn({ errors: parsed.error.flatten() }, "Invalid training enrolment details");

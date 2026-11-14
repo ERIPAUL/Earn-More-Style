@@ -5,11 +5,9 @@ import {
   CheckCircle2, BookOpen, ClipboardList, ArrowRight, Target,
 } from "lucide-react";
 import { Link } from "wouter";
-import { useGetTrainingPaymentQuote } from "@workspace/api-client-react";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import Seo from "@/components/seo";
-import TrainingEnrollmentDialog from "@/components/training-enrollment-dialog";
 
 /* ─── Data ─────────────────────────────────────────────────── */
 
@@ -18,7 +16,7 @@ const level1Modules = [
     num: "01",
     title: "Introduction to ESG and Why It Matters",
     duration: "40 minutes",
-    day: "14 November 2026, Module 1",
+    day: "Module 1",
     topics: [
       "What is ESG? Definitions and real-world relevance",
       "How ESG affects everyday business decisions",
@@ -37,7 +35,7 @@ const level1Modules = [
     num: "02",
     title: "Environment Basics: Climate, Carbon and Your Company",
     duration: "40 minutes",
-    day: "14 November 2026, Module 2",
+    day: "Module 2",
     topics: [
       "Climate change explained plainly",
       "What is a carbon footprint?",
@@ -56,7 +54,7 @@ const level1Modules = [
     num: "03",
     title: "Social Responsibility: People, Fair Work and Community",
     duration: "40 minutes",
-    day: "14 November 2026, Module 3",
+    day: "Module 3",
     topics: [
       "What social responsibility means at work",
       "Fair wages, labour rights and safe conditions",
@@ -75,7 +73,7 @@ const level1Modules = [
     num: "04",
     title: "Governance Foundations: Rules, Ethics and Accountability",
     duration: "40 minutes",
-    day: "14 November 2026, Module 4",
+    day: "Module 4",
     topics: [
       "What is corporate governance?",
       "Boards, management and accountability structures",
@@ -94,7 +92,7 @@ const level1Modules = [
     num: "05",
     title: "ESG Reporting and Measurement: Reading the Numbers",
     duration: "40 minutes",
-    day: "14 November 2026, Module 5",
+    day: "Module 5",
     topics: [
       "Why companies report ESG data",
       "Key frameworks: GRI, SASB and ISSB simplified",
@@ -113,7 +111,7 @@ const level1Modules = [
     num: "06",
     title: "Capstone: Your Personal ESG Action Plan",
     duration: "40 minutes",
-    day: "14 November 2026, Module 6",
+    day: "Module 6",
     topics: [
       "Linking ESG to your day-to-day role",
       "Building a personal ESG commitment",
@@ -237,26 +235,11 @@ function ModuleCard({ mod, index }: { mod: (typeof level1Modules)[0]; index: num
 /* ─── Page ─────────────────────────────────────────────────── */
 
 export default function TrainingPage() {
-  const [enrollmentOpen, setEnrollmentOpen] = useState(false);
-  const trainingPrice = useGetTrainingPaymentQuote({
-    query: {
-      queryKey: ["training-page-price"],
-      staleTime: 60_000,
-      retry: 1,
-    },
-  });
-  const usdPrice = trainingPrice.data
-    ? new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(trainingPrice.data.usdTotalCents / 100)
-    : null;
-
   return (
     <>
       <Seo
         title="Corporate ESG Training Programme | EarnMore Group"
-        description="A one-day, 4-hour Corporate ESG Strategy and Compliance Level 1 training for junior and early-career staff, delivered on 14 November 2026. Contact EarnMore for Level 2 training."
+        description="A one-day, 4-hour Corporate ESG Strategy and Compliance Level 1 training for junior and early-career staff, with the next cohort dates to be announced. Contact EarnMore to register your interest or to discuss Level 2 training."
         keywords="ESG training Nigeria, ESG course Africa, sustainability training, corporate ESG programme, ESG Institute certificate"
         canonical="/training"
         ogImage="https://earnmoregroup.com/og/training.jpg"
@@ -294,7 +277,7 @@ export default function TrainingPage() {
                       { icon: <Layers className="w-4 h-4" />, label: "6 Modules" },
                       { icon: <Clock className="w-4 h-4" />, label: "4 Hours · 1 Day" },
                       { icon: <Users className="w-4 h-4" />, label: "Level 1 Foundation" },
-                      { icon: <Calendar className="w-4 h-4" />, label: "14 November 2026" },
+                      { icon: <Calendar className="w-4 h-4" />, label: "Next cohort: dates to be announced" },
                     ].map((b, i) => (
                       <span
                         key={i}
@@ -307,16 +290,12 @@ export default function TrainingPage() {
                   </div>
 
                   <div className="flex flex-wrap gap-4">
-                    <button
-                      type="button"
-                      onClick={() => setEnrollmentOpen(true)}
-                      className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white font-semibold px-7 py-3.5 rounded-md transition-all group"
-                    >
-                      Enroll Now
+                    <Link href="/contact" className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white font-semibold px-7 py-3.5 rounded-md transition-all group">
+                      Register Your Interest
                       <span className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
                         <ArrowRight className="w-3.5 h-3.5" />
                       </span>
-                    </button>
+                    </Link>
                   </div>
                 </motion.div>
               </div>
@@ -339,7 +318,7 @@ export default function TrainingPage() {
                   {/* Detail rows */}
                   <div className="bg-white divide-y divide-gray-100">
                     {[
-                      { icon: <Calendar className="w-4 h-4" />, label: "Date", value: "14 November 2026" },
+                      { icon: <Calendar className="w-4 h-4" />, label: "Next Cohort", value: "Dates to be announced" },
                       { icon: <Clock className="w-4 h-4" />, label: "Duration", value: "4 hours, one day" },
                       { icon: <Layers className="w-4 h-4" />, label: "Format", value: "Online" },
                       { icon: <BookOpen className="w-4 h-4" />, label: "Modules", value: "6 Level 1 modules" },
@@ -356,23 +335,13 @@ export default function TrainingPage() {
                     ))}
                   </div>
                   <div className="px-7 py-4 bg-emerald-50 border-t border-emerald-100">
-                    <p className="text-xs text-primary font-semibold uppercase tracking-wider">Course price</p>
-                    {usdPrice ? (
-                      <p className="mt-1 text-lg font-bold text-foreground">{usdPrice}</p>
-                    ) : (
-                      <p className="mt-1 text-xs text-foreground/60">
-                        Current price available at checkout.
-                      </p>
-                    )}
+                    <p className="text-xs text-primary font-semibold uppercase tracking-wider">Registration</p>
+                    <p className="mt-1 text-sm text-foreground/70">Opens when the next cohort is announced. Register your interest and we will notify you first.</p>
                   </div>
                   <div className="px-7 py-5 bg-white border-t border-gray-100">
-                    <button
-                      type="button"
-                      onClick={() => setEnrollmentOpen(true)}
-                      className="block w-full text-center bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3.5 rounded-md transition-all"
-                    >
-                      Enroll Now
-                    </button>
+                    <Link href="/contact" className="block w-full text-center bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3.5 rounded-md transition-all">
+                      Register Your Interest
+                    </Link>
                   </div>
                 </div>
               </motion.div>
@@ -430,7 +399,7 @@ export default function TrainingPage() {
                   </ul>
                   <div className="inline-flex items-center gap-2 bg-emerald-50 px-3 py-2 rounded-lg">
                     <Calendar className="w-3.5 h-3.5 text-primary" />
-                    <span className="text-xs text-primary font-semibold">14 November 2026</span>
+                    <span className="text-xs text-primary font-semibold">Dates to be announced</span>
                   </div>
                 </div>
               </motion.div>
@@ -481,7 +450,7 @@ export default function TrainingPage() {
                 </p>
               </div>
               <div className="flex-shrink-0 flex flex-wrap gap-2 md:flex-col">
-                <span className="text-xs bg-white border border-emerald-200 text-primary font-semibold px-3 py-1.5 rounded-lg">14 November 2026</span>
+                <span className="text-xs bg-white border border-emerald-200 text-primary font-semibold px-3 py-1.5 rounded-lg">Next cohort: dates to be announced</span>
                 <span className="text-xs bg-white border border-emerald-200 text-primary font-semibold px-3 py-1.5 rounded-lg">Pass mark: 70%</span>
               </div>
             </div>
@@ -598,7 +567,7 @@ export default function TrainingPage() {
                 <tbody className="divide-y divide-gray-100">
                   {[
                     { label: "Target Audience", value: "Junior and early-career staff (0-5 years). No prior ESG knowledge needed." },
-                    { label: "Scheduled Date", value: "14 November 2026" },
+                    { label: "Next Cohort", value: "Dates to be announced" },
                     { label: "Duration", value: "4 hours, one day" },
                     { label: "Modules", value: "6 modules covering all three ESG pillars" },
                     { label: "Pass Mark", value: "70% on a 20-question written assessment" },
@@ -638,31 +607,26 @@ export default function TrainingPage() {
             >
               <p className="text-emerald-400 text-xs font-bold tracking-widest uppercase mb-4 flex items-center justify-center gap-2">
                 <span className="w-6 h-px bg-emerald-400" />
-                Enrol Your Team
+                Next Cohort
               </p>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
                 Ready to Build Your{" "}
                 <span className="italic font-serif font-normal text-emerald-300">ESG Capability?</span>
               </h2>
               <p className="text-green-200/60 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-                Level 1 takes place on 14 November 2026 in one 4-hour session. Places are limited. Contact us to enrol your team or to discuss Level 2 training.
+                Our next Level 1 cohort will be announced soon. Places are limited, so register your interest and we will notify you as soon as dates and registration open. You can also contact us to discuss training for your team or Level 2.
               </p>
-              <button
-                type="button"
-                onClick={() => setEnrollmentOpen(true)}
-                className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white font-semibold px-9 py-4 rounded-md transition-all group text-base"
-              >
-                Enroll Now
+              <Link href="/contact" className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white font-semibold px-9 py-4 rounded-md transition-all group text-base">
+                Register Your Interest
                 <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
                   <ArrowRight className="w-4 h-4" />
                 </span>
-              </button>
+              </Link>
             </motion.div>
           </div>
         </section>
 
       </main>
-      <TrainingEnrollmentDialog open={enrollmentOpen} onOpenChange={setEnrollmentOpen} />
       <Footer />
     </>
   );
